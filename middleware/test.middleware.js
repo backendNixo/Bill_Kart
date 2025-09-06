@@ -1,12 +1,13 @@
 import crypto from "crypto";
 import { rateLimit } from "express-rate-limit";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
 
 const HMAC_SECRET = process.env.CHECKSUM_SECRET || "mysecret";
-const FILE_SECRET_KEY = crypto.createHash("sha256").update(process.env.FILE_SECRET_KEY || "file-secret").digest();
+const FILE_SECRET_KEY = crypto.createHash("sha256").update(process.env.FILE_SECRET_KEY).digest();
 const IV_LENGTH = 16;
 
-// Rate limiter
 export const checkIpLimit = rateLimit({
   windowMs: 1 * 60 * 1000,
   max: 4,
@@ -15,24 +16,9 @@ export const checkIpLimit = rateLimit({
   message: { status: 429, message: "Too many requests, try again later" }
 });
 
-// Verify JWT token
-export const verifyToken = (req, res, next) => {
-  try {
-    const token = req.headers["authorization"]?.split(" ")[1];
-    if (!token) return res.status(401).json({ message: "No token provided" });
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
-    next();
-  } catch (err) {
-    res.status(401).json({ message: "Invalid token" });
-  }
-};
-
-// Mobile detection
 export const isMobileUserAgent = (ua = "") => /mobile|android|iphone|ipad|phone/i.test(ua);
 
-// Checksum
 export const verifyChecksum = (userAgent, signature) => {
   if (!signature) return false;
   const hmac = crypto.createHmac("sha256", HMAC_SECRET);
@@ -49,28 +35,68 @@ export const verifyChecksum = (userAgent, signature) => {
   }
 };
 
-// User-Agent + role check middleware
-export const verifyUserAgent = (requireRoleCheck = false) => (req, res, next) => {
-  try {
-    const clientChecksum = req.headers["x-checksum"];
-    const ua = req.get("user-agent") || "";
+// export const verifyUserAgent = (requireRoleCheck = false) => (req, res, next) => {
+//   try {
+//     const clientChecksum = req.headers["x-checksum"];
+//     const ua = req.get("user-agent") || "";
 
-    if (!verifyChecksum(ua, clientChecksum))
-      return res.status(403).json({ message: "Checksum mismatch" });
+//     if (!verifyChecksum(ua, clientChecksum))
+//       return res.status(403).json({ message: "Checksum mismatch" });
 
-    if (requireRoleCheck) {
-      if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+//     if (requireRoleCheck) {
+//       if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+//       const isMobile = isMobileUserAgent(ua);
+//       if (req.user.role === "admin" && isMobile)
+//         return res.status(403).json({ message: "Admin only allowed from web" });
+//       if (req.user.role === "user" && !isMobile)
+//         return res.status(403).json({ message: "User only allowed from mobile" });
+//     }
+//     next();
+//   } catch (err) {
+//     return res.status(401).json({ message: "Unknown Agent", error: err.message });
+//   }
+// }
+
+export const verifyUserAgent = (requireRoleCheck = false) => {
+  return (req, res, next) => {
+    try {
+      const clientChecksum = req.headers["x-checksum"];
+      const ua = req.get("user-agent") || "";
+
+      const isValid = verifyChecksum(ua, clientChecksum);
+      if (!isValid) {
+        return res.status(403).json({ message: "Checksum mismatch" });
+      }
+
       const isMobile = isMobileUserAgent(ua);
-      if (req.user.role === "admin" && isMobile)
-        return res.status(403).json({ message: "Admin only allowed from web" });
-      if (req.user.role === "user" && !isMobile)
-        return res.status(403).json({ message: "User only allowed from mobile" });
+
+      if (requireRoleCheck) {
+        if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+
+        if (req.user.role === "admin" && isMobile) {
+          return res.status(403).json({ message: "Admin only allowed from web" });
+        }
+
+        if (req.user.role === "user" && !isMobile) {
+          return res.status(403).json({ message: "User only allowed from mobile" });
+        }
+      } else {
+        if (req.body?.role === "admin" && isMobile) {
+          return res.status(403).json({ message: "Admin login only allowed from web" });
+        }
+
+        if (req.body?.role === "user" && !isMobile) {
+          return res.status(403).json({ message: "User login only allowed from mobile" });
+        }
+      }
+
+      next();
+    } catch (err) {
+      return res.status(401).json({ message: "Unknown Agent", error: err.message });
     }
-    next();
-  } catch (err) {
-    return res.status(401).json({ message: "Unknown Agent", error: err.message });
-  }
-}
+  };
+};
+
 export const decryptMiddleware = (req, res, next) => {
   try {
     if (req.body?.data && req.body?.iv) {
