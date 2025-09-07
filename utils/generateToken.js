@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 
 
- const generateAccessToken = async (id,role,) => {
-  const token = await jwt.sign(
+ const generateAccessToken = (id,role,) => {
+  const token = jwt.sign(
     { id,role},
     process.env.JWT_SECRET,
     { expiresIn: "1h" }
@@ -10,8 +10,8 @@ import jwt from "jsonwebtoken";
   return token;
 }
 
- const generateRefreshToken = async (id,role) => {
-   const token = await jwt.sign(
+ const generateRefreshToken =  (id,role) => {
+   const token = jwt.sign(
     { id,role},
     process.env.JWT_SECRET,
     { expiresIn: "7d" }

@@ -35,5 +35,9 @@ const decryptFile = (inputPath, outputPath, ivHex) => {
   });
 };
 
+ const generateChecksum = (data) => {
+  return crypto.createHash("sha256").update(data).digest("hex");
+};
 
-export { encryptFile, decryptFile };
+
+export { encryptFile, decryptFile, generateChecksum };

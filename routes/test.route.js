@@ -1,12 +1,17 @@
+
 import express from "express";
-import { verifyUserAgent } from "../middleware/test.middleware.js";
-import { LoginUser, GetData } from "../controllers/auth.controller.js";
-import { verifyToken } from "../middleware/verifyToken.js";
+import {
+  register,
+  login,
+  Getdata,
+} from "../controllers/auth.controller.js";
+import { verifyChecksum, verifyUserAgent } from "../middleware/test.middleware.js"
+import {verifyToken} from "../middleware/verifyToken.js"
 
 const router = express.Router();
 
-router.post("/login", verifyUserAgent(false), LoginUser);
-
-router.get("/get_data", verifyToken, verifyUserAgent(true), GetData);
+router.post("/register", verifyChecksum, register);
+router.post("/login", verifyUserAgent, verifyChecksum, login);
+router.get("/getdata/:username",verifyToken, verifyUserAgent, verifyChecksum, Getdata);
 
 export default router;

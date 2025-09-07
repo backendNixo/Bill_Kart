@@ -1,32 +1,54 @@
+// import express from "express";
+// import dotenv from "dotenv";
+// import cors from "cors";
+// import compression from "compression";
+// import connectDB from "./config/db.js";
+// import authRoutes from "./routes/test.route.js";
+// import { checkIpLimit, encryptMiddleware, decryptMiddleware } from "./middleware/test.middleware.js";
+
+// dotenv.config();
+// const app = express();
+
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(cors());
+// app.use(compression());
+
+// app.use(checkIpLimit);
+// app.use(decryptMiddleware);
+// app.use(encryptMiddleware);
+
+
+// app.use("/api", authRoutes);
+
+// const PORT = 9000;
+// app.listen(PORT, async () => {
+//   try {
+//     await connectDB();
+//     console.log(`Server running on port ${PORT}`);
+//   } catch (err) {
+//     console.error("DB connection failed", err);
+//   }
+// });
+
 import express from "express";
-import dotenv from "dotenv";
-import cors from "cors";
-import compression from "compression";
-import connectDB from "./config/db.js";
+import { connectDB } from "./config/db.js";
 import authRoutes from "./routes/test.route.js";
 import { checkIpLimit, encryptMiddleware, decryptMiddleware } from "./middleware/test.middleware.js";
 
-dotenv.config();
 const app = express();
+connectDB();
 
-app.use(express.json());
+// Middlewares
+app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
-app.use(compression());
-
-app.use(checkIpLimit);
+// app.use(decryptRequest);
+// app.use(encryptResponse);
 app.use(decryptMiddleware);
 app.use(encryptMiddleware);
+app.use(checkIpLimit);
 
+// Routes
+app.use("/api/auth", authRoutes);
 
-app.use("/api", authRoutes);
-
-const PORT = 9000;
-app.listen(PORT, async () => {
-  try {
-    await connectDB();
-    console.log(`Server running on port ${PORT}`);
-  } catch (err) {
-    console.error("DB connection failed", err);
-  }
-});
+app.listen(5000, () => console.log("Server running on port 5000"));

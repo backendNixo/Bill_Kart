@@ -1,52 +1,63 @@
+
 import User from "../model/user.model.js";
-import { generateAccessToken, generateRefreshToken } from "../utils/generateToken.js"
-export const GetData=async(req,res)=>{
-try {
-    console.log(req.body);
-    console.log(res);
-    const data=await User.findOne({_id:req.user.id})
-    console.log(data);
+import bcrypt from "bcryptjs";
+import {generateAccessToken,generateRefreshToken} from "../utils/generateToken.js"
+
+
+
+
+export const register = async (req, res) => {
+//   const username = "krati";
+//   const password = "1234";
+//   const role = "admin";
+//   const content = "x".repeat(5 * 1024 * 1024);
+  const { username, password, role,content } = req.body;
+  const hashed = await bcrypt.hash(password, 10);
+  const user = new User({ username, password: hashed, role, content });
+  await user.save();
+  res.json({ message: "User registered successfully" });
+};
+
+export const login = async (req, res) => {
+  const { username, password } = req.body;
+  console.log(req.body);
+  
+  const user = await User.findOne({ username });
+  if (!user) return res.status(404).json({ error: "User not found" });
+
+  const match = await bcrypt.compare(password, user.password);
+  if (!match) return res.status(401).json({ error: "Invalid credentials" });
+
+  const accessToken = generateAccessToken(user._id, user.role);
+  const refreshToken = generateRefreshToken(user._id, user.role);
+  user.refreshToken = refreshToken;
+  await user.save();
+
+    console.log("login success fully!");
     
-    return res.status(200).json({msg:"data found success"})
-    
-} catch (error) {
-    return res.status(500).json({msg:"data not found"})
-}
-}
+  res.json({message:"user login success fully!", accessToken, refreshToken });
+};
 
-const LoginUser = async (req, res) => {
-    try {
-        const { userName, password } = req.body;
-
-        if (!userName || !password) {
-            return res.status(400).json({ message: "User Name Or Password Not Found " })
-        }
-        const user = await User.findOne({ userName: userName });
-        if (!user) {
-            return res.status(400).json({ message: "User Not Found " })
-        }
-        if (user.password !== password) {
-            return res.status(400).json({ message: "In Correct User Credential" })
-        }
-
-
-        const accessToken = await generateAccessToken(user._id, user.role, req.headers["user-agent"]);
-        const refreshToken = await generateRefreshToken(user._id, user.role, req.headers["user-agent"]);
-
-        console.log(accessToken, refreshToken);
-
-        user.refreshToken = refreshToken;
-        await user.save();
-        return res.status(200).json({
-            message: "User Login Successfully!", tokens: {
-                accessToken,
-                refreshToken,
-            },
-        })
-
-    } catch (error) {
-        return res.status(500).json({ message: "Error :" + error.message })
+export const refresh = async (req, res) => {
+  const { token } = req.body;
+  try {
+    const decoded = verifyToken(token);
+    const user = await User.findById(decoded.id);
+    if (!user || user.refreshToken !== token) {
+      return res.status(403).json({ error: "Invalid refresh token" });
     }
-}
+    const newAccessToken = generateAccessToken(user);
+    res.json({ accessToken: newAccessToken });
+  } catch (err) {
+    res.status(403).json({ error: "Invalid token" });
+  }
+};
 
-export{LoginUser};
+export const Getdata = async (req, res) => {
+  const username = req.params.username;
+  const user = await User.findOne({ username });
+
+
+  res.json({ message: "data fetched success", data: user });
+};
+
