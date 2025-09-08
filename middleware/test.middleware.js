@@ -3,11 +3,13 @@ import { rateLimit } from "express-rate-limit";
 import { generateChecksum } from "../utils/encryption.js";
 
 import dotenv from "dotenv";
+
 dotenv.config();
 
+const secret=process.env.FILE_SECRET_KEY;
 const FILE_SECRET_KEY = crypto
   .createHash("sha256")
-  .update(toString(process.env.FILE_SECRET_KEY))
+  .update(secret)
   .digest();
 const IV_LENGTH = 16;
 
@@ -31,7 +33,7 @@ export const decryptMiddleware = (req, res, next) => {
 
       let decrypted = decipher.update(req.body.data, "hex", "utf8");
       decrypted += decipher.final("utf8");
-
+      
       req.body = JSON.parse(decrypted);
       console.log("Request auto-decrypted");
     }
@@ -45,14 +47,16 @@ export const decryptMiddleware = (req, res, next) => {
 };
 export const encryptMiddleware = (req, res, next) => {
   const oldJson = res.json;
+  console.log(oldJson);
+  
   res.json = function (data) {
     try {
       const iv = crypto.randomBytes(IV_LENGTH);
       const cipher = crypto.createCipheriv("aes-256-cbc", FILE_SECRET_KEY, iv);
-
+  
       let encrypted = cipher.update(JSON.stringify(data), "utf8", "hex");
       encrypted += cipher.final("hex");
-
+      
       return oldJson.call(this, { data: encrypted, iv: iv.toString("hex") });
     } catch (err) {
       console.log("Encryption failed, sending plain response");
@@ -81,7 +85,8 @@ export const verifyChecksum = (req, res, next) => {
 };
 
 export const verifyUserAgent = (req, res, next) => {
-  const role = req.body.role || req.user?.role;
+  // const role = req.body.role || req.user?.role;
+  const role =req.user?.role;
   const userAgent = req.headers["user-agent"] || "";
   console.log(role, userAgent);
 
@@ -90,7 +95,6 @@ export const verifyUserAgent = (req, res, next) => {
 
     return res.status(403).json({
       error: "Admins allowed only from web",
-      msg: "Admins allowed only from web",
     });
   }
 
@@ -99,7 +103,6 @@ export const verifyUserAgent = (req, res, next) => {
 
     return res.status(403).json({
       error: "Users allowed only from mobile",
-      msg: "Users allowed only from mobile",
     });
   }
   console.log("user agent verify");

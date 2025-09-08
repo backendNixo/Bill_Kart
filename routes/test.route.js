@@ -4,7 +4,7 @@ import {
   register,
   login,
   Getdata,
-} from "../controllers/auth.controller.js";
+} from "../controllers/user/auth.controller.js";
 import { verifyChecksum, verifyUserAgent } from "../middleware/test.middleware.js"
 import {verifyToken} from "../middleware/verifyToken.js"
 
