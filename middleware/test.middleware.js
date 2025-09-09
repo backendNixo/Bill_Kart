@@ -85,8 +85,9 @@ export const verifyChecksum = (req, res, next) => {
 };
 
 export const verifyUserAgent = (req, res, next) => {
-  // const role = req.body.role || req.user?.role;
-  const role =req.user?.role;
+
+  let role =req.user?.role||req.body?.role;
+  
   const userAgent = req.headers["user-agent"] || "";
   console.log(role, userAgent);
 

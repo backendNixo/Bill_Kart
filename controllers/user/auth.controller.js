@@ -1,46 +1,44 @@
 
 import User from "../../model/user.model.js";
 import bcrypt from "bcryptjs";
-import {generateAccessToken,generateRefreshToken} from "../../utils/generateToken.js"
-import Admin from "../../model/admin/admin.model.js";
+import APIError from "../../utils/APIError.js";
+import { APIResponse } from "../../utils/APIResponse.js";
+import { generateAccessToken, generateRefreshToken } from "../../utils/generateToken.js"
 
 
 
-export const register = async (req, res) => {
-//   const username = "krati";
-//   const password = "1234";
-//   const role = "admin";
-//   const content = "x".repeat(5 * 1024 * 1024);
-  const { username, password} = req.body;// role,content 
-  const hashed = await bcrypt.hash(password, 10);
-  const user = new User({ username, password: hashed }); //role, content
-  await user.save();
-  res.json({ message: "User registered successfully" });
-};
 
 export const login = async (req, res) => {
   const { username, password } = req.body;
-  console.log(req.body);
-  
+  if (!username || !password) {
+    return res.status(400).json(new APIError("User Credentials Required", 400));
+  }
+
   const user = await User.findOne({ username });
-  if (!user) return res.status(404).json({ error: "User not found" });
+  if (!user) {
+    return res.status(404).json(new APIError("User not found", 404));
+  }
 
   const match = await bcrypt.compare(password, user.password);
-  if (!match) return res.status(401).json({ error: "Invalid credentials" });
+  if (!match) {
+    return res.status(401).json(new APIError("Invalid credentials", 401));
+  }
 
   const accessToken = generateAccessToken(user._id, user.role);
   const refreshToken = generateRefreshToken(user._id, user.role);
   user.refreshToken = refreshToken;
   await user.save();
 
-    console.log("login success fully!");
-    
-  res.json({message:"user login success fully!", accessToken, refreshToken });
+  return res.status(200).json(new APIResponse("User login success fully!", 200, { Token: accessToken}));
 };
 
-export const Getdata = async (req, res) => {
-  const username = req.params.username;
-  const user = await User.findOne({ username });
-  res.json({ message: "data fetched success", data: user });
+export const GetProfile = async (req, res) => {
+  const userId = req.user.id;
+
+  const user = await User.findOne({ _id: userId });
+  if (!user) {
+ return res.status(404).json(new APIError("User not found", 404));
+  }
+ return res.status(200).json(new APIResponse("User Profile :", 200,user));
 };
 

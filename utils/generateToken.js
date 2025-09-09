@@ -9,7 +9,6 @@ const generateAccessToken = (id, role,) => {
   );
   return token;
 }
-
 const generateRefreshToken = (id, role) => {
   const token = jwt.sign(
     { id, role },
@@ -18,15 +17,15 @@ const generateRefreshToken = (id, role) => {
   );
   return token;
 }
-const generateToken = (id) => {
-  const token = jwt.sign(
-    { id },
-    process.env.JWT_SECRET,
-    { expiresIn: "1h" }
-  );
-  return token;
-}
+// const generateToken = (id) => {
+//   const token = jwt.sign(
+//     { id },
+//     process.env.JWT_SECRET,
+//     { expiresIn: "3h" }
+//   );
+//   return token;
+// }
 
 
 
-export { generateAccessToken, generateRefreshToken, generateToken }
+export { generateAccessToken, generateRefreshToken }

@@ -27,8 +27,8 @@ app.use(cors({
 }))
 app.use(compression());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-app.use(encryptMiddleware);
-app.use(decryptMiddleware);
+// app.use(encryptMiddleware);
+// app.use(decryptMiddleware);
 app.use(checkIpLimit);
 
 // Routes
