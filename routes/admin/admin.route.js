@@ -10,7 +10,7 @@ import {
 } from "../../controllers/admin/auth.controller.js";
 import express from "express";
 import { verifyToken } from "../../middleware/verifyToken.js";
-import { verifyChecksum, verifyUserAgent,encryptMiddleware, decryptMiddleware } from "../../middleware/test.middleware.js";
+import { verifyChecksum, verifyUserAgent, encryptMiddleware, decryptMiddleware } from "../../middleware/test.middleware.js";
 
 const router = express.Router();
 
@@ -41,12 +41,12 @@ const router = express.Router();
  *         description: Admin Login Successfully!
  */
 
-router.route('/login_admin').post(verifyChecksum,verifyUserAgent,decryptMiddleware, Login);
+router.route('/login_admin').post(Login);
 
 /**
  * @swagger
  * /update_password:
- *   post:
+ *   patch:
  *     summary: Update Admin Password
  *     tags: [Admin Auth Apis]
  *     parameters:
@@ -69,12 +69,12 @@ router.route('/login_admin').post(verifyChecksum,verifyUserAgent,decryptMiddlewa
  *         description: Admin Password Updated Successfully!
  */
 
-router.route('/update_password').patch(verifyToken,verifyChecksum,verifyUserAgent, UpdatePassowrd);
+router.route('/update_password').patch(verifyToken, UpdatePassowrd);
 
 /**
  * @swagger
  * /update_admin_profile:
- *   post:
+ *   patch:
  *     summary: Update Admin Profile
  *     tags: [Admin Auth Apis]
  *     parameters:
@@ -95,12 +95,12 @@ router.route('/update_password').patch(verifyToken,verifyChecksum,verifyUserAgen
  *         description: Admin Profile Updated Successfully!
  */
 
-router.route('/update_admin_profile').patch(verifyToken,verifyChecksum,verifyUserAgent, UpdateAdminProfile);
+router.route('/update_admin_profile').patch(verifyToken, UpdateAdminProfile);
 
 /**
  * @swagger
  * /get_profile:
- *   post:
+ *   get:
  *     summary: Get Admin Profile
  *     tags: [Admin Auth Apis]
  *     responses:
@@ -108,7 +108,7 @@ router.route('/update_admin_profile').patch(verifyToken,verifyChecksum,verifyUse
  *         description: Admin Profile Fetched Successfully!
  */
 
-router.route('/get_profile').get(verifyToken,verifyChecksum,verifyUserAgent, decryptMiddleware, GetAdminProfile);
+router.route('/get_profile').get(verifyToken, decryptMiddleware, GetAdminProfile);
 
 /**
  * @swagger
@@ -121,7 +121,7 @@ router.route('/get_profile').get(verifyToken,verifyChecksum,verifyUserAgent, dec
  *         description: User List Fetched Successfully!
  */
 
-router.route('/get_users_list').get(verifyToken,verifyChecksum,verifyUserAgent,decryptMiddleware,GetUsersList);
+router.route('/get_users_list').get(verifyToken, decryptMiddleware, GetUsersList);
 
 /**
  * @swagger
@@ -134,12 +134,12 @@ router.route('/get_users_list').get(verifyToken,verifyChecksum,verifyUserAgent,d
  *         description: User Fetched By Id Successfully!
  */
 
-router.route('/get_user_byid/:id').get(verifyToken,verifyChecksum,verifyUserAgent,decryptMiddleware,GetUserById);
+router.route('/get_user_byid/:id').get(verifyToken, decryptMiddleware, GetUserById);
 
 /**
  * @swagger
  * /update_user_password/:id:
- *   get:
+ *   patch:
  *     summary: Update User Password
  *     tags: [Admin Auth Apis]
  *     responses:
@@ -147,7 +147,7 @@ router.route('/get_user_byid/:id').get(verifyToken,verifyChecksum,verifyUserAgen
  *         description: User Password Updated Successfully!
  */
 
-router.route('/update_user_password/:id').patch(verifyToken,verifyChecksum,verifyUserAgent,UpdateUserPassword);
+router.route('/update_user_password/:id').patch(verifyToken, UpdateUserPassword);
 
 /**
  * @swagger
@@ -160,7 +160,7 @@ router.route('/update_user_password/:id').patch(verifyToken,verifyChecksum,verif
  *         description: User Deleted Successfully!
  */
 
-router.route('/delete_user/:id').delete(verifyToken,verifyChecksum,verifyUserAgent,DeleteUser);
+router.route('/delete_user/:id').delete(verifyToken, DeleteUser);
 
 
 

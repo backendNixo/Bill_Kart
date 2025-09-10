@@ -31,6 +31,9 @@ const swaggerOptions = {
     },
     apis: [
         "./routes/admin/admin.route.js",
+        "./routes/test.route.js",
+        "./routes/users/redeeme.route.js",
+        "./routes/admin/offer.route.js"
     ],
 };
 

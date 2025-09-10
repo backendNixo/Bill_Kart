@@ -3,7 +3,8 @@
 import express from "express";
 import { connectDB } from "./config/db.js";
 import authRoutes from "./routes/test.route.js";
-import AdminRoutes from "./routes/admin/admin.route.js"
+import AdminRoutes from "./routes/admin/admin.route.js";
+import RedeemeRoutes from "./routes/users/redeeme.route.js";
 import { checkIpLimit, encryptMiddleware, decryptMiddleware } from "./middleware/test.middleware.js";
 import swaggerUi from "swagger-ui-express"
 import { swaggerSpec } from "./config/swagger.js";
@@ -33,6 +34,7 @@ app.use(checkIpLimit);
 
 // Routes
 app.use("/api/auth", authRoutes);
-app.use("/api/admin", AdminRoutes)
+app.use("/api/admin", AdminRoutes);
+app.use("/api/user",RedeemeRoutes);
 
 app.listen(9000, () => console.log("Server running on port 9000"));
