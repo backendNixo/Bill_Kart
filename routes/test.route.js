@@ -42,7 +42,7 @@ const router = express.Router();
  *       200:
  *         description: User Login Successfully!
  */
-router.route("/login").post( verifyUserAgent, verifyChecksum, login);
+router.route("/login").post(login);
 
 /**
  * @swagger
@@ -55,7 +55,7 @@ router.route("/login").post( verifyUserAgent, verifyChecksum, login);
  *         description: Get User Profile Data Successfully!
  */
 
-router.route("/get_profile").get( verifyToken, verifyUserAgent, verifyChecksum, decryptMiddleware, GetProfile);
+router.route("/get_profile").get(verifyToken, verifyUserAgent, verifyChecksum, decryptMiddleware, GetProfile);
 
 /**
  * @swagger

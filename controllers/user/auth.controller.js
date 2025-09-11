@@ -1,5 +1,5 @@
 
-import User from "../../model/user.model.js";
+import userModel from "../../model/user.model.js";
 import bcrypt from "bcryptjs";
 import APIError from "../../utils/APIError.js";
 import { APIResponse } from "../../utils/APIResponse.js";
@@ -10,20 +10,26 @@ import { generateAccessToken, generateRefreshToken } from "../../utils/generateT
 
 export const login = async (req, res) => {
   try {
-    const { username, password } = req.body;
-  if (!username || !password) {
+    const { userName, password } = req.body;
+
+    console.log(userName,password);
+    
+  if (!userName || !password) {
     return res.status(400).json(new APIError("User Credentials Required", 400));
   }
 
-  const user = await User.findOne({ username });
+  const user = await userModel.findOne({userName:userName})
+
+  console.log(user);
+  
   if (!user) {
     return res.status(404).json(new APIError("User not found", 404));
   }
 
-  const match = await bcrypt.compare(password, user.password);
-  if (!match) {
-    return res.status(401).json(new APIError("Invalid credentials", 401));
-  }
+  // const match = await bcrypt.compare(password, user.password);
+  // if (!match) {
+  //   return res.status(401).json(new APIError("Invalid credentials", 401));
+  // }
 
   const accessToken = generateAccessToken(user._id, user.role);
   const refreshToken = generateRefreshToken(user._id, user.role);

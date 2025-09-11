@@ -30,6 +30,6 @@ const router=express.Router();
  *       200:
  *         description: Redeeme Created Successfully!
  */
-router.route('/add_redeeme').post(verifyToken,addRedeeme);
+router.route('/add_redeeme/:offername').post(verifyToken,addRedeeme);
 
 export default router;

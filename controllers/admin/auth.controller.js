@@ -75,15 +75,16 @@ export const UpdateAdminProfile = async (req, res) => {
         if (!admin) {
             return res.status(404).json(new APIError("Admin Not Found", 404));
         }
-        if (admin.username === username) {
-            admin.username = username;
-        }
-        else {
-            const adminExist = await AdminModel.find({ username: username });
-            if (adminExist) {
-                return res.status(404).json(new APIError("User Name Already Exist", 404))
-            }
-        }
+        // if (admin.username === username) {
+        //     admin.username = username;
+        // }
+        // else {
+        //     const adminExist = await AdminModel.find({ username: username });
+        //     if (adminExist) {
+        //         return res.status(404).json(new APIError("User Name Already Exist", 404))
+        //     }
+        // }
+        admin.username = username;
         await admin.save();
         return res.status(200).json(new APIResponse("Admin Password Updated Successfully!", 200))
     } catch (error) {

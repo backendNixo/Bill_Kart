@@ -103,6 +103,8 @@ const GetOfferList=async(req,res)=>{
         return res.status(500).json(new APIError("Error : ",+error,500));
     }
 }
+
+
 export{
     CreateOffer,
     DeleteOffer,
