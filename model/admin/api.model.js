@@ -1,0 +1,95 @@
+
+import mongoose from "mongoose";
+
+const apiSchema=new mongoose.Schema({
+apiUrl:{
+    type:String
+},
+apiGroup:{
+    type:String
+},
+groupName:{
+     type:String,
+    required:true
+},
+groupCode:{
+     type:String,
+    required:true
+},
+maxLimitPerTran:{
+     type:Number,
+     default:0
+},
+method:{
+     type:String,
+    enum:["GET","POST","PUT"]
+},
+status:{
+     type:String
+},
+liveId:{
+     type:String
+},
+errorCode:{
+     type:String
+},
+message:{
+     type:String
+},
+successCode:{
+     type:String,
+     required:true,
+     trim:true
+},
+failedCode:{
+     type:String,
+     required:true,
+     trim:true
+},
+refKey:{
+    type:String,
+    trim:true
+},
+maxQueue:{
+    type:Number,
+    default:0
+},
+currQueue:{
+     type:Number,
+    default:0
+},
+resType:{
+      type:String,
+    trim:true,
+    enum:["JSON","XML","CSV","STRING","OTHER","Delimiter"]
+},
+postType:{
+    type:String,
+    trim:true,
+    enum:["x-www-form-urlencoded","application-json","query-string"]
+},
+fDelimiter:{
+    type:String,
+},
+sDelimiter:{
+    type:String,
+},
+userId:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'User',
+    trim:true,
+    required:true
+},
+isActive:{
+    type:Boolean,
+    default:false
+},
+transactionId:{
+    type:String,
+    required:true
+}
+},{timestamps:true});
+
+const API=mongoose.model("API",apiSchema);
+
+export default API;

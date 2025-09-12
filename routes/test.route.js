@@ -10,9 +10,6 @@ import { verifyToken } from "../middleware/verifyToken.js"
 
 const router = express.Router();
 
-// router.post("/register", verifyChecksum,encryptMiddleware,register);
-
-
 /**
  * @swagger
  * /login:
@@ -67,6 +64,7 @@ router.route("/get_profile").get(verifyToken, verifyUserAgent, verifyChecksum, d
  *       200:
  *         description: User Password Updated Successfully!
  */
+
 router.route("/change_password").patch(verifyToken, verifyUserAgent, verifyChecksum, UpdatePassowrd)
 
 export default router;

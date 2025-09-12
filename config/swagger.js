@@ -34,7 +34,9 @@ const swaggerOptions = {
         "./routes/test.route.js",
         "./routes/users/redeeme.route.js",
         "./routes/admin/offer.route.js",
-        "./routes/users/offer.routes.js"
+        "./routes/users/offer.routes.js",
+        "./routes/admin/api.route.js",
+        "./routes/admin/notification.route.js"
     ],
 };
 

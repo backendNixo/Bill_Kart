@@ -6,7 +6,10 @@ import {
     GetUsersList,
     GetUserById,
     UpdateUserPassword,
-    DeleteUser
+    DeleteUser,
+    UpdateUserStatus,
+    BlockUser,
+    DeletedUser
 } from "../../controllers/admin/auth.controller.js";
 import express from "express";
 import { verifyToken } from "../../middleware/verifyToken.js";
@@ -163,5 +166,43 @@ router.route('/update_user_password/:id').patch(verifyToken, UpdateUserPassword)
 router.route('/delete_user/:id').delete(verifyToken, DeleteUser);
 
 
+/**
+ * @swagger
+ * /update_user_status/:id:
+ *   patch:
+ *     summary: Update User Status
+ *     tags: [Admin Auth Apis]
+ *     responses:
+ *       200:
+ *         description: User Status Updated Successfully!
+ */
+
+router.route('/update_user_status/:id').patch(verifyToken, UpdateUserStatus);
+
+/**
+ * @swagger
+ * /block_user/:id:
+ *   patch:
+ *     summary: Block User
+ *     tags: [Admin Auth Apis]
+ *     responses:
+ *       200:
+ *         description: User Blocked Updated Successfully!
+ */
+
+router.route('/block_user/:id').patch(verifyToken, BlockUser);
+
+/**
+ * @swagger
+ * /update_user_delete/:id:
+ *   patch:
+ *     summary: User Delete Status Update
+ *     tags: [Admin Auth Apis]
+ *     responses:
+ *       200:
+ *         description: User Delete Status Updated Successfully!
+ */
+
+router.route('/update_user_delete/:id').patch(verifyToken, DeletedUser);
 
 export default router;

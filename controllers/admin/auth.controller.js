@@ -42,17 +42,18 @@ export const UpdatePassowrd = async (req, res) => {
         if (!oldPassword || !newPassword) {
             return res.status(400).json(new APIError("Old Password Or New Password Not Found", 400));
         }
-
         const admin = await AdminModel.findOne({ _id: adminId });
         if (!admin) {
             return res.status(404).json(new APIError("Admin Not Found", 404))
         }
+       
+        
         const match = await bcrypt.compare(oldPassword, admin.password);
         if (!match) {
             return res.status(400).json(new APIError("Invalid Credential", 400))
         }
 
-        admin.password = await bcrypt.hash(newPassword, 10);
+        admin.password =await bcrypt.hash(newPassword,10);
         await admin.save();
         return res.status(200).json(new APIResponse("Admin Password Updated Successfully!", 200))
     } catch (error) {
@@ -110,6 +111,7 @@ export const GetAdminProfile = async (req, res) => {
     }
 }
 
+
 //USER ROUTES =========================================================
 
 
@@ -163,13 +165,14 @@ export const UpdateUserPassword=async (req, res) => {
          if(!user){
             return res.status(404).json(new APIError("User Not Found",404));
          }
-
-         const match= await bcrypt.compare(oldPassword,user.password);
-         if(!match){
+         console.log();
+         
+        //  const match= await bcrypt.compare(oldPassword,user.password);
+         if(oldPassword!==user.password){
             return res.status(400).json(new APIError("Invalid Credential",400));
          }
-         const hashedPassword=await bcrypt.hash(newPassword,10);
-         user.password=hashedPassword;
+        //  const hashedPassword=await bcrypt.hash(newPassword,10);
+         user.password=newPassword;
          await user.save();
         return res.status(200).json(new APIResponse("User Password Updated Successfully!", 200));
     } catch (error) {
@@ -197,3 +200,69 @@ export const DeleteUser=async (req, res) => {
         return res.status(500).json(new APIError("Error :" + error, 500))
     }
 }
+
+export const UpdateUserStatus=async(req,res)=>{
+    try {
+        const userId=req.params.id;
+         if(!userId){
+            return res.status(400).json(new APIError("User Id Missing",400));
+         }
+
+         const user=await userModel.findOne({_id:userId});
+
+         if(!user){
+            return res.status(400).json(new APIError("User Not Found",400));
+         }
+         user.status=req.body.status??user.status;
+
+         await user.save();
+        return res.status(200).json(new APIResponse("User Status Updated Successfully!", 200))
+    } catch (error) {
+         return res.status(500).json(new APIError("Error :" + error, 500))
+    }
+}
+
+export const BlockUser=async(req,res)=>{
+    try {
+        const userId=req.params.id;
+         if(!userId){
+            return res.status(400).json(new APIError("User Id Missing",400));
+         }
+
+         const user=await userModel.findOne({_id:userId});
+
+         if(!user){
+            return res.status(400).json(new APIError("User Not Found",400));
+         }
+         
+          user.block=req.body.block??user.block;
+         await user.save();
+        return res.status(200).json(new APIResponse("User Blocked Successfully!", 200))
+    } catch (error) {
+         return res.status(500).json(new APIError("Error :" + error, 500))
+    }
+}
+
+export const DeletedUser=async(req,res)=>{
+    try {
+        const userId=req.params.id;
+         if(!userId){
+            return res.status(400).json(new APIError("User Id Missing",400));
+         }
+
+         const user=await userModel.findOne({_id:userId});
+
+         if(!user){
+            return res.status(400).json(new APIError("User Not Found",400));
+         }
+         
+         user.deleted=req.body.deleted??user.deleted;
+         await user.save();
+        return res.status(200).json(new APIResponse("User Deleted Successfully!", 200))
+    } catch (error) {
+         return res.status(500).json(new APIError("Error :" + error, 500))
+    }
+}
+
+
+

@@ -31,6 +31,15 @@ export const login = async (req, res) => {
   //   return res.status(401).json(new APIError("Invalid credentials", 401));
   // }
 
+    if(user.status==false){
+       return res.status(400).json(new APIError("User Status Not Active", 400));
+    }
+    if(user.block==true){
+       return res.status(400).json(new APIError("User Blocked", 400));
+    }
+    if(user.deleted==true){
+       return res.status(400).json(new APIError("User Deleted", 400));
+    }
   const accessToken = generateAccessToken(user._id, user.role);
   const refreshToken = generateRefreshToken(user._id, user.role);
   user.refreshToken = refreshToken;

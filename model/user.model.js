@@ -6,6 +6,18 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: ["admin", "user"], },
   refreshToken: { type: String },
   content: { type: String },
+  status:{
+    type:Boolean,
+    default:false
+  },
+  block:{
+    type:Boolean,
+    default:false
+  },
+  deleted:{
+    type:Boolean,
+    default:false
+  }
 },{timestamps:true});
 
 export default mongoose.model("User", userSchema);

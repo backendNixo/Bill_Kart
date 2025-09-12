@@ -8,6 +8,7 @@ import RedeemeRoutes from "./routes/users/redeeme.route.js";
 import AdminOfferRoutes from "./routes/admin/offer.route.js";
 import UserOfferRoutes from "./routes/users/offer.routes.js"
 import { checkIpLimit} from "./middleware/test.middleware.js";
+import Apiroutes from "./routes/admin/api.route.js";
 import swaggerUi from "swagger-ui-express"
 import { swaggerSpec } from "./config/swagger.js";
 import compression from "compression";
@@ -22,6 +23,7 @@ const app = express();
 connectDB();
 
 // Middlewares
+
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
@@ -35,9 +37,16 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(checkIpLimit);
 
 // Routes
+
+[Apiroutes,AdminRoutes,AdminOfferRoutes].forEach(route=>{
+    app.use("/api/admin",route);
+})
+
+
 app.use("/api/auth", authRoutes);
-app.use("/api/admin", AdminRoutes);
-app.use("/api/admin",AdminOfferRoutes);
+// app.use("/api/admin",Apiroutes);
+// app.use("/api/admin", AdminRoutes);
+// app.use("/api/admin",AdminOfferRoutes);
 app.use("/api/user",RedeemeRoutes);
 app.use("/api/user",UserOfferRoutes);
 
