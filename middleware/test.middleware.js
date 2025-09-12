@@ -15,7 +15,7 @@ const IV_LENGTH = 16;
 
 export const checkIpLimit = rateLimit({
   windowMs: 1 * 60 * 1000,
-  max: 4,
+  max: 10,
   standardHeaders: "draft-8",
   legacyHeaders: false,
   message: { status: 429, message: "Too many requests, try again later" },

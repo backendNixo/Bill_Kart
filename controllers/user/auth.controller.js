@@ -26,10 +26,10 @@ export const login = async (req, res) => {
     return res.status(404).json(new APIError("User not found", 404));
   }
 
-  // const match = await bcrypt.compare(password, user.password);
-  // if (!match) {
-  //   return res.status(401).json(new APIError("Invalid credentials", 401));
-  // }
+  const match = await bcrypt.compare(password, user.password);
+  if (!match) {
+    return res.status(401).json(new APIError("Invalid credentials", 401));
+  }
 
     if(user.status==false){
        return res.status(400).json(new APIError("User Status Not Active", 400));
@@ -43,9 +43,11 @@ export const login = async (req, res) => {
   const accessToken = generateAccessToken(user._id, user.role);
   const refreshToken = generateRefreshToken(user._id, user.role);
   user.refreshToken = refreshToken;
-  await user.save();
+  await user.save();  
 
-  return res.status(200).json(new APIResponse("User login success fully!", 200, { Token: accessToken }));
+  
+   
+  return res.status(200).json(new APIResponse("User login success fully!", 200,{ Token: accessToken }));
   } catch (error) {
     return res.status(500).json(new APIError("Error :"+error, 500));
   }
