@@ -76,7 +76,7 @@ sDelimiter:{
 },
 userId:{
     type:mongoose.Schema.Types.ObjectId,
-    ref:'User',
+    ref:'Admin',
     trim:true,
     required:true
 },

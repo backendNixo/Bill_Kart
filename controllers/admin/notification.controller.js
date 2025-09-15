@@ -10,7 +10,7 @@ const CreateNotification = async (req, res) => {
         if (!header || !body || !notificationFor) {
             return res.status(400).json(new APIError("All Fields Are Required", 400));
         }
-        const userIds = [];
+        let userIds = [];
         if (notificationFor === 'selected') {
             if (!Array.isArray(selectedUsers) || selectedUsers.length === 0) {
                 return res.status(400).json(new APIError("Please Select Users", 400));
@@ -41,7 +41,7 @@ const DeleteNotification = async (req, res) => {
         if (!id) {
             return res.status(400).json(new APIError("Notification Id Missing", 400));
         }
-        const DeleteNotification = await NotificationModel.findOneAndDelete({ _id: id, userId: req.user.id });
+        const DeleteNotification = await NotificationModel.findOneAndDelete({ _id: id, adminId: req.user.id });
         if (!DeleteNotification) {
             return res.status(400).json(new APIError("Error When Delete Notification", 400));
         }
@@ -56,7 +56,7 @@ const UpdateNotification = async (req, res) => {
         if (!id) {
             return res.status(400).json(new APIError("Notification Id Missing", 400));
         }
-        const notification = await NotificationModel.findOne({ _id: id, userId: req.user.id });
+        const notification = await NotificationModel.findOne({ _id: id, adminId: req.user.id });
         if (!notification) {
             return res.status(400).json(new APIError("Notification Not Found", 400));
         }
@@ -72,7 +72,7 @@ const UpdateNotification = async (req, res) => {
 }
 const GetNotificationList = async (req, res) => {
     try {
-        const notificationList = await NotificationModel.find({ userId: req.user.id });
+        const notificationList = await NotificationModel.find({ adminId: req.user.id });
         if (!notificationList.length == 0) {
             return res.status(400).json(new APIError("Notification List Empty", 400));
         }
@@ -89,7 +89,7 @@ const GetNotificationBasedOnType = async (req, res) => {
             return res.status(400).json(new APIError("Please Select Type Of Notification", 400));
         }
 
-        const notificationList = await NotificationModel.find({ userId: req.user.id, notificationFor: notificationfor });
+        const notificationList = await NotificationModel.find({ adminId: req.user.id, notificationFor: notificationfor });
 
         if (!notificationList.length == 0) {
             return res.status(400).json(new APIError("Notification List Empty", 400));

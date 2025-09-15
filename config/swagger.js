@@ -11,7 +11,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: "http://192.168.1.19:9000/",
+                url: "http://192.168.1.56:9000/",
             },
         ],
         components: {
@@ -36,7 +36,8 @@ const swaggerOptions = {
         "./routes/admin/offer.route.js",
         "./routes/users/offer.routes.js",
         "./routes/admin/api.route.js",
-        "./routes/admin/notification.route.js"
+        "./routes/admin/notification.route.js",
+        "./routes/admin/service.route.js"
     ],
 };
 

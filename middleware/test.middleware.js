@@ -7,15 +7,17 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const secret=process.env.FILE_SECRET_KEY;
+
 const FILE_SECRET_KEY = crypto
   .createHash("sha256")
   .update(secret)
   .digest();
 const IV_LENGTH = 16;
 
+
 export const checkIpLimit = rateLimit({
   windowMs: 1 * 60 * 1000,
-  max: 10,
+  max: 50,
   standardHeaders: "draft-8",
   legacyHeaders: false,
   message: { status: 429, message: "Too many requests, try again later" },
