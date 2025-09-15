@@ -4,8 +4,7 @@ import{
     UpdateNotification,
     GetNotificationList,
     GetNotificationBasedOnType,
-    SendNotificationToUser,
-    IsNotificationRead
+    SendNotificationToUser
 } from "../../controllers/admin/notification.controller.js";
 
 import {verifyToken} from "../../middleware/verifyToken.js";
@@ -94,18 +93,6 @@ router.route('/notification_list_based_on_type').post(verifyToken,GetNotificatio
 
 /**
  * @swagger
- * /send_notification_to_user/:id:
- *   post:
- *     summary: Send Notification 
- *     tags: [Notification Apis]
- *     responses:
- *       200:
- *         description: Send Notification  Successfully!
- */
-router.route('/send_notification_to_user/:id').post(verifyToken,SendNotificationToUser);
-
-/**
- * @swagger
  * /notification_seen/:id:
  *   patch:
  *     summary: Notification Read
@@ -114,6 +101,6 @@ router.route('/send_notification_to_user/:id').post(verifyToken,SendNotification
  *       200:
  *         description: Notification Read Successfully!
  */
-router.route('/notification_seen/:id').patch(verifyToken,IsNotificationRead);
+router.route('/send_notification/:id').patch(verifyToken,SendNotificationToUser);
 
 export default router;

@@ -106,20 +106,6 @@ const SendNotificationToUser = async (req, res) => {
         if (!notificationid) {
             return res.status(400).json(new APIError("Notification Id Missing", 400));
         }
-
-        const notification = await NotificationModel.findOne({ _id: notificationid, adminId: req.user.id });
-
-        return res.status(200).json(new APIResponse(`Notification Send For ${notification.notificationFor} User Successfully!`, 200, notification));
-    } catch (error) {
-        return res.status(500).json(new APIError("Error : " + error, 500));
-    }
-}
-const IsNotificationRead = async (req, res) => {
-    try {
-        const notificationid = req.params.id;
-        if (!notificationid) {
-            return res.status(400).json(new APIError("Notification Id Missing", 400));
-        }
         
         const notification = await NotificationRead.findOne({ notificationId: notificationid,userId:req.user.id});
         if(notification.isSeen == true){
@@ -132,7 +118,7 @@ const IsNotificationRead = async (req, res) => {
             isSeen:true
         })
       
-        return res.status(200).json(new APIResponse(`Notification Seen Successfully!`, 200));
+        return res.status(200).json(new APIResponse(`Notification Seen Successfully!`, 200,notification));
     } catch (error) {
         return res.status(500).json(new APIError("Error : " + error, 500));
     }
@@ -146,5 +132,4 @@ export {
     GetNotificationList,
     GetNotificationBasedOnType,
     SendNotificationToUser,
-    IsNotificationRead
 };
