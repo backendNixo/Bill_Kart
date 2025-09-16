@@ -1,3 +1,4 @@
+
 import OfferModel from "../../model/admin/offer.model.js";
 import APIError from "../../utils/APIError.js";
 import {APIResponse} from "../../utils/APIResponse.js";
@@ -10,7 +11,7 @@ const CreateOffer=async(req,res)=>{
          return res.status(400).json(new APIError("All Fields Are Required",400));
         }
         if(minAmount>=maxAmount){
-          return res.status(400).json(new APIError("Min Amount Should Be Greater Than Max Amount",400));
+          return res.status(400).json(new APIError("Max Amount Should Be Greater Than Min Amount",400));
         }
         if(minAmount<0||maxAmount<0){
             return res.status(400).json(new APIError("Min Amount Or Max Amount Should Be Greater Than 0",400));
@@ -27,6 +28,8 @@ const CreateOffer=async(req,res)=>{
         })
         return res.status(200).json(new APIResponse("Offer Created Successfully!",200))
     } catch (error) {
+        console.log(error);
+        
         return res.status(500).json(new APIError("Error : ",+error,500));
     }
 }

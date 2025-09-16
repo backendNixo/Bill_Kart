@@ -8,6 +8,7 @@ import AdminOfferRoutes from "./routes/admin/offer.route.js";
 import UserOfferRoutes from "./routes/users/offer.routes.js";
 import serviceRoutes from "./routes/admin/service.route.js";
 import notificationRoutes from "./routes/admin/notification.route.js";
+import operatorsRoutes from "./routes/services/operators.routes.js";
 import { checkIpLimit} from "./middleware/test.middleware.js";
 import Apiroutes from "./routes/admin/api.route.js";
 import swaggerUi from "swagger-ui-express"
@@ -43,11 +44,8 @@ app.use(checkIpLimit);
     app.use("/api/admin",route);
 })
 
-
+app.use("/api/operator",operatorsRoutes);
 app.use("/api/auth", authRoutes);
-// app.use("/api/admin",Apiroutes);
-// app.use("/api/admin", AdminRoutes);
-// app.use("/api/admin",AdminOfferRoutes);
 app.use("/api/user",RedeemeRoutes);
 app.use("/api/user",UserOfferRoutes);
 

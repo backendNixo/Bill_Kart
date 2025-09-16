@@ -3,10 +3,13 @@ import express from "express";
 import {
   login,
   GetProfile,
-  UpdatePassowrd
+  UpdatePassowrd,
+  verifyOtp,
+  completeSetup
 } from "../controllers/user/auth.controller.js";
 import { verifyChecksum, verifyUserAgent, encryptMiddleware, decryptMiddleware } from "../middleware/test.middleware.js"
-import { verifyToken } from "../middleware/verifyToken.js"
+import { verifyToken } from "../middleware/verifyToken.js";
+import {SetupMiddleware} from "../middleware/isSetup.middleware.js"
 
 const router = express.Router();
 
@@ -66,5 +69,10 @@ router.route("/get_profile").get(verifyToken, verifyUserAgent, verifyChecksum, d
  */
 
 router.route("/change_password").patch(verifyToken, verifyUserAgent, verifyChecksum, UpdatePassowrd)
+
+
+router.route('/verify_otp').post(verifyToken,verifyUserAgent,verifyChecksum,verifyOtp);
+
+router.route('/complete_setup').patch(verifyToken,completeSetup);
 
 export default router;
