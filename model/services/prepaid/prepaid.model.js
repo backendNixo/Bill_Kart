@@ -33,7 +33,7 @@ const prepaidSchema = new mongoose.Schema(
                 type: Boolean,
                 default: false,
             },
-            regex: {
+            mobileNumber: {
                 type: String,
             },
             name: {
