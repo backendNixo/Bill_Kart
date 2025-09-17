@@ -73,7 +73,7 @@ const UpdateNotification = async (req, res) => {
 const GetNotificationList = async (req, res) => {
     try {
         const notificationList = await NotificationModel.find({ adminId: req.user.id });
-        if (!notificationList.length == 0) {
+        if (notificationList.length == 0) {
             return res.status(400).json(new APIError("Notification List Empty", 400));
         }
 
