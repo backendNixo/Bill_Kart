@@ -12,7 +12,7 @@ export const GetbroadbandOptByBillerID = async (req, res) => {
         if (!billerId) {
             return res.status(400).json(new APIError("BillerId required", 400));
         }
-
+          
         const operator = await broadbandModel.findOne({ "parameter.billerId": billerId });
 
         return res.status(200).json(new APIResponse("Broadband Operator fetched successfully!", 200, operator));
@@ -21,16 +21,11 @@ export const GetbroadbandOptByBillerID = async (req, res) => {
     }
 };
 
-//GET BROAD BAND OPERATOR LIST BY Category
 export const GetbroadbandOptList = async (req, res) => {
     try {
-        const optCategory = req.params.category;
-        if (!optCategory) {
-            return res.status(400).json(new APIError("Operator Category required", 400));
-        }
-
+  
         const operators = Operators.filter((op) => {
-            return op.Category === optCategory
+            return op.Category === "Broadband"
         });
 
         if (!operators.length) {
@@ -46,14 +41,40 @@ export const GetbroadbandOptList = async (req, res) => {
     }
 };
 
-
-//  Validate User Input
-export const ValidateBroadbandOperator = async (req, res) => {
+export const BroadbandOperatorConfig = async (req, res) => {
     try {
-        const { category, billerId } = req.params;
+        const  {billerId}  = req.params;
+       console.log(billerId);
+       
+        const operator = Operators.find(
+            (op) => op.Category === "Broadband" && op.BillerId === billerId
+        );
+
+        if (!operator) {
+            return res.status(404).json({
+                success: false,
+                message: "Invalid operator",
+            });
+        }
+        return res.status(200).json({
+            success: true,
+            message: "Operator validated successfully",
+            operator
+        });
+    } catch (error) {
+
+        console.log(error);
+
+        return res.status(500).json({ success: false, error: error.message });
+    }
+};
+
+export const ValidateBroadbandOperators= async (req, res) => {
+    try {
+        const {billerId } = req.params;
 
         const operator = Operators.find(
-            (op) => op.Category === category && op.BillerId === billerId
+            (op) => op.Category === "Broadband" && op.BillerId === billerId
         );
 
         if (!operator) {
@@ -65,7 +86,6 @@ export const ValidateBroadbandOperator = async (req, res) => {
         const userData = req.body;
 
         const validations = Object.entries(userData).map(([key, value]) => {
-            const regex = new RegExp(operator.Regex);  
             const cleanValue = String(value).trim();
             if(value!==operator[key]){
                 return false;
@@ -83,7 +103,7 @@ export const ValidateBroadbandOperator = async (req, res) => {
         if (hasInvalid) {
             await broadbandModel.create({
                 userId: req.user.id,
-                "parameter.category": category,
+                "parameter.category": "Broadband",
                 "parameter.billerId": billerId,
                 parameter: userData,
             });
@@ -99,8 +119,7 @@ export const ValidateBroadbandOperator = async (req, res) => {
         return res.status(200).json({
             success: true,
             message: "Operator validated successfully",
-            operator,
-            data: userData,
+            operator
         });
     } catch (error) {
 
@@ -109,6 +128,8 @@ export const ValidateBroadbandOperator = async (req, res) => {
         return res.status(500).json({ success: false, error: error.message });
     }
 };
+
+
 
 
 

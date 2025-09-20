@@ -25,8 +25,8 @@ const WaterSuplySchema = new mongoose.Schema(
                 type: String,
                 required: true,
             },
-             ViewBill: {
-                type:String
+            ViewBill: {
+                type: String
             },
             BBPSEnabled: {
                 type: Boolean,

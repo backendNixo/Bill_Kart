@@ -61,23 +61,37 @@ import landlineRoutes from "./routes/services/insurance/insurance.route.js";
 import postpaidRoutes from "./routes/services/postpaid/postpaid.route.js";
 import prepaidRoutes from "./routes/services/prepaid/prepaid.route.js";
 import waterSuplyRoutes from "./routes/services/waterSuply/waterSuply.route.js";
+import donationRoutes from "./routes/services/donation/donation.route.js";
+import fastagRoutes from "./routes/services/fastag/fastag.route.js";
+import loanRepaymentRoutes from './routes/services/loanRepayment/loanRepayment.route.js';
+import lpgRoutes from './routes/services/lpg/lpg.route.js';
+import municipalityRoutes from "./routes/services/municipality/municipality.route.js";
+import municipalTaxRoutes from "./routes/services/municipalTax/municipalTax.route.js";
 
 
 
+app.use('/api/user/broadband',broadbandRoutes)
+app.use('/api/user/cable',cableRoutes)
+app.use('/api/user/creditcard',creditCard)
+app.use('/api/user/datacard',dataCardRoutes)
+app.use('/api/user/dth',dthRoutes)
+app.use('/api/user/electricity',electricityRoutes)
+app.use('/api/user/emi',EMIRoutes)
+app.use('/api/user/gas',gasRoutes)
+app.use('/api/user/insurance',insuranceRoutes)
+app.use('/api/user/landline',landlineRoutes)
+app.use('/api/user/postpaid',postpaidRoutes)
+app.use('/api/user/prepaid',prepaidRoutes)
+app.use('/api/user/watersuply',waterSuplyRoutes)
+app.use('/api/user/donation',donationRoutes);
+app.use('/api/user/fastag',fastagRoutes);
+app.use('/api/user/loanrepayment',loanRepaymentRoutes);
+app.use('/api/user/lpg',lpgRoutes);
+app.use('/api/user/municipality',municipalityRoutes);
+app.use('/api/user/municipalTax',municipalTaxRoutes);
 
-app.use('/api/admin/broadband',broadbandRoutes)
-app.use('/api/admin/cable',cableRoutes)
-app.use('/api/admin/creditcard',creditCard)
-app.use('/api/admin/datacard',dataCardRoutes)
-app.use('/api/admin/dth',dthRoutes)
-app.use('/api/admin/electricity',electricityRoutes)
-app.use('/api/admin/emi',EMIRoutes)
-app.use('/api/admin/gas',gasRoutes)
-app.use('/api/admin/insurance',insuranceRoutes)
-app.use('/api/admin/landline',landlineRoutes)
-app.use('/api/admin/postpaid',postpaidRoutes)
-app.use('/api/admin/prepaid',prepaidRoutes)
-app.use('/api/admin/watersuply',waterSuplyRoutes)
+
+
 
 
 app.listen(9000, () => console.log("Server running on port 9000"));

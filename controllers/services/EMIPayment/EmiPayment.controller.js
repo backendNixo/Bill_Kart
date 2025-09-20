@@ -14,7 +14,7 @@ export const GetEMIOptByBillerID = async (req, res) => {
 
         const operator = await dthModel.findOne({ "parameter.billerId": billerId });
 
-        return res.status(200).json(new APIResponse("EMI Payment Operator fetched successfully!", 200, operator));
+        return res.status(200).json(new APIResponse("EMI Operator fetched successfully!", 200, operator));
     } catch (error) {
         return res.status(500).json(new APIError("Error: " + error.message, 500));
     }
@@ -22,13 +22,9 @@ export const GetEMIOptByBillerID = async (req, res) => {
 
 export const GetEMIOperatortList = async (req, res) => {
     try {
-        const optCategory = req.params.category;
-        if (!optCategory) {
-            return res.status(400).json(new APIError("Operator Category required", 400));
-        }
-
+        
         const operators = Operators.filter((op) => {
-            return op.Category === optCategory
+           return op.Category=== "EMI"
         });
 
         if (!operators.length) {
@@ -38,18 +34,46 @@ export const GetEMIOperatortList = async (req, res) => {
             });
         }
 
-        return res.status(200).json(new APIResponse("EMI Payment Operator fetched successfully!", 200, operators));
+        return res.status(200).json(new APIResponse("EMI Operator fetched successfully!", 200, operators));
     } catch (error) {
         return res.status(500).json(new APIError("Error: " + error.message, 500));
     }
 };
 
-export const ValidateEMIPaymentOperator = async (req, res) => {
+
+export const EMIOperatorConfig = async (req, res) => {
     try {
-        const { category, billerId } = req.params;
+        const {billerId } = req.params;
 
         const operator = Operators.find(
-            (op) => op.Category === category && op.BillerId === billerId
+            (op) => op.Category === "EMI" && op.BillerId === billerId
+        );
+
+        if (!operator) {
+            return res.status(404).json({
+                success: false,
+                message: "Invalid operator",
+            });
+        }
+        return res.status(200).json({
+            success: true,
+            message: "EMI Operator",
+            operator
+        });
+    } catch (error) {
+
+        console.log(error);
+
+        return res.status(500).json({ success: false, error: error.message });
+    }
+};
+
+export const ValidateEMIPaymentOperator = async (req, res) => {
+    try {
+        const { billerId } = req.params;
+
+        const operator = Operators.find(
+            (op) => op.Category === "EMI" && op.BillerId === billerId
         );
 
         if (!operator) {
@@ -61,16 +85,15 @@ export const ValidateEMIPaymentOperator = async (req, res) => {
         const userData = req.body;
 
         const validations = Object.entries(userData).map(([key, value]) => {
-            const regex = new RegExp(operator.Regex);
             const cleanValue = String(value).trim();
-            if (value !== operator[key]) {
+            if(value!==operator[key]){
                 return false;
             }
-
-            return {
+            
+             return {
                 field: key,
                 value: cleanValue,
-                isValid: true,
+                isValid:true,
             };
         });
 
@@ -79,7 +102,7 @@ export const ValidateEMIPaymentOperator = async (req, res) => {
         if (hasInvalid) {
             await EmiPaymentModel.create({
                 userId: req.user.id,
-                "parameter.category": category,
+                "parameter.category": "EMI",
                 "parameter.billerId": billerId,
                 parameter: userData,
             });
@@ -105,3 +128,5 @@ export const ValidateEMIPaymentOperator = async (req, res) => {
         return res.status(500).json({ success: false, error: error.message });
     }
 };
+
+

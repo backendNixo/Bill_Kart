@@ -257,3 +257,18 @@ export const DeletedUser=async(req,res)=>{
     }
 }
 
+export const GetAllUserNameList=async (req, res) => {
+    try {
+        const usersNameList=await userModel.find({},{userName:1});
+
+        if(usersNameList.length==0){
+            return res.status(400).json(new APIError("Users List Empty",400));
+        }
+  
+        return res.status(200).json(new APIResponse("Users Names List :", 200,usersNameList))
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(new APIError("Error :" + error, 500))
+    }
+}
+

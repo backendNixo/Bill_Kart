@@ -22,13 +22,9 @@ export const GetDataOptByBillerID = async (req, res) => {
 
 export const GetDataOperatortList = async (req, res) => {
     try {
-        const optCategory = req.params.category;
-        if (!optCategory) {
-            return res.status(400).json(new APIError("Operator Category required", 400));
-        }
-
+        
         const operators = Operators.filter((op) => {
-            return op.Category === optCategory
+            return op.Category==="Datacard Prepaid"
         });
 
         if (!operators.length) {
@@ -45,12 +41,39 @@ export const GetDataOperatortList = async (req, res) => {
 };
 
 
-export const ValidateDataOperator = async (req, res) => {
+export const DatacardOperatorConfig = async (req, res) => {
     try {
-        const { category, billerId } = req.params;
+        const {billerId } = req.params;
 
         const operator = Operators.find(
-            (op) => op.Category === category && op.BillerId === billerId
+            (op) => op.Category === "Datacard Prepaid" && op.BillerId === billerId
+        );
+
+        if (!operator) {
+            return res.status(404).json({
+                success: false,
+                message: "Invalid operator",
+            });
+        }
+        return res.status(200).json({
+            success: true,
+            message: "Datacard Prepaid Operator",
+            operator
+        });
+    } catch (error) {
+
+        console.log(error);
+
+        return res.status(500).json({ success: false, error: error.message });
+    }
+};
+
+export const ValidateDataOperator = async (req, res) => {
+    try {
+        const { billerId } = req.params;
+
+        const operator = Operators.find(
+            (op) => op.Category === "Datacard Prepaid" && op.BillerId === billerId
         );
 
         if (!operator) {
@@ -62,7 +85,6 @@ export const ValidateDataOperator = async (req, res) => {
         const userData = req.body;
 
         const validations = Object.entries(userData).map(([key, value]) => {
-            const regex = new RegExp(operator.Regex);  
             const cleanValue = String(value).trim();
             if(value!==operator[key]){
                 return false;
@@ -80,7 +102,7 @@ export const ValidateDataOperator = async (req, res) => {
         if (hasInvalid) {
             await datacardModel.create({
                 userId: req.user.id,
-                "parameter.category": category,
+                "parameter.category": "Datacard Prepaid",
                 "parameter.billerId": billerId,
                 parameter: userData,
             });
@@ -106,11 +128,6 @@ export const ValidateDataOperator = async (req, res) => {
         return res.status(500).json({ success: false, error: error.message });
     }
 };
-
-
-
-        
-
 
 
 

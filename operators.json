@@ -412,7 +412,7 @@
   {
     "Op Id": 70,
     "Operator Name": "Bangalore Water Supply and Sewerage Board",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": ".+",
@@ -665,7 +665,7 @@
   {
     "Op Id": 149,
     "Operator Name": "Uttarakhand Jal Sansthan",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{7}$",
@@ -676,7 +676,7 @@
   {
     "Op Id": 157,
     "Operator Name": "Pune Municipal Corporation Water",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{1,20}$",
@@ -853,7 +853,7 @@
   {
     "Op Id": 185,
     "Operator Name": "Municipal Corporation of Gurugram",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{6,8}$",
@@ -1057,7 +1057,7 @@
   {
     "Op Id": 209,
     "Operator Name": "Aditya Birla Finance ltd. (ABFL)",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z]{3}-[a-zA-Z][0-9]{5}-[0-9]{9}",
@@ -1069,7 +1069,7 @@
   {
     "Op Id": 210,
     "Operator Name": "BAJAJ AUTO FINANCE",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": ".+",
@@ -1082,7 +1082,7 @@
   {
     "Op Id": 211,
     "Operator Name": "Hyderabad Metropolitan Water Supply and Sewerage Board",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z]{2,25}$",
@@ -1148,7 +1148,7 @@
   {
     "Op Id": 218,
     "Operator Name": "New Delhi Municipal Council (NDMC) - Water",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{7,10}$",
@@ -1181,7 +1181,7 @@
   {
     "Op Id": 222,
     "Operator Name": "Municipal Corporation Ludhiana – Water",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,10}$",
@@ -1216,7 +1216,7 @@
   {
     "Op Id": 232,
     "Operator Name": "Surat Municipal Corporation",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z]{1,20}$",
@@ -1227,7 +1227,7 @@
   {
     "Op Id": 233,
     "Operator Name": "DMI FInance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": false,
     "Regex": "^[dD][mM][iI][0-9]{10}$",
@@ -1260,7 +1260,7 @@
   {
     "Op Id": 236,
     "Operator Name": "Ujjain Nagar Nigam – PHED",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{8,10}$",
@@ -1294,7 +1294,7 @@
   {
     "Op Id": 241,
     "Operator Name": "Greater Warangal Municipal Corporation – Water",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z]{7,15}$",
@@ -1439,7 +1439,7 @@
   {
     "Op Id": 256,
     "Operator Name": "Ranchi Municipal Corporation",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{6,25}$",
@@ -1450,7 +1450,7 @@
   {
     "Op Id": 262,
     "Operator Name": "Delhi Jal Board",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{10}$",
@@ -1461,7 +1461,7 @@
   {
     "Op Id": 264,
     "Operator Name": "Haryana Urban Development Authority",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{6,10}$",
@@ -1495,7 +1495,7 @@
   {
     "Op Id": 267,
     "Operator Name": "Hero FinCorp Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": false,
     "Name": "Loan Id/Application Id",
@@ -1507,7 +1507,7 @@
   {
     "Op Id": 268,
     "Operator Name": "Mysuru Citi Corporation",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,7}$",
@@ -1518,7 +1518,7 @@
   {
     "Op Id": 270,
     "Operator Name": "Punjab Municipal Corporations/Councils",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1}[1-9]{1}[0-9]{8}$",
@@ -1541,7 +1541,7 @@
   {
     "Op Id": 273,
     "Operator Name": "Delhi Development Authority (DDA) - Water",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,13}$",
@@ -1583,7 +1583,7 @@
   {
     "Op Id": 276,
     "Operator Name": "Department of Public Health Engineering-Water, Mizoram",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z\\\\-]{5,15}$  ",
@@ -2022,7 +2022,7 @@
   {
     "Op Id": 297,
     "Operator Name": "Flexsalary",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "  ^[5-9][0-9]{5,9}$",
@@ -2033,7 +2033,7 @@
   {
     "Op Id": 298,
     "Operator Name": "Kerala Water Authority (KWA)",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z]{8,10}$",
@@ -2044,7 +2044,7 @@
   {
     "Op Id": 299,
     "Operator Name": "L and T Financial Services",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[Tt][0-9a-zA-Z]{17,19}|[1-9]{7}$",
@@ -2056,7 +2056,7 @@
   {
     "Op Id": 300,
     "Operator Name": "Loksuvidha",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{5,6}$",
@@ -2067,7 +2067,7 @@
   {
     "Op Id": 301,
     "Operator Name": "Motilal Oswal Home Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{20, 25}$",
@@ -2078,7 +2078,7 @@
   {
     "Op Id": 302,
     "Operator Name": "Paisa Dukan-Borrower EMI",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[l,L][n,N]\\\\d{6}$",
@@ -2089,7 +2089,7 @@
   {
     "Op Id": 303,
     "Operator Name": "Snapmint",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[5-9][0-9]{9}$",
@@ -2100,7 +2100,7 @@
   {
     "Op Id": 304,
     "Operator Name": "Tata Capital Financial Services Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{7,21}$",
@@ -2123,7 +2123,7 @@
   {
     "Op Id": 306,
     "Operator Name": "Religare Health Insurance Co Ltd.",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{8}$",
@@ -2135,7 +2135,7 @@
   {
     "Op Id": 307,
     "Operator Name": "Aditya Birla Housing Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[Ll][Nn][a-zA-Z]{3}[a-zA-Z0-9_]{3}[-][0-9]{11}$",
@@ -2169,7 +2169,7 @@
   {
     "Op Id": 317,
     "Operator Name": "AAVAS FINANCIERS LIMITED",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9-]+$",
@@ -2180,7 +2180,7 @@
   {
     "Op Id": 318,
     "Operator Name": "Indiabulls Housing Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{14}",
@@ -2204,7 +2204,7 @@
   {
     "Op Id": 320,
     "Operator Name": "Avail",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{10}$",
@@ -2216,7 +2216,7 @@
   {
     "Op Id": 321,
     "Operator Name": "Clix",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z]{2}[A-Z0-9]{11,18}$",
@@ -2227,7 +2227,7 @@
   {
     "Op Id": 322,
     "Operator Name": "Varthana",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^(([A-Z]{3})+(-)+([A-Z]{3})+(-)\\\\w+([0-9])\\\\w+([A-Z]{2}))|(([A-Z]{3})+([0-9])+([A-Z]{1}))|(([A-Z]{1})+([0-9]{2})+([A-Z]{3})+(-)+([A-Z]{3})+(-)+([0-9]{6}))$",
@@ -2249,7 +2249,7 @@
   {
     "Op Id": 324,
     "Operator Name": "Ess Kay Fincorp Limited (Sk Finance)",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{7,18}$",
@@ -2260,7 +2260,7 @@
   {
     "Op Id": 325,
     "Operator Name": "Faircent",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{10}$",
@@ -2272,7 +2272,7 @@
   {
     "Op Id": 326,
     "Operator Name": "i2iFunding",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,10}$",
@@ -2283,7 +2283,7 @@
   {
     "Op Id": 327,
     "Operator Name": "Capri Global Capital Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{10,20}$",
@@ -2316,7 +2316,7 @@
   {
     "Op Id": 330,
     "Operator Name": "Municipal Corporation Chandigarh",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{7,20}$",
@@ -2327,7 +2327,7 @@
   {
     "Op Id": 331,
     "Operator Name": "Manappuram Finance Limited-Vehicle Loan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([a-zA-Z]){10}([0-9]){12}?$",
@@ -2348,7 +2348,7 @@
   {
     "Op Id": 344,
     "Operator Name": "Capri Global Housing Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{10,20}$",
@@ -2384,7 +2384,7 @@
   {
     "Op Id": 370,
     "Operator Name": "Madhya Pradesh Urban Administration and Development - Water",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -2408,7 +2408,7 @@
   {
     "Op Id": 374,
     "Operator Name": "Muthoot Microfin Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -2419,7 +2419,7 @@
   {
     "Op Id": 375,
     "Operator Name": "Shriram Transport Finance Company Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -2430,7 +2430,7 @@
   {
     "Op Id": 376,
     "Operator Name": "Easy Home Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -2441,7 +2441,7 @@
   {
     "Op Id": 377,
     "Operator Name": "Axis Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([0-9]){4}([a-zA-Z]){3}([0-9]){8}?$",
@@ -2452,7 +2452,7 @@
   {
     "Op Id": 378,
     "Operator Name": "Jain Autofin",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([6-9]\\\\d{9})|(\\\\d{5})|(((HR)|(RJ))\\\\d{1,2}[A-Z]{0,3}\\\\d{4})$",
@@ -2463,7 +2463,7 @@
   {
     "Op Id": 379,
     "Operator Name": "Cars24 Financial Services Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z]{2}\\\\d{1,2}[A-Z]{0,3}\\\\d{4}$",
@@ -2507,7 +2507,7 @@
   {
     "Op Id": 383,
     "Operator Name": "Oxyzo Financial Services Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[Oo]{1}[Xx]{1}[Yy]{1}[A-Za-z0-9]{7,11}$",
@@ -2518,19 +2518,19 @@
   {
     "Op Id": 384,
     "Operator Name": "Toyota Financial Services",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Not Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z]{4}[0-9]{7}$",
     "Name": "Loan Account Number",
     "cn": "Loan Account Number",
-    "ad1 with regex": "LoanPaymentMode (\"EMI Payment\",\"Other\")",
+    "ad1 with regex": "LoanPaymentMode (\"EMI\",\"Other\")",
     "BillerId": "TOYO00000NAT59"
   },
   {
     "Op Id": 385,
     "Operator Name": "AU Bank Loan Repayment",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -2541,7 +2541,7 @@
   {
     "Op Id": 387,
     "Operator Name": "Arohan Financial Services Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -2552,7 +2552,7 @@
   {
     "Op Id": 388,
     "Operator Name": "Bajaj Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{14,18}$",
@@ -2563,7 +2563,7 @@
   {
     "Op Id": 390,
     "Operator Name": "Jana Small Finance Bank",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{14,16}$",
@@ -2574,7 +2574,7 @@
   {
     "Op Id": 391,
     "Operator Name": "LOANTAP CREDIT PRODUCTS PRIVATE LIMITED",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z]{15,35}$",
@@ -2585,7 +2585,7 @@
   {
     "Op Id": 392,
     "Operator Name": "Shriram Housing Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -2596,7 +2596,7 @@
   {
     "Op Id": 393,
     "Operator Name": "Kissht",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{10,10}$",
@@ -2631,7 +2631,7 @@
   {
     "Op Id": 398,
     "Operator Name": "RupeeRedee",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[1|2]{1}[0-9]{8}$",
@@ -2657,7 +2657,7 @@
   {
     "Op Id": 406,
     "Operator Name": "ICICI Bank Ltd - Loans",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z0-9]{1}[^Zz1][A-Z0-9]{14}$",
@@ -2668,7 +2668,7 @@
   {
     "Op Id": 407,
     "Operator Name": "Kinara Capital",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([A-Z]{5}[0-9]{7})|([0-9]{2,}[A-Z]{2,}[0-9]{1,}[A-Z0-9]{2,})$",
@@ -2713,7 +2713,7 @@
   {
     "Op Id": 419,
     "Operator Name": "BERAR Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Not Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{6}$",
@@ -2724,7 +2724,7 @@
   {
     "Op Id": 420,
     "Operator Name": "Avanse Financial Services Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$\"",
@@ -2735,7 +2735,7 @@
   {
     "Op Id": 421,
     "Operator Name": "Baid Leasing and Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([6-9]\\\\d{9})|(\\\\d{4,5})|(((HR)|(RJ))\\\\d{1,2}[A-Z]{0,3}\\\\d{4})$",
@@ -2746,7 +2746,7 @@
   {
     "Op Id": 422,
     "Operator Name": "OHMYLOAN",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z0-9]{2,9}$",
@@ -2757,7 +2757,7 @@
   {
     "Op Id": 423,
     "Operator Name": "OMLP2P.COM",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z0-9]{2,9}$",
@@ -2768,7 +2768,7 @@
   {
     "Op Id": 424,
     "Operator Name": "Annapurna Finance Private Limited-MSME",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -2779,7 +2779,7 @@
   {
     "Op Id": 425,
     "Operator Name": "Home Credit India Finance Pvt. Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^\\\\d{10}$  ",
@@ -2790,7 +2790,7 @@
   {
     "Op Id": 426,
     "Operator Name": "India Shelter Finance Corporation Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^AP-\\\\d{3,}$",
@@ -2801,7 +2801,7 @@
   {
     "Op Id": 427,
     "Operator Name": "Kanakadurga Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -2812,7 +2812,7 @@
   {
     "Op Id": 428,
     "Operator Name": "Mahindra Rural Housing Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -2823,7 +2823,7 @@
   {
     "Op Id": 430,
     "Operator Name": "Fincare Small Finance Bank",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{14}$",
@@ -2834,7 +2834,7 @@
   {
     "Op Id": 431,
     "Operator Name": "Adani Capital Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^(\\\\d{3}[A-Z]{2}|\\\\d{5}|[A-Z]{5})[A-Z]\\\\d{9}$",
@@ -2889,7 +2889,7 @@
   {
     "Op Id": 440,
     "Operator Name": "Maxvalue Credits And Investments Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]{5,20}$",
@@ -2901,7 +2901,7 @@
   {
     "Op Id": 441,
     "Operator Name": "Svatantra Microfin Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{2,8}$",
@@ -2912,7 +2912,7 @@
   {
     "Op Id": 442,
     "Operator Name": "Altum Credo Home Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^\\\\d{13}$",
@@ -2923,7 +2923,7 @@
   {
     "Op Id": 443,
     "Operator Name": "INDUSIND BANK - CFD",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -2934,7 +2934,7 @@
   {
     "Op Id": 444,
     "Operator Name": "FlexiLoans",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z]{4}\\\\d{9}$",
@@ -2945,7 +2945,7 @@
   {
     "Op Id": 445,
     "Operator Name": "Credit Wise Capital",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{10,10}$",
@@ -2957,7 +2957,7 @@
   {
     "Op Id": 447,
     "Operator Name": "Chaitanya India Fin Credit Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^.{7,30}$",
@@ -2968,7 +2968,7 @@
   {
     "Op Id": 448,
     "Operator Name": "Digamber Capfin Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^(JLG-[0-9]{9})|([0-9]{9})$",
@@ -2979,7 +2979,7 @@
   {
     "Op Id": 449,
     "Operator Name": "Midland Microfin Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3012,7 +3012,7 @@
   {
     "Op Id": 457,
     "Operator Name": "Ascend Capital",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^1700\\\\d{4}$",
@@ -3023,7 +3023,7 @@
   {
     "Op Id": 458,
     "Operator Name": "Nidhilakshmi Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^L-\\\\d{1,5}$",
@@ -3034,7 +3034,7 @@
   {
     "Op Id": 459,
     "Operator Name": "NM Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([6-9]\\\\d{9})|(\\\\d{3,8})|(((HR)|(RJ))\\\\d{1,2}[A-Z]{0,3}\\\\d{4})$",
@@ -3045,7 +3045,7 @@
   {
     "Op Id": 460,
     "Operator Name": "Oroboro",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": " ^(TFL\\/P\\/[0-9]{3,}\\/[0-9]{2,}-[0-9]{2,})$|^(TFL[0-9]{6,})$|^(ORO)[0-9]{11}$",
@@ -3056,7 +3056,7 @@
   {
     "Op Id": 461,
     "Operator Name": "India Home Loan Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3067,7 +3067,7 @@
   {
     "Op Id": 462,
     "Operator Name": "DCB Bank Loan Repayment",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{10,22}$",
@@ -3078,7 +3078,7 @@
   {
     "Op Id": 463,
     "Operator Name": "Eduvanz Financing Pvt. Ltd.",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3089,7 +3089,7 @@
   {
     "Op Id": 464,
     "Operator Name": "Mintifi Finserve Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3156,7 +3156,7 @@
   {
     "Op Id": 471,
     "Operator Name": "Hiranandani Financial Services Pvt  Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{16,16}$",
@@ -3167,7 +3167,7 @@
   {
     "Op Id": 472,
     "Operator Name": "Home First Finance Company India Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{8,8}$",
@@ -3178,7 +3178,7 @@
   {
     "Op Id": 473,
     "Operator Name": "Ujjivan Small Finance Bank",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^\\\\d{15}(\\\\d|(T0){1,2}|T1)?$",
@@ -3189,7 +3189,7 @@
   {
     "Op Id": 474,
     "Operator Name": "Light Microfinance Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3200,7 +3200,7 @@
   {
     "Op Id": 475,
     "Operator Name": "IIFL Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^(GL|SL|MF)\\\\d{1,8}$",
@@ -3212,7 +3212,7 @@
   {
     "Op Id": 476,
     "Operator Name": "IIFL Home Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^(IL|\\\\d{0,2})\\\\d{1,8}$",
@@ -3224,7 +3224,7 @@
   {
     "Op Id": 479,
     "Operator Name": "TVS Credit",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -3235,7 +3235,7 @@
   {
     "Op Id": 480,
     "Operator Name": "CreditAccess Grameen - Microfinance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,10}$",
@@ -3246,7 +3246,7 @@
   {
     "Op Id": 481,
     "Operator Name": "CreditAccess Grameen - Retail Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3257,7 +3257,7 @@
   {
     "Op Id": 482,
     "Operator Name": "Khush Housing Finance Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3268,7 +3268,7 @@
   {
     "Op Id": 487,
     "Operator Name": "Adani Housing Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^(\\\\d{3}[A-Z]{2}|\\\\d{4}[A-Z]|[A-Z]{5})[A-Z]\\\\d{9}$",
@@ -3279,7 +3279,7 @@
   {
     "Op Id": 488,
     "Operator Name": "Janakalyan Financial Services Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{4}[-]{0,1}[0-9]{6,8}$",
@@ -3290,7 +3290,7 @@
   {
     "Op Id": 489,
     "Operator Name": "Muthoot Fincorp Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3313,7 +3313,7 @@
   {
     "Op Id": 491,
     "Operator Name": "Agora Microfinance India Ltd - AMIL",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3337,7 +3337,7 @@
   {
     "Op Id": 493,
     "Operator Name": "Jain Motor Finmart",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([6-9]\\\\d{9})|(\\\\d{5})|(((HR)|(RJ))\\\\d{1,2}[A-Z]{0,3}\\\\d{4})$",
@@ -3348,7 +3348,7 @@
   {
     "Op Id": 494,
     "Operator Name": "Bharat Financial Inclusion Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3359,7 +3359,7 @@
   {
     "Op Id": 495,
     "Operator Name": "StashFin",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[5-9][0-9]{8,10}$",
@@ -3371,7 +3371,7 @@
   {
     "Op Id": 496,
     "Operator Name": "Pooja Finelease",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([A-Z]{2}\\\\d{5}|[A-Z]{3}\\\\d{4}|P\\\\d{6}|NRB\\\\dPFJ\\\\d{6})$",
@@ -3382,7 +3382,7 @@
   {
     "Op Id": 497,
     "Operator Name": "Mahaveer Finance India Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -3393,7 +3393,7 @@
   {
     "Op Id": 498,
     "Operator Name": "Nagar Nigam Aligarh- muncipality",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3415,7 +3415,7 @@
   {
     "Op Id": 500,
     "Operator Name": "Vistaar Financial services Private Limited\r\n\r\n",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3427,7 +3427,7 @@
   {
     "Op Id": 501,
     "Operator Name": "Axis Bank Limited-Microfinance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{15,15}$",
@@ -3439,7 +3439,7 @@
   {
     "Op Id": 507,
     "Operator Name": "Kotak Mahindra Prime Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z]{2,50}$",
@@ -3450,7 +3450,7 @@
   {
     "Op Id": 508,
     "Operator Name": "Mahindra and Mahindra Financial Services Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3462,7 +3462,7 @@
   {
     "Op Id": 509,
     "Operator Name": "Nagar Nigam Aligarh- water",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{1,25}$",
@@ -3473,7 +3473,7 @@
   {
     "Op Id": 510,
     "Operator Name": "Dvara Kshetriya Gramin Financials Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -3484,7 +3484,7 @@
   {
     "Op Id": 511,
     "Operator Name": "Muthoot Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9\\\\/]{10,15}$",
@@ -3495,7 +3495,7 @@
   {
     "Op Id": 512,
     "Operator Name": "John Deere Financial India Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^\\\\d{4,10}$",
@@ -3517,7 +3517,7 @@
   {
     "Op Id": 514,
     "Operator Name": "Public Health Engineering Department, Haryana",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{1,50}$",
@@ -3528,7 +3528,7 @@
   {
     "Op Id": 515,
     "Operator Name": "Tata Capital Housing Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{7,21}$",
@@ -3540,7 +3540,7 @@
   {
     "Op Id": 516,
     "Operator Name": "SMEcorner",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{4,20}$",
@@ -3563,7 +3563,7 @@
   {
     "Op Id": 518,
     "Operator Name": "Netafim Agricultural Financing Agency Pvt. Ltd.",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^(0|[1-9][0-9]*)$",
@@ -3585,7 +3585,7 @@
   {
     "Op Id": 520,
     "Operator Name": "Kotak Mahindra Bank Ltd.-Loans",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z]{2,50}$",
@@ -3596,7 +3596,7 @@
   {
     "Op Id": 521,
     "Operator Name": "Samasta Microfinance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{10,20}$",
@@ -3640,7 +3640,7 @@
   {
     "Op Id": 527,
     "Operator Name": "HDB Financial Services Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,15}$",
@@ -3651,7 +3651,7 @@
   {
     "Op Id": 528,
     "Operator Name": "Novelty Finance Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3662,7 +3662,7 @@
   {
     "Op Id": 529,
     "Operator Name": "Aptus Value Housing Finance India Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3675,7 +3675,7 @@
   {
     "Op Id": 530,
     "Operator Name": "Aptus Finance India Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3688,7 +3688,7 @@
   {
     "Op Id": 531,
     "Operator Name": "Mitron Capital",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3699,7 +3699,7 @@
   {
     "Op Id": 532,
     "Operator Name": "Thazhayil Nidhi Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3710,7 +3710,7 @@
   {
     "Op Id": 533,
     "Operator Name": "X10 Financial Services Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3721,7 +3721,7 @@
   {
     "Op Id": 534,
     "Operator Name": "Muthoot Housing Finance Company Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3756,7 +3756,7 @@
   {
     "Op Id": 540,
     "Operator Name": "Vatva Industrial Estate Infrastructure Development Ltd",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3767,7 +3767,7 @@
   {
     "Op Id": 541,
     "Operator Name": "ESAF Small Finance Bank (Micro Loans)",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([A-Z]|[a-z]|[0-9]){7,20}$",
@@ -3778,7 +3778,7 @@
   {
     "Op Id": 542,
     "Operator Name": "Yogakshemam Loans Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3789,7 +3789,7 @@
   {
     "Op Id": 545,
     "Operator Name": "Rander Peoples Co Operative Bank Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3869,7 +3869,7 @@
   {
     "Op Id": 553,
     "Operator Name": "Annapurna Finance Private Limited-MFI",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3880,7 +3880,7 @@
   {
     "Op Id": 554,
     "Operator Name": "Axis Bank Limited - Retail Loan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z0-9]{5,20}$",
@@ -3893,7 +3893,7 @@
   {
     "Op Id": 555,
     "Operator Name": "Fullerton India Housing Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^6[0-9]{14}$",
@@ -3904,7 +3904,7 @@
   {
     "Op Id": 556,
     "Operator Name": "Fullerton India credit company limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{14,15}",
@@ -3915,7 +3915,7 @@
   {
     "Op Id": 557,
     "Operator Name": "G U Financial Services Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3926,7 +3926,7 @@
   {
     "Op Id": 558,
     "Operator Name": "InCred",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z]{5}\\\\d{5}-\\\\d{9}$",
@@ -3937,7 +3937,7 @@
   {
     "Op Id": 559,
     "Operator Name": "MoneyTap",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{10,10}$",
@@ -3949,7 +3949,7 @@
   {
     "Op Id": 560,
     "Operator Name": "Muthoot Capital Services Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([0-9]{8}|[0-9A-Za-z]{19}$",
@@ -3961,7 +3961,7 @@
   {
     "Op Id": 561,
     "Operator Name": "Ayaan Finserve India Private LTD",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3972,7 +3972,7 @@
   {
     "Op Id": 562,
     "Operator Name": "Sarvjan India Fintech Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -3994,7 +3994,7 @@
   {
     "Op Id": 564,
     "Operator Name": "Port Blair Municipal Council - Water",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4005,7 +4005,7 @@
   {
     "Op Id": 565,
     "Operator Name": "Vasai Virar Municipal Corporation - Water",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4028,7 +4028,7 @@
   {
     "Op Id": 568,
     "Operator Name": "Aadhar Housing Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -4039,7 +4039,7 @@
   {
     "Op Id": 569,
     "Operator Name": "IDF Financial Services Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4050,7 +4050,7 @@
   {
     "Op Id": 570,
     "Operator Name": "Bajaj Housing Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4061,7 +4061,7 @@
   {
     "Op Id": 572,
     "Operator Name": "Centrum Microcredit Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4083,7 +4083,7 @@
   {
     "Op Id": 574,
     "Operator Name": "Ziploan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{2,20}$",
@@ -4094,7 +4094,7 @@
   {
     "Op Id": 575,
     "Operator Name": "Equitas SFB – Microfinance Loan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,10}$",
@@ -4105,7 +4105,7 @@
   {
     "Op Id": 576,
     "Operator Name": "Indostar Capital Finance Limited - CV",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4128,7 +4128,7 @@
   {
     "Op Id": 578,
     "Operator Name": "Shivamogga City Corporation - Water Tax",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4139,7 +4139,7 @@
   {
     "Op Id": 579,
     "Operator Name": "RMK Fincorp Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4151,7 +4151,7 @@
   {
     "Op Id": 580,
     "Operator Name": "Jammu Kashmir Water Billing-JKPHE Kashmir",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{3,15}",
@@ -4162,7 +4162,7 @@
   {
     "Op Id": 581,
     "Operator Name": "Jammu Kashmir Water Billing-JKPHE Jammu",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{3,15}",
@@ -4173,7 +4173,7 @@
   {
     "Op Id": 584,
     "Operator Name": "Smile Microfinance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{8,20}$",
@@ -4184,7 +4184,7 @@
   {
     "Op Id": 586,
     "Operator Name": "Belstar Microfinance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4195,7 +4195,7 @@
   {
     "Op Id": 587,
     "Operator Name": "Tata Motors Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "[0-9a-zA-Z]{1,30}$",
@@ -4251,7 +4251,7 @@
   {
     "Op Id": 595,
     "Operator Name": "Vijayapura Water Board",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4439,7 +4439,7 @@
   {
     "Op Id": 614,
     "Operator Name": "Diwakar Tracom Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^(PL|A|ML)[0-9]{5}( [0-9]){0,1}$",
@@ -4450,7 +4450,7 @@
   {
     "Op Id": 615,
     "Operator Name": "Hindon Mercantile Limited - Mufin",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,15}$",
@@ -4461,7 +4461,7 @@
   {
     "Op Id": 616,
     "Operator Name": "Indostar Home Finance Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4472,7 +4472,7 @@
   {
     "Op Id": 617,
     "Operator Name": "Loan2Wheels",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4483,7 +4483,7 @@
   {
     "Op Id": 618,
     "Operator Name": "Muthoot Money",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4542,7 +4542,7 @@
   {
     "Op Id": 623,
     "Operator Name": "Kerala Vision Broadband Pvt Ltd",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9_]*$",
@@ -4553,7 +4553,7 @@
   {
     "Op Id": 624,
     "Operator Name": "City Municipal Council –Ilkal",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,7}$",
@@ -4564,7 +4564,7 @@
   {
     "Op Id": 625,
     "Operator Name": "Aye Finance Pvt. Ltd.",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{1,20}$",
@@ -4575,7 +4575,7 @@
   {
     "Op Id": 626,
     "Operator Name": "Criss Financial Holdings Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{1,20}$",
@@ -4598,7 +4598,7 @@
   {
     "Op Id": 628,
     "Operator Name": "Spandana Sphoorty Financial Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{1,20}$",
@@ -4631,7 +4631,7 @@
   {
     "Op Id": 631,
     "Operator Name": "Indostar Capital Finance Limited - SME",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{8,20}$",
@@ -4653,7 +4653,7 @@
   {
     "Op Id": 635,
     "Operator Name": "Shubham Housing Development Finance Company Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "[a-zA-Z0-9._]{15,20}$",
@@ -4664,7 +4664,7 @@
   {
     "Op Id": 641,
     "Operator Name": "Kredit Bee",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{10}$",
@@ -4676,7 +4676,7 @@
   {
     "Op Id": 644,
     "Operator Name": "MCGM Water Department",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{2}[a-zA-Z0-9@,$&amp;#*]{1}[0-9]{7,12}$",
@@ -4687,7 +4687,7 @@
   {
     "Op Id": 645,
     "Operator Name": "DCBS Loan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{3}(-[0-9]{7})$",
@@ -4698,7 +4698,7 @@
   {
     "Op Id": 646,
     "Operator Name": "Reliance ARC",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Optional",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -4720,7 +4720,7 @@
   {
     "Op Id": 649,
     "Operator Name": "Finova Capital Private Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -4742,7 +4742,7 @@
   {
     "Op Id": 651,
     "Operator Name": "Care India Finvest Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{1,20}$",
@@ -4753,7 +4753,7 @@
   {
     "Op Id": 652,
     "Operator Name": "Electronica Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([0-9\\\\-\\\\_]{2,25})$",
@@ -4764,7 +4764,7 @@
   {
     "Op Id": 653,
     "Operator Name": "Muthoot Homefin Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "[a-zA-Z0-9]+$",
@@ -4775,7 +4775,7 @@
   {
     "Op Id": 654,
     "Operator Name": "Spandana Rural And Urban Development Organisation",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{1,20}$",
@@ -4786,7 +4786,7 @@
   {
     "Op Id": 655,
     "Operator Name": "Suryoday Small Finance Bank",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{12}$",
@@ -4819,7 +4819,7 @@
   {
     "Op Id": 658,
     "Operator Name": "Moneywise Financial Services Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{12}$",
@@ -4852,7 +4852,7 @@
   {
     "Op Id": 661,
     "Operator Name": "APAC Financial Services Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{12,25}$",
@@ -4863,7 +4863,7 @@
   {
     "Op Id": 662,
     "Operator Name": "NABFINS",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^\\\\d{15,15}$",
@@ -4874,7 +4874,7 @@
   {
     "Op Id": 663,
     "Operator Name": "Ekagrata Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^\\\\d{2,25}$",
@@ -4907,7 +4907,7 @@
   {
     "Op Id": 667,
     "Operator Name": "ICICI BANK - Interest Repayment Loans",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^\\\\d{12,12}$",
@@ -4918,7 +4918,7 @@
   {
     "Op Id": 671,
     "Operator Name": "Bussan Auto Finance India Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{16}$",
@@ -4996,7 +4996,7 @@
   {
     "Op Id": 679,
     "Operator Name": "Fortune Credit Capital Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^d{2,8}$",
@@ -5007,7 +5007,7 @@
   {
     "Op Id": 680,
     "Operator Name": "CNH Industrial Capital Pvt. Ltd.",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{5,50}$",
@@ -5018,7 +5018,7 @@
   {
     "Op Id": 681,
     "Operator Name": "Dev Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{2,25}$",
@@ -5029,7 +5029,7 @@
   {
     "Op Id": 682,
     "Operator Name": "Muthoot Finance-Personal Loan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{10,15}$",
@@ -5040,7 +5040,7 @@
   {
     "Op Id": 683,
     "Operator Name": "Shine Blue Hire Purchase Ltd.",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{2,25}$",
@@ -5084,7 +5084,7 @@
   {
     "Op Id": 691,
     "Operator Name": "STREE NIDHI - TELANGANA",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{5,50}$",
@@ -5095,7 +5095,7 @@
   {
     "Op Id": 692,
     "Operator Name": "Kanakadurga Finance Limited - Gold Loans",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{5,50}$",
@@ -5141,7 +5141,7 @@
   {
     "Op Id": 697,
     "Operator Name": "Cholamandalam Investment and Finance Company Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]$",
@@ -5153,7 +5153,7 @@
   {
     "Op Id": 698,
     "Operator Name": "Protium",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{30}$",
@@ -5164,7 +5164,7 @@
   {
     "Op Id": 699,
     "Operator Name": "Manappuram Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^\\\\d{16}$",
@@ -5187,7 +5187,7 @@
   {
     "Op Id": 704,
     "Operator Name": "Jejuri Nagarparishad",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{}$",
@@ -5198,7 +5198,7 @@
   {
     "Op Id": 705,
     "Operator Name": "Public Works Department (PWD), Goa",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{}$",
@@ -5220,7 +5220,7 @@
   {
     "Op Id": 707,
     "Operator Name": "R.Sen and Company Investment and Finance Pvt. Ltd.",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{9,11}$",
@@ -5231,7 +5231,7 @@
   {
     "Op Id": 708,
     "Operator Name": "UGRO Capital Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{1,20}$",
@@ -5264,7 +5264,7 @@
   {
     "Op Id": 711,
     "Operator Name": "We Pay Finance Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{3,10}$",
@@ -5341,7 +5341,7 @@
   {
     "Op Id": 720,
     "Operator Name": "\tEZFINANZE",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{1,16}$",
@@ -5352,7 +5352,7 @@
   {
     "Op Id": 721,
     "Operator Name": "Deccan Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^\\\\d{7,30}$",
@@ -5473,7 +5473,7 @@
   {
     "Op Id": 740,
     "Operator Name": "Punjab National Bank",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{}$",
@@ -5484,7 +5484,7 @@
   {
     "Op Id": 741,
     "Operator Name": "LoanBaba",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{5,8}$",
@@ -5495,7 +5495,7 @@
   {
     "Op Id": 742,
     "Operator Name": "Ashv Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{14,18}$",
@@ -5506,7 +5506,7 @@
   {
     "Op Id": 743,
     "Operator Name": "Unity Small Finance Bank",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{1,20}$",
@@ -5517,7 +5517,7 @@
   {
     "Op Id": 744,
     "Operator Name": "Lord Krishna Financial Services",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{1,20}$",
@@ -5528,7 +5528,7 @@
   {
     "Op Id": 745,
     "Operator Name": "Vastu Finserve India Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{1,20}$",
@@ -5551,7 +5551,7 @@
   {
     "Op Id": 751,
     "Operator Name": "Shimla Jal Prabandhan",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9/_/-]{1,30}$",
@@ -5639,7 +5639,7 @@
   {
     "Op Id": 760,
     "Operator Name": "Credit One Payments Solutions Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[ A-Za-z0-9_@./#&amp;+-]{9,20}$",
@@ -5650,7 +5650,7 @@
   {
     "Op Id": 761,
     "Operator Name": "Kusalava Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9 ,()&amp;/._''-]{04,30}$",
@@ -5672,7 +5672,7 @@
   {
     "Op Id": 764,
     "Operator Name": "Monedo Financial Services Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{3,9}$",
@@ -5738,7 +5738,7 @@
   {
     "Op Id": 770,
     "Operator Name": "Dhansansar Nidhi Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,10}$",
@@ -5749,7 +5749,7 @@
   {
     "Op Id": 771,
     "Operator Name": "Fortune Integrated Assets Finance Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9-]{1,20}$",
@@ -5760,7 +5760,7 @@
   {
     "Op Id": 772,
     "Operator Name": "Muthoot Money - Gold Loan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9\\\\/]{10,15}$",
@@ -5771,7 +5771,7 @@
   {
     "Op Id": 773,
     "Operator Name": "Swara Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,18}$",
@@ -5793,7 +5793,7 @@
   {
     "Op Id": 776,
     "Operator Name": "Amrit Malwa Capital Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{1,20}$",
@@ -5804,7 +5804,7 @@
   {
     "Op Id": 777,
     "Operator Name": "ESAF Small Finance Bank (Retails Loans)",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{14,14}$",
@@ -5826,7 +5826,7 @@
   {
     "Op Id": 780,
     "Operator Name": "Capital India Home Loans Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -5848,7 +5848,7 @@
   {
     "Op Id": 782,
     "Operator Name": "Unnayan Bharat Finance Corporation Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{1,25}$",
@@ -5859,7 +5859,7 @@
   {
     "Op Id": 788,
     "Operator Name": "TJ Broadband Network Pvt Ltd\"",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_:=#%*+.$-]{4,50}$",
@@ -5870,7 +5870,7 @@
   {
     "Op Id": 789,
     "Operator Name": "Eway FiberNet",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z_/\\\\.-]{1,20}$",
@@ -5914,7 +5914,7 @@
   {
     "Op Id": 793,
     "Operator Name": "ARTH",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "[0-9a-zA-Z:]{5,25}$",
@@ -5925,7 +5925,7 @@
   {
     "Op Id": 794,
     "Operator Name": "Ramaiah Capital Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([A-Z0-9]{8,14})$",
@@ -6046,7 +6046,7 @@
   {
     "Op Id": 806,
     "Operator Name": "Hinduja Housing Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "yyyy-MM-dd",
@@ -6057,7 +6057,7 @@
   {
     "Op Id": 807,
     "Operator Name": "IIFL Samasta Finance Ltd - Retail Loans",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{1,25}$",
@@ -6068,7 +6068,7 @@
   {
     "Op Id": 808,
     "Operator Name": "SBFC Finance Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z]{10,10}$",
@@ -6079,7 +6079,7 @@
   {
     "Op Id": 809,
     "Operator Name": "Poonawalla Fincorp Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z\\\\_a-z\\\\-\\\\/0-9]{5,30}$",
@@ -6091,7 +6091,7 @@
   {
     "Op Id": 810,
     "Operator Name": "Sonata Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{5,12}$",
@@ -6102,7 +6102,7 @@
   {
     "Op Id": 811,
     "Operator Name": "Agriwise Finserv Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z]{15,15}$",
@@ -6157,7 +6157,7 @@
   {
     "Op Id": 819,
     "Operator Name": "Union Bank of India-Loans",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{15}$",
@@ -6168,7 +6168,7 @@
   {
     "Op Id": 820,
     "Operator Name": "Five Star Business Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{15}$",
@@ -6202,7 +6202,7 @@
   {
     "Op Id": 824,
     "Operator Name": "Thane Municipal Corporation Water Tax",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "[A-Za-z0-9\\\\@\\\\-\\\\.\\\\_\\\\/]{1,48}$",
@@ -6214,7 +6214,7 @@
   {
     "Op Id": 825,
     "Operator Name": "Talegaon Dabhade Nagar Parishad - Water Payments",
-    "Category": "Water Supplier",
+    "Category": "Water",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{4,20}$",
@@ -6236,7 +6236,7 @@
   {
     "Op Id": 827,
     "Operator Name": "Saraswat Bank - Loan Repayment",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{15}$",
@@ -6269,7 +6269,7 @@
   {
     "Op Id": 830,
     "Operator Name": "EMGEE MUTHOOT NIDHI LTD",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z\\\\/]{1,15}$",
@@ -6280,7 +6280,7 @@
   {
     "Op Id": 831,
     "Operator Name": "GEO BROS MUTHOOT NIDHI LTD",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z\\\\/]{1,15}$",
@@ -6324,7 +6324,7 @@
   {
     "Op Id": 835,
     "Operator Name": "LoanFront",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[6-9][0-9]{9}$",
@@ -6368,7 +6368,7 @@
   {
     "Op Id": 839,
     "Operator Name": "Credit Saison",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{3,16}$",
@@ -6445,7 +6445,7 @@
   {
     "Op Id": 847,
     "Operator Name": "Ambit Finvest Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z:]{5,25}",
@@ -6456,7 +6456,7 @@
   {
     "Op Id": 848,
     "Operator Name": "Kogta Financial India Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{1,16}$",
@@ -6578,7 +6578,7 @@
   {
     "Op Id": 860,
     "Operator Name": "Muthoot Vehicle And Asset Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{15,20}$",
@@ -6590,7 +6590,7 @@
   {
     "Op Id": 861,
     "Operator Name": "Setia Auto Finance Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z@#$%^&amp;*()_+=.,-]{3,20}$",
@@ -6601,7 +6601,7 @@
   {
     "Op Id": 862,
     "Operator Name": "Manappuram Home Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_#-.!:]{4,25}$",
@@ -6646,7 +6646,7 @@
   {
     "Op Id": 867,
     "Operator Name": "SR Broadband",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,20}$",
@@ -6657,7 +6657,7 @@
   {
     "Op Id": 868,
     "Operator Name": "Vision Fibernet",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,20}$",
@@ -6668,7 +6668,7 @@
   {
     "Op Id": 870,
     "Operator Name": "Fedbank Financial Services Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{16,20}$",
@@ -6679,7 +6679,7 @@
   {
     "Op Id": 871,
     "Operator Name": "Hinduja Leyland Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{11,13}$",
@@ -6690,7 +6690,7 @@
   {
     "Op Id": 872,
     "Operator Name": "Paisabuddy Finance Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z@#$%^&amp;*()_+=.,-]{3,20}$",
@@ -6701,7 +6701,7 @@
   {
     "Op Id": 873,
     "Operator Name": "Ring",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{10,10}$",
@@ -6713,7 +6713,7 @@
   {
     "Op Id": 874,
     "Operator Name": "SG Broadband internet Pvt Ltd",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9@_.-]{1,64}$",
@@ -6735,7 +6735,7 @@
   {
     "Op Id": 877,
     "Operator Name": "REALTEL",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,20}$",
@@ -6746,7 +6746,7 @@
   {
     "Op Id": 878,
     "Operator Name": "IRRA Internet Service Private Limited",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z_]{3,30}$",
@@ -6757,7 +6757,7 @@
   {
     "Op Id": 879,
     "Operator Name": "MM Networks",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.-:]{3,30}$",
@@ -6790,7 +6790,7 @@
   {
     "Op Id": 882,
     "Operator Name": "Feathers",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:=#%*+!$\\\\/-]{2,50}",
@@ -6801,7 +6801,7 @@
   {
     "Op Id": 883,
     "Operator Name": "Fiber Power Connects Private Limited",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9@_.]{3,48}$",
@@ -6834,7 +6834,7 @@
   {
     "Op Id": 886,
     "Operator Name": "Orange Fibernet and TV",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.-:]{3,30}$",
@@ -6845,7 +6845,7 @@
   {
     "Op Id": 887,
     "Operator Name": "Rajesh Digital and Datacom Private Limited",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9@_.]{3,48}$",
@@ -6856,7 +6856,7 @@
   {
     "Op Id": 888,
     "Operator Name": "Smart Net India Pvt Ltd",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:=#%*+!$\\\\/-]{2,50}$",
@@ -6867,7 +6867,7 @@
   {
     "Op Id": 889,
     "Operator Name": "Xpress Fiber Pvt Ltd",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.-:]{3,30}$",
@@ -6878,7 +6878,7 @@
   {
     "Op Id": 890,
     "Operator Name": "Yes Bank Ltd - Loan Payment",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{15,20}$",
@@ -6900,7 +6900,7 @@
   {
     "Op Id": 892,
     "Operator Name": "Wave Fiber",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,30}$",
@@ -6911,7 +6911,7 @@
   {
     "Op Id": 893,
     "Operator Name": "Mahindra Finance Consumer Loans",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{7,15}$",
@@ -6923,7 +6923,7 @@
   {
     "Op Id": 894,
     "Operator Name": "ACNS Pvt Ltd",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_*.$-]{2,50}$",
@@ -6934,7 +6934,7 @@
   {
     "Op Id": 895,
     "Operator Name": "Adigital",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_*.$-]{2,50}$",
@@ -6945,7 +6945,7 @@
   {
     "Op Id": 896,
     "Operator Name": "Amber Online Services",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{3,26}$",
@@ -6980,7 +6980,7 @@
   {
     "Op Id": 899,
     "Operator Name": "Cloud ISP",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_*.$-]{2,50}$",
@@ -6991,7 +6991,7 @@
   {
     "Op Id": 900,
     "Operator Name": "Crystal Broadband",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,30}$",
@@ -7013,7 +7013,7 @@
   {
     "Op Id": 902,
     "Operator Name": "MANOJAVA BROADBAND PRIVATE LTD",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9,()/._''-]{1,13}$",
@@ -7024,7 +7024,7 @@
   {
     "Op Id": 903,
     "Operator Name": "Hero Housing Finance Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[A-Z0-9]{7,20}$",
@@ -7036,7 +7036,7 @@
   {
     "Op Id": 904,
     "Operator Name": "Reach Broadband",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,30}$",
@@ -7047,7 +7047,7 @@
   {
     "Op Id": 905,
     "Operator Name": "Kord Broadband Services Pvt Ltd",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z_@.-]{2,50}$",
@@ -7058,7 +7058,7 @@
   {
     "Op Id": 906,
     "Operator Name": "IMPERIUM DIGITAL NETWORK PRIVATE LIMITED",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_:=#%+!*.$-/]{2,50}$",
@@ -7069,7 +7069,7 @@
   {
     "Op Id": 907,
     "Operator Name": "ARIHANT NETWORK",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9@_*.$-]{2,50}$",
@@ -7080,7 +7080,7 @@
   {
     "Op Id": 908,
     "Operator Name": "AT Broadband",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9@_:=#%+!*.$-\\\\/]{2,50}$",
@@ -7091,7 +7091,7 @@
   {
     "Op Id": 910,
     "Operator Name": "Wonder Home Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{5,15}$",
@@ -7102,7 +7102,7 @@
   {
     "Op Id": 911,
     "Operator Name": "One Click",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,20}$",
@@ -7113,7 +7113,7 @@
   {
     "Op Id": 912,
     "Operator Name": "Gtech Partner",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Not Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,30}$",
@@ -7124,7 +7124,7 @@
   {
     "Op Id": 913,
     "Operator Name": "QNet",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9@_*.-]{2,50}$",
@@ -7135,7 +7135,7 @@
   {
     "Op Id": 914,
     "Operator Name": "Maben Nidhi",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z\\\\/]{2,12}$",
@@ -7146,7 +7146,7 @@
   {
     "Op Id": 915,
     "Operator Name": "Gtech Broadband",
-    "Category": "Broadband Postpaid",
+    "Category": "Broadband",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,30}$",
@@ -7157,7 +7157,7 @@
   {
     "Op Id": 917,
     "Operator Name": "Credin",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -7168,7 +7168,7 @@
   {
     "Op Id": 919,
     "Operator Name": "EDC Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9,()/._''-]{1,20}$",
@@ -7190,7 +7190,7 @@
   {
     "Op Id": 921,
     "Operator Name": "Laxmi India Finleasecap Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,10}$",
@@ -7256,7 +7256,7 @@
   {
     "Op Id": 927,
     "Operator Name": "Samrat Motor Finance Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9@_*.$-]{2,50}$",
@@ -7279,7 +7279,7 @@
   {
     "Op Id": 930,
     "Operator Name": "SATYA MIRCO FINANCE",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Optional",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{10,12}$",
@@ -7346,7 +7346,7 @@
   {
     "Op Id": 936,
     "Operator Name": "Karpagam Hire Purchase And Finance Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9,()/._''-]{1,18}$",
@@ -7368,7 +7368,7 @@
   {
     "Op Id": 938,
     "Operator Name": "Loanzen Finance Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{2,25}$",
@@ -7401,7 +7401,7 @@
   {
     "Op Id": 941,
     "Operator Name": "Piramal Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{5,20}$",
@@ -7412,7 +7412,7 @@
   {
     "Op Id": 944,
     "Operator Name": "KIFS Housing Finance Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{4,10}$",
@@ -7566,7 +7566,7 @@
   {
     "Op Id": 964,
     "Operator Name": "Unimoni Financial Services Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{10}$",
@@ -7646,7 +7646,7 @@
   {
     "Op Id": 972,
     "Operator Name": "Veritas Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9-]{14}$",
@@ -7690,7 +7690,7 @@
   {
     "Op Id": 976,
     "Operator Name": "Aris Capital Pvt Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9\\\\/]{2,20}$",
@@ -7780,7 +7780,7 @@
   {
     "Op Id": 984,
     "Operator Name": "Shalibhadra Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9-]{3,20}$",
@@ -7803,7 +7803,7 @@
   {
     "Op Id": 986,
     "Operator Name": "The Kurla Nagarik Sahakari Bank Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9,()/._''-]{1,13}$",
@@ -7814,7 +7814,7 @@
   {
     "Op Id": 987,
     "Operator Name": "Utkarsh Bank Loan Repayment",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{2,20}$",
@@ -7858,7 +7858,7 @@
   {
     "Op Id": 992,
     "Operator Name": "VFS Capital Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{10,20}$",
@@ -7902,7 +7902,7 @@
   {
     "Op Id": 998,
     "Operator Name": "Namdev Finvest Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{10,20}$",
@@ -7990,7 +7990,7 @@
   {
     "Op Id": 1008,
     "Operator Name": "Share India Fincap Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{2,10}$",
@@ -8034,7 +8034,7 @@
   {
     "Op Id": 1013,
     "Operator Name": "Capital Trust Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9\\\\/]{2,20}$",
@@ -8067,7 +8067,7 @@
   {
     "Op Id": 1017,
     "Operator Name": "Maitreya Capital and Business Services Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,30}$",
@@ -8111,7 +8111,7 @@
   {
     "Op Id": 1022,
     "Operator Name": "Cashtree Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{8}$",
@@ -8144,7 +8144,7 @@
   {
     "Op Id": 1025,
     "Operator Name": "Hedge Finance Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9\\\\s]{4,26}$",
@@ -8276,7 +8276,7 @@
   {
     "Op Id": 1038,
     "Operator Name": "Alfastar India Nidhi Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z 0-9]{5,20}$",
@@ -8287,7 +8287,7 @@
   {
     "Op Id": 1039,
     "Operator Name": "Mangal Credit and Fincorp Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,30}$",
@@ -8445,7 +8445,7 @@
   {
     "Op Id": 1055,
     "Operator Name": "Pahal Finance IL/SL",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z0-9]{10,15}$",
@@ -8554,7 +8554,7 @@
   {
     "Op Id": 1065,
     "Operator Name": "Sewa Grih Rin Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{12,16}$",
@@ -8643,7 +8643,7 @@
   {
     "Op Id": 1075,
     "Operator Name": "Namra Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{5,13}$",
@@ -8676,7 +8676,7 @@
   {
     "Op Id": 1078,
     "Operator Name": "Axis Bank Ltd - MCA",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{3,20}$",
@@ -8754,7 +8754,7 @@
   {
     "Op Id": 1085,
     "Operator Name": "Arman Financial Services Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{5,13}$",
@@ -8798,7 +8798,7 @@
   {
     "Op Id": 1089,
     "Operator Name": "Avanti Finance Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{10,25}$",
@@ -8809,7 +8809,7 @@
   {
     "Op Id": 1090,
     "Operator Name": "Speel Finance Company Private Limited (Pocketly)",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{10,10}$",
@@ -8865,7 +8865,7 @@
   {
     "Op Id": 1095,
     "Operator Name": "Esco Elettil Nidhi Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{6,15}$",
@@ -8876,7 +8876,7 @@
   {
     "Op Id": 1096,
     "Operator Name": "Keertana Finserv Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{3,20}$",
@@ -8887,7 +8887,7 @@
   {
     "Op Id": 1097,
     "Operator Name": "Fasttrack Housing Finance Ltd.",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{9,9}$",
@@ -8965,7 +8965,7 @@
   {
     "Op Id": 1104,
     "Operator Name": "121 Finance Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9\\\\@\\\\s\\\\-]{8,35}$",
@@ -9009,7 +9009,7 @@
   {
     "Op Id": 1108,
     "Operator Name": "Goldline Finance Private Limited (Capital Now)",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{10,13}$$",
@@ -9077,7 +9077,7 @@
   {
     "Op Id": 1115,
     "Operator Name": "Andhra Pragathi Grameena Bank Loan Repayment",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{7,25}$",
@@ -9088,7 +9088,7 @@
   {
     "Op Id": 1116,
     "Operator Name": "Muthoot Vehicle And Asset Finance Limited Gold Loan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9,()/._''-]{10,15}$",
@@ -9143,7 +9143,7 @@
   {
     "Op Id": 1121,
     "Operator Name": "Bajaj Finance Ltd - Corporate agent",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z]{1,20}$\",",
@@ -9178,7 +9178,7 @@
   {
     "Op Id": 1125,
     "Operator Name": "Axis Bank Ltd-Digital Loan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z0-9]{15,20}$",
@@ -9200,7 +9200,7 @@
   {
     "Op Id": 1127,
     "Operator Name": "Bajaj Finance Limited Agent Collection",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{1,30}$",
@@ -9255,7 +9255,7 @@
   {
     "Op Id": 1132,
     "Operator Name": "Ajeevak Nidhi Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{2,18}$",
@@ -9343,7 +9343,7 @@
   {
     "Op Id": 1141,
     "Operator Name": "Rahimatpur Sahakari Bank Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{3,30}$",
@@ -9455,7 +9455,7 @@
   {
     "Op Id": 1152,
     "Operator Name": "Amarpadma Credits Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9,()/._'-]{1,20}$",
@@ -9466,7 +9466,7 @@
   {
     "Op Id": 1153,
     "Operator Name": "Arthmate Financing India Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{2,21}$",
@@ -9477,7 +9477,7 @@
   {
     "Op Id": 1154,
     "Operator Name": "Rajasthan Mahila Nidhi",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{17,32}$",
@@ -9556,7 +9556,7 @@
   {
     "Op Id": 1162,
     "Operator Name": "Navi Loans",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{9,16}$",
@@ -9567,7 +9567,7 @@
   {
     "Op Id": 1163,
     "Operator Name": "Poonawalla Housing Finance Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required ",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9\\\\/]{2,22}$",
@@ -9813,7 +9813,7 @@
   {
     "Op Id": 1186,
     "Operator Name": "Strr Nidhi Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,13}$",
@@ -9824,7 +9824,7 @@
   {
     "Op Id": 1187,
     "Operator Name": "BWDA Finance Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Not Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9,()/._''-]{2,20}$",
@@ -9835,7 +9835,7 @@
   {
     "Op Id": 1188,
     "Operator Name": "Ummeed Housing Finance Pvt. Ltd.",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z-]{20,28}$",
@@ -9846,7 +9846,7 @@
   {
     "Op Id": 1189,
     "Operator Name": "Wheelsemi Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]+$",
@@ -9857,7 +9857,7 @@
   {
     "Op Id": 1190,
     "Operator Name": "Art Housing Finance (India) Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9a-zA-Z-]{5,20}$",
@@ -9946,7 +9946,7 @@
   {
     "Op Id": 1198,
     "Operator Name": "Kannattu Finance Nidhi Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{10,24}$",
@@ -9957,7 +9957,7 @@
   {
     "Op Id": 1199,
     "Operator Name": "Kannattu Fingold Finance Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{10,24}$",
@@ -10056,7 +10056,7 @@
   {
     "Op Id": 1208,
     "Operator Name": "Moneyboxx",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{10,11}$",
@@ -10067,7 +10067,7 @@
   {
     "Op Id": 1209,
     "Operator Name": "Dadhich Finserv Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,20}$",
@@ -10166,7 +10166,7 @@
   {
     "Op Id": 1218,
     "Operator Name": "MAS Financial Services Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{5,9}$",
@@ -10177,7 +10177,7 @@
   {
     "Op Id": 1220,
     "Operator Name": "SRLF Micro Care Foundation",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Optional",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,20}$",
@@ -10243,7 +10243,7 @@
   {
     "Op Id": 1226,
     "Operator Name": "Mgm Financiers",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{1,15}$",
@@ -10254,7 +10254,7 @@
   {
     "Op Id": 1227,
     "Operator Name": "Reliant Credits India Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{5,20}$",
@@ -10265,7 +10265,7 @@
   {
     "Op Id": 1228,
     "Operator Name": "Visionfund",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^(?:-?\\\\d){1,15}$",
@@ -10298,7 +10298,7 @@
   {
     "Op Id": 1233,
     "Operator Name": "IFL Housing Finance Ltd Gold Loan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{12,20}$",
@@ -10309,7 +10309,7 @@
   {
     "Op Id": 1234,
     "Operator Name": "IFL Housing Finance Ltd Home Loan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{12,20}$",
@@ -10353,7 +10353,7 @@
   {
     "Op Id": 1238,
     "Operator Name": "Supra Pacific Financial Services Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^1\\\\d{13}$",
@@ -10364,7 +10364,7 @@
   {
     "Op Id": 1239,
     "Operator Name": "Riyanjali Nidhi Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,20}$",
@@ -10398,7 +10398,7 @@
   {
     "Op Id": 1243,
     "Operator Name": "Aham Housing Finance Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^([A-Z]{0,4})\\\\/([A-Z]{0,4})\\\\/([A-Z]{0,4})\\\\/(\\\\d{9})$",
@@ -10409,7 +10409,7 @@
   {
     "Op Id": 1244,
     "Operator Name": "Babasaheb Deshmukh Sahakari Bank Limited Atpadi",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{3,30}$",
@@ -10452,7 +10452,7 @@
   {
     "Op Id": 1250,
     "Operator Name": "Bazaari Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,20}$",
@@ -10463,7 +10463,7 @@
   {
     "Op Id": 1251,
     "Operator Name": "Megha Holdings Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{3,8}$",
@@ -10474,7 +10474,7 @@
   {
     "Op Id": 1252,
     "Operator Name": "Secureind Nidhi",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{3,30}$",
@@ -10507,7 +10507,7 @@
   {
     "Op Id": 1256,
     "Operator Name": "Boundparivar Loan",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{3,30}$",
@@ -10518,7 +10518,7 @@
   {
     "Op Id": 1257,
     "Operator Name": "HMKA Nidhi Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{3,30}$",
@@ -10606,7 +10606,7 @@
   {
     "Op Id": 1265,
     "Operator Name": "Infinity Fincorp Solutions Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z]{7}\\\\d{7,8}$",
@@ -10676,7 +10676,7 @@
   {
     "Op Id": 1271,
     "Operator Name": "Unigold Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{4,15}$",
@@ -10687,7 +10687,7 @@
   {
     "Op Id": 1272,
     "Operator Name": "CSL Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{5,40}$",
@@ -10786,7 +10786,7 @@
   {
     "Op Id": 1282,
     "Operator Name": "Emerald Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[6-9][0-9]{9}$",
@@ -10797,7 +10797,7 @@
   {
     "Op Id": 1283,
     "Operator Name": "Jeevan Dhara",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z@_.:-]{3,30}$",
@@ -10808,7 +10808,7 @@
   {
     "Op Id": 1284,
     "Operator Name": "Mere Apne Micro Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[6-9][0-9]{9}$",
@@ -10831,7 +10831,7 @@
   {
     "Op Id": 1286,
     "Operator Name": "Finnable",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z-]{10,20}$",
@@ -10842,7 +10842,7 @@
   {
     "Op Id": 1287,
     "Operator Name": "IFFCO Kisan Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{12,22}$",
@@ -10854,7 +10854,7 @@
   {
     "Op Id": 1288,
     "Operator Name": "Mere Apne Nidhi",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[6-9][0-9]{9}$",
@@ -10955,7 +10955,7 @@
   {
     "Op Id": 1297,
     "Operator Name": "Chaitanya Godavari Grameena Bank",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{15,15}$",
@@ -10966,7 +10966,7 @@
   {
     "Op Id": 1298,
     "Operator Name": "Indian Bank Loan EMI",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{15}$",
@@ -10978,7 +10978,7 @@
   {
     "Op Id": 1299,
     "Operator Name": "Tiffany Finance Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{7,30}$",
@@ -11012,7 +11012,7 @@
   {
     "Op Id": 1303,
     "Operator Name": "Singularity Creditworld Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z]{4}[0-9]{9}$",
@@ -11067,7 +11067,7 @@
   {
     "Op Id": 1308,
     "Operator Name": "Anscor Capital And Investment Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{3,30}$",
@@ -11078,7 +11078,7 @@
   {
     "Op Id": 1309,
     "Operator Name": "Aristo Securities Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[5-9][0-9]{9}$",
@@ -11089,7 +11089,7 @@
   {
     "Op Id": 1310,
     "Operator Name": "Dhanmax Finance Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,20}$",
@@ -11100,7 +11100,7 @@
   {
     "Op Id": 1311,
     "Operator Name": "M S Fincap Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,20}$",
@@ -11179,7 +11179,7 @@
   {
     "Op Id": 1320,
     "Operator Name": "Suneet Finman Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{5,20}$",
@@ -11190,7 +11190,7 @@
   {
     "Op Id": 1321,
     "Operator Name": "FeeMonk",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{10,15}$",
@@ -11201,7 +11201,7 @@
   {
     "Op Id": 1322,
     "Operator Name": "Gobrapota Asharalo Nidhi Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,13}$",
@@ -11212,7 +11212,7 @@
   {
     "Op Id": 1323,
     "Operator Name": "Aryabharat Digital Nighi Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,13}$",
@@ -11223,7 +11223,7 @@
   {
     "Op Id": 1324,
     "Operator Name": "Del Capital Private Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Z0-9-]{8,25}$",
@@ -11234,7 +11234,7 @@
   {
     "Op Id": 1327,
     "Operator Name": "Girnar Capital (Formerly Khemlani Finance)",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,25}$",
@@ -11290,7 +11290,7 @@
   {
     "Op Id": 1333,
     "Operator Name": "Bhgala Livelihood Finserv Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{4,12}$",
@@ -11301,7 +11301,7 @@
   {
     "Op Id": 1334,
     "Operator Name": "Vedika Credit Capital Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9 -]{1,50}$",
@@ -11411,7 +11411,7 @@
   {
     "Op Id": 1346,
     "Operator Name": "Achiievers Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[6-9][0-9]{9}$",
@@ -11422,7 +11422,7 @@
   {
     "Op Id": 1347,
     "Operator Name": "HGNL Nidhi Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z-_]{3,20}$",
@@ -11433,7 +11433,7 @@
   {
     "Op Id": 1348,
     "Operator Name": "Javana Nidhi Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,20}$",
@@ -11444,7 +11444,7 @@
   {
     "Op Id": 1349,
     "Operator Name": "Lendingkart Finance Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z.-]{6,24}$",
@@ -11455,7 +11455,7 @@
   {
     "Op Id": 1350,
     "Operator Name": "Sakthi Finance Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9/]{10,12}$",
@@ -11466,7 +11466,7 @@
   {
     "Op Id": 1351,
     "Operator Name": "Sampournasamuh M F",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{5,10}$",
@@ -11642,7 +11642,7 @@
   {
     "Op Id": 1370,
     "Operator Name": "Kosamattam Finance Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{12,20}$",
@@ -11654,7 +11654,7 @@
   {
     "Op Id": 1371,
     "Operator Name": "Shri Ram Finance Corporation Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]{1,20}$",
@@ -11689,7 +11689,7 @@
   {
     "Op Id": 1375,
     "Operator Name": "Rupitol Finance Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[a-zA-Z0-9]*$",
@@ -11701,7 +11701,7 @@
   {
     "Op Id": 1376,
     "Operator Name": "VFS Capital Ltd - MSME Loans",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]*$",
@@ -11712,7 +11712,7 @@
   {
     "Op Id": 1377,
     "Operator Name": "Ziniya Nidhi Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,13}$",
@@ -11803,7 +11803,7 @@
   {
     "Op Id": 1386,
     "Operator Name": "Adarsh Laxmi Nidhi",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z-_]{3,20}$",
@@ -11814,7 +11814,7 @@
   {
     "Op Id": 1387,
     "Operator Name": "Sanritik Nidhi Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{1,18}$",
@@ -11952,7 +11952,7 @@
   {
     "Op Id": 1401,
     "Operator Name": "Bajaj Auto Credit Limited",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[A-Za-z0-9]{14}$",
@@ -11963,7 +11963,7 @@
   {
     "Op Id": 1402,
     "Operator Name": "Chachyot Nidhi",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z-_]{3,20}$",
@@ -11974,7 +11974,7 @@
   {
     "Op Id": 1403,
     "Operator Name": "Metrocity Finance Pvt Ltd",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z-_]{3,20}$",
@@ -12136,7 +12136,7 @@
   {
     "Op Id": 1417,
     "Operator Name": "Upkaar Micro Finance",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9]{12,12}$",
@@ -12147,7 +12147,7 @@
   {
     "Op Id": 1418,
     "Operator Name": "Blackbuck Finserve",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Not Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{6,20}$",
@@ -12158,7 +12158,7 @@
   {
     "Op Id": 1419,
     "Operator Name": "KPS MICRO SERVICES FOUNDATION",
-    "Category": "EMI Payment",
+    "Category": "EMI",
     "ViewBill": "Required",
     "BBPS Enabled": true,
     "Regex": "^[0-9A-Za-z]{4,7}$",

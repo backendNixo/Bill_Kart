@@ -1,10 +1,11 @@
-import {GetCableOptByBillerID,GetCableOperatortList,ValidateCableOperator} from "../../../controllers/services/cable/cable.controller.js";
+import {GetCableOptByBillerID,GetCableOperatortList,CableOperatorConfig,ValidateCableOperator} from "../../../controllers/services/cable/cable.controller.js";
 import express from "express";
 const router=express.Router();
 import {verifyToken} from "../../../middleware/verifyToken.js";
 
-router.route('/cable_list/:category').get(verifyToken,GetCableOperatortList);
-router.route('/:category/:billerId').post(verifyToken,ValidateCableOperator);
+router.route('/cable_list').get(verifyToken,GetCableOperatortList);
+router.route('/cable_opt/:billerId').get(verifyToken,CableOperatorConfig);
+router.route('/validate_cable/:billerId').post(verifyToken,ValidateCableOperator);
 
 
 export default router;

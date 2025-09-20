@@ -6,7 +6,8 @@ DeleteService,
 UpdateServiceStatus,
 UpdateService,
 AllowServicePermission,
-removeServicePermission
+removeServicePermission,
+UserNameList
 } from "../../controllers/admin/service.controller.js";
 import {verifyToken} from "../../middleware/verifyToken.js";
 
@@ -120,13 +121,19 @@ router.route('/allow_service_permission/:id').post(verifyToken,AllowServicePermi
 /**
  * @swagger
  * /remove_service_permission/:serviceid/:userid:
- *   post:
+ *   get:
  *     summary: Remove Service Permission
  *     tags: [Service Apis]
  *     responses:
  *       200:
  *         description: Remove Service Permission To User Successfully!
  */
-router.route('/remove_service_permission/:serviceid/:userid').post(verifyToken,removeServicePermission);
+router.route('/remove_service_permission/:serviceid/:userid').get(verifyToken,removeServicePermission);
+
+
+router.route('/get_allowed_user_username').get(verifyToken,UserNameList);
+
+
+
 
 export default router;

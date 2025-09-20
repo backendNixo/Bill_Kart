@@ -13,14 +13,19 @@ export const CreateService = async (req, res) => {
             return res.status(400).json(new APIError("Service Name Required", 400));
         }
 
+        console.log(name, "       ", allowedUsers);
+
         const description = req.body.description ?? "";
         const isActive = req.body.isActive ?? false;
 
         let usersId = [];
         if (Array.isArray(allowedUsers) && allowedUsers.length > 0) {
-            const users = await userModel.find({ userName: { $in: allowedUsers } });
-            usersId = users.map((u) => u._id);
+            // const users = await userModel.find({ userName: { $in: allowedUsers } });
+            usersId = allowedUsers.map((u) => u._id);
+        } else {
+            return res.status(400).json(new APIError("Empty List", 400));
         }
+        console.log(usersId);
 
         await serviceModel.create({
             name,
@@ -161,7 +166,7 @@ export const AllowServicePermission = async (req, res) => {
 
 export const removeServicePermission = async (req, res) => {
     try {
-        const serviceId = req.params.serviceid; 
+        const serviceId = req.params.serviceid;
         const userId = req.params.userid;
         if (!serviceId) {
             return res.status(400).json(new APIError("Service Id Missing", 400));
@@ -186,6 +191,30 @@ export const removeServicePermission = async (req, res) => {
             .json(new APIError("Error :" + error.message, 500));
     }
 };
+
+export const UserNameList = async (req, res) => {
+    try {
+        const serviceList = await serviceModel
+            .findOne({ adminId: req.user.id })
+            .populate("allowedUsers", "userName");
+
+        if (!serviceList) {
+            return res.status(404).json(new APIError("No Services Found", 404));
+        }
+
+        const userList = serviceList.allowedUsers.map(u => ({
+            id: u._id,
+            userName: u.userName,
+        }));
+
+        return res
+            .status(200)
+            .json(new APIResponse("Services Users Name List Fetched Successfully!", 200, userList));
+    } catch (error) {
+        return res.status(500).json(new APIError("Error :" + error, 500));
+    }
+};
+
 
 
 

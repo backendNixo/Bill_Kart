@@ -1,10 +1,11 @@
-import {GetEMIOptByBillerID,GetEMIOperatortList,ValidateEMIPaymentOperator} from "../../../controllers/services/EMIPayment/EmiPayment.controller.js";
+import {GetEMIOptByBillerID,GetEMIOperatortList,ValidateEMIPaymentOperator,EMIOperatorConfig} from "../../../controllers/services/EMIPayment/EmiPayment.controller.js";
 import express from "express";
 const router=express.Router();
 import {verifyToken} from "../../../middleware/verifyToken.js";
 
-router.route('/emi_list/:category').get(verifyToken,GetEMIOperatortList);
-router.route('/:category/:billerId').post(verifyToken,ValidateEMIPaymentOperator);
+router.route('/emi_list').get(verifyToken,GetEMIOperatortList);
+router.route('/emi_opt/:billerId').get(verifyToken,EMIOperatorConfig);
+router.route('/validate_emi/:billerId').post(verifyToken,ValidateEMIPaymentOperator);
 
 
 export default router;
