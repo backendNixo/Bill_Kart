@@ -66,33 +66,57 @@ export const ValidateBroadbandOperators = async (req, res) => {
             (op) => op.Category === "Broadband" && op.BillerId === billerId
         );
 
+
         if (!operator) {
             return res.status(400).json(new APIError("Invalid operator", 400));
         }
         const userData = req.body;
+        
+        if (!userData) {
+            return res.status(400).json(new APIError("Required Data Not Found", 400));
+        }
 
+
+        const userKeys = Object.keys(userData).map(k => k);
+        console.log("User keys:", userKeys);
+
+        const possibleFields = [operator.Name, operator.cn, operator.adwithregex]
+            .filter(f => typeof f === "string")
+            .map(f => f);
+
+
+        console.log("Possible fields:", possibleFields);
         const validations = Object.entries(userData).map(([key, value]) => {
-            const cleanValue = String(value).trim();
-            if (value !== operator[key]) {
-                return false;
+            const normalizedKey = key;
+            if (possibleFields.includes(normalizedKey)) {
+                const regex = new RegExp(operator.Regex);
+                console.log(regex);
+                let testResult= regex.test(String(value))
+                return {
+                    field: key,
+                    value,
+                    isValid: testResult
+                };
+            } else {
+                return {
+                    field: key,
+                    value,
+                    isValid: false,
+                    message: "Field not found in operator"
+                };
             }
-
-            return {
-                field: key,
-                value: cleanValue,
-                isValid: true,
-            };
         });
 
-        console.log(validations);
+        console.log("Validations:", validations);
         const hasInvalid = validations.some(v => !v.isValid);
         if (hasInvalid) {
             await broadbandModel.create({
                 userId: req.user.id,
                 "parameter.category": "Broadband",
                 "parameter.billerId": billerId,
-                parameter: userData,
+                parameter: userData
             });
+
             return res.status(400).json(new APIError("One or more fields are invalid", 400, validations));
         }
         return res.status(200).json(new APIResponse("Operator validated successfully", 200, operator));
