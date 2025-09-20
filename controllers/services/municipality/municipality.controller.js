@@ -28,10 +28,7 @@ export const GetMunicipalityOperatortList = async (req, res) => {
         });
 
         if (!operators.length) {
-            return res.status(404).json({
-                success: false,
-                message: "No operators found for this category",
-            });
+            return res.status(400).json(new APIError("No operators found for this category", 400));
         }
 
         return res.status(200).json(new APIResponse("Municipality Operator fetched successfully!", 200, operators));
@@ -49,21 +46,11 @@ export const MunicipalityOperatorConfig = async (req, res) => {
         );
 
         if (!operator) {
-            return res.status(404).json({
-                success: false,
-                message: "Invalid operator",
-            });
+            return res.status(400).json(new APIError("Invalid operator", 400));
         }
-        return res.status(200).json({
-            success: true,
-            message: "Municipality Operator",
-            operator
-        });
+        return res.status(200).json(new APIResponse("LPG Booking Operator", 200, operator));
     } catch (error) {
-
-        console.log(error);
-
-        return res.status(500).json({ success: false, error: error.message });
+        return res.status(500).json(new APIError("Error: " + error.message, 500));
     }
 };
 
@@ -76,10 +63,7 @@ export const ValidateMunicipalitytOperator = async (req, res) => {
         );
 
         if (!operator) {
-            return res.status(404).json({
-                success: false,
-                message: "Invalid operator",
-            });
+            return res.status(400).json(new APIError("Invalid operator", 400));
         }
         const userData = req.body;
 
@@ -106,25 +90,13 @@ export const ValidateMunicipalitytOperator = async (req, res) => {
                 parameter: userData,
             });
 
-            return res.status(400).json({
-                success: false,
-                message: "One or more fields are invalid",
-                details: validations,
-                saved: true
-            });
+            return res.status(400).json(new APIError("One or more fields are invalid", 400, validations));
         }
 
-        return res.status(200).json({
-            success: true,
-            message: "Operator validated successfully",
-            operator,
-            data: userData,
-        });
+        return res.status(200).json(new APIResponse("Operator validated successfully", 200, operator));
     } catch (error) {
 
-        console.log(error);
-
-        return res.status(500).json({ success: false, error: error.message });
+        return res.status(500).json(new APIError("Error: " + error.message, 500));
     }
 };
 
