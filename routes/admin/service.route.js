@@ -130,7 +130,16 @@ router.route('/allow_service_permission/:id').post(verifyToken,AllowServicePermi
  */
 router.route('/remove_service_permission/:serviceid/:userid').get(verifyToken,removeServicePermission);
 
-
+/**
+ * @swagger
+ * /get_allowed_user_username:
+ *   get:
+ *     summary: Allow Users Name List
+ *     tags: [Service Apis]
+ *     responses:
+ *       200:
+ *         description: Allow Service Users Name List Fetched Successfully!
+ */
 router.route('/get_allowed_user_username').get(verifyToken,UserNameList);
 
 

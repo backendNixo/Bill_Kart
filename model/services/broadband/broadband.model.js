@@ -8,38 +8,6 @@ const broadBandSchema = new mongoose.Schema(
             required: true,
         },
         parameter: {
-            // opId: {
-            //     type: Number,
-            // },
-            // billerId: {
-            //     type: String,
-            //     required: true,
-            // },
-            // operatorName: {
-            //     type: String,
-            //     trim: true,
-            // },
-            // category: {
-            //     type: String,
-            //     required: true,
-            // },
-            // ViewBill: {
-            //     type:String
-            // },
-            // BBPSEnabled: {
-            //     type: Boolean,
-            //     default: false,
-            // },
-            // Regex: {
-            //     type: String,
-            // },
-            // Name: {
-            //     type: String,
-            //     trim: true,
-            // },
-            // cn: {
-            //     type: String,
-            // },
             type:mongoose.Schema.Types.Mixed,
             unique:true
         },

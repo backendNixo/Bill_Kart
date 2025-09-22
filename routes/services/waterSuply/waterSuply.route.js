@@ -3,6 +3,8 @@ import express from "express";
 const router=express.Router();
 import {verifyToken} from "../../../middleware/verifyToken.js";
 
+
+router.route('/get_watersupply_byid/:billerId').get(verifyToken,GetWaterSuplyOptByBillerID);
 router.route('/waterSuply_list').get(verifyToken,GetWaterSuplyOperatortList);
 router.route('/watersupply_opt/:billerId').get(verifyToken,WaterSupplyOperatorConfig);
 router.route('/validate_watersupply/:billerId').post(verifyToken,ValidateWaterSuplyOperator);

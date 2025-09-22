@@ -8,6 +8,8 @@ import express from "express";
 const router=express.Router();
 import {verifyToken} from "../../../middleware/verifyToken.js";
 
+
+router.route('/get_municipal_byid/:billerId').get(verifyToken,GetMunicipalTaxOptByBillerID);
 router.route('/municipaltax_list').get(verifyToken,GetMunicipalTaxOperatortList);
 router.route('/municipaltax_opt/:billerId').get(verifyToken,MunicipalTaxOperatorConfig);
 router.route('/validate_municipaltax/:billerId').post(verifyToken,ValidateMunicipalTaxtOperator);
