@@ -26,8 +26,8 @@ export const login = async (req, res) => {
       return res.status(404).json(new APIError("User not found", 404));
     }
 
-    const match = await bcrypt.compare(password, user.password);
-    if (!match) {
+    // const match = await bcrypt.compare(password, user.password);
+    if (password!==user.password) {
       return res.status(401).json(new APIError("Invalid credentials", 401));
     }
 

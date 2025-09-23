@@ -7,3 +7,4 @@ export function success() {
 export function failed() {
     return false;
 }
+

@@ -215,8 +215,29 @@ export const UserNameList = async (req, res) => {
     }
 };
 
+export const GetUsersAllowedServices = async (req, res) => {
+    try {
+        const userId = req.params.id;
 
+        const serviceList = await serviceModel.find({ adminId: req.user.id },{name:1,allowedUsers:1});
+        console.log(serviceList);
+        
+        if (serviceList.length === 0) {
+            return res.status(404).json(new APIError("No Services Found", 404));
+        }
 
-
-
+        const userServices = serviceList.filter(service =>
+            service.allowedUsers.some(u => u.toString() === userId.toString())
+        );
+        return res.status(200).json(
+            new APIResponse(
+                "Users Allowed Services List Fetched Successfully!",
+                200,
+                userServices
+            )
+        );
+    } catch (error) {
+        return res.status(500).json(new APIError("Error :" + error, 500));
+    }
+};
 

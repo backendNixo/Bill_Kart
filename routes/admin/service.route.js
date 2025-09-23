@@ -7,7 +7,8 @@ UpdateServiceStatus,
 UpdateService,
 AllowServicePermission,
 removeServicePermission,
-UserNameList
+UserNameList,
+GetUsersAllowedServices
 } from "../../controllers/admin/service.controller.js";
 import {verifyToken} from "../../middleware/verifyToken.js";
 
@@ -141,6 +142,19 @@ router.route('/remove_service_permission/:serviceid/:userid').get(verifyToken,re
  *         description: Allow Service Users Name List Fetched Successfully!
  */
 router.route('/get_allowed_user_username').get(verifyToken,UserNameList);
+
+
+/**
+ * @swagger
+ * /get_user_service_list/:id:
+ *   get:
+ *     summary: Get Users Service List
+ *     tags: [Service Apis]
+ *     responses:
+ *       200:
+ *         description: Get Users Service List Successfully!
+ */
+router.route('/get_user_service_list/:id').get(verifyToken,GetUsersAllowedServices)
 
 
 

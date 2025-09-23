@@ -37,7 +37,13 @@ const swaggerOptions = {
         "./routes/users/offer.routes.js",
         "./routes/admin/api.route.js",
         "./routes/admin/notification.route.js",
-        "./routes/admin/service.route.js"
+        "./routes/admin/service.route.js",
+        "./routes/services/broadband/broadband.routes.js",
+        "./routes/services/cable/cable.route.js",
+        "./routes/services/creditCardPay/creditCard.route.js",
+        "./routes/services/datacardPrepaid/dataCard.route.js",
+        "./routes/services/donation/donation.route.js",
+        "./routes/services/DTH/dth.route.js"
     ],
 };
 

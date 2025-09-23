@@ -10,7 +10,8 @@ import {
     UpdateUserStatus,
     BlockUser,
     DeletedUser,
-    GetAllUserNameList
+    GetAllUserNameList,
+    CreateUser
 } from "../../controllers/admin/auth.controller.js";
 import express from "express";
 import { verifyToken } from "../../middleware/verifyToken.js";
@@ -219,6 +220,41 @@ router.route('/update_user_delete/:id').patch(verifyToken, DeletedUser);
 
 router.route('/get_all_users_name_list').get(verifyToken,GetAllUserNameList);
 
+
+/**
+ * @swagger
+ * /create_user:
+ *   post:
+ *     summary: Create User
+ *     tags: [Admin Auth Apis]
+ *     parameters:
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               userName:
+ *                 type: string
+ *               mobileNumber:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *               status:
+ *                 type: boolean
+ *               block:
+ *                 type: boolean
+ *               deleted:
+ *                 type: boolean
+ *     responses:
+ *       200:
+ *         description: User Created Successfully!
+ */
+router.route('/create_user').post(verifyToken,CreateUser);
 
 
 export default router;
