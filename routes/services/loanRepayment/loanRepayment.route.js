@@ -2,7 +2,8 @@ import {
     GetLoanRepaymentOptByBillerID,
     GetLoanRepaymentOperatortList,
     LoanRepaymentOperatorConfig,
-    ValidateLoanRepaymentOperator
+    ValidateLoanRepaymentOperator,
+    createLoanPayment
 } from "../../../controllers/services/loanRepayment/loanRepayment.controller.js"
 import express from "express";
 const router=express.Router();
@@ -13,6 +14,6 @@ router.route('/get_loan_byid/:billerId').get(verifyToken,GetLoanRepaymentOptByBi
 router.route('/loanRepayment_list').get(verifyToken,GetLoanRepaymentOperatortList);
 router.route('/loanRepayment_opt/:billerId').get(verifyToken,LoanRepaymentOperatorConfig);
 router.route('/validate_loanRepayment/:billerId').post(verifyToken,ValidateLoanRepaymentOperator);
-
+router.route('/create_loan_payment').post(verifyToken, createLoanPayment);
 
 export default router;

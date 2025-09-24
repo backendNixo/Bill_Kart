@@ -1,4 +1,10 @@
-import {BroadbandOperatorConfig, GetbroadbandOptByBillerID,GetbroadbandOptList,ValidateBroadbandOperators} from "../../../controllers/services/broadband/broadband.controller.js";
+import {
+    BroadbandOperatorConfig, 
+    GetbroadbandOptByBillerID,
+    GetbroadbandOptList,
+    ValidateBroadbandOperators,
+    createBroadbandPayment
+} from "../../../controllers/services/broadband/broadband.controller.js";
 import express from "express";
 const router=express.Router();
 import {verifyToken} from "../../../middleware/verifyToken.js";
@@ -41,5 +47,7 @@ router.route('/broadband_opt/:billerId').get(verifyToken,BroadbandOperatorConfig
  */
 router.route('/validate_broadband/:billerId').post(verifyToken,ValidateBroadbandOperators);
 
+
+router.route('/create_broadband_payment').post(verifyToken,createBroadbandPayment);
 
 export default router;

@@ -106,6 +106,7 @@ export const GetAdminProfile = async (req, res) => {
 
 //USER ROUTES =========================================================
 
+
 export const CreateUser = async (req, res) => {
     try {
         const { userName, mobileNumber, password } = req.body;

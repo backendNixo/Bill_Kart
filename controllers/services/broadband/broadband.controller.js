@@ -132,61 +132,31 @@ export const ValidateBroadbandOperators = async (req, res) => {
 };
 
 
-
-
-export const AddOrderHistory = async (req, res) => {
+function forBroadband(req) {
+    return {
+        success: true,
+        orderId: "MZXR45798XDD",
+        details: req
+    }
+}
+export const createBroadbandPayment = async (req, res) => {
     try {
-        const operatorAPIRes = ""; // call operator api
-
-        if (!operatorAPIRes.success) {
-            return res
-                .status(400)
-                .json(new APIError("Operator validation failed", 400));
-        }
-
         const order = await OrderHistory.create({
             userId: req.user.id,
-            userData: operatorAPIRes.data,
-            paymentStatus: false
+            userData: userData
         });
 
-        return res.status(200).json(new APIResponse("Order History Stored Successfully !", 200)
-        );
+
+        let response = forBroadband(req.body);
+
+        order.paymentStatus=response.success;
+        order.save()
+        return res.status(200).json(new APIResponse("Process Done",200,response));
+
     } catch (error) {
         return res.status(500).json(new APIError("Error: " + error.message, 500));
     }
-};
-
-
-export const UpdatePaymentStatus = async (req, res) => {
-    try {
-        const paymentstatus = ""; // call payment  api
-        const { orderId } = req.body;
-
-        if (!orderId) {
-            return res.status(400).json(new APIError("Order Id is required", 400));
-        }
-    
-        const order = await OrderHistory.findOne({_id:orderId});
-        if (!order) {
-            return res.status(404).json(new APIError("Order not found", 404));
-        }
-        order.paymentStatus=paymentstatus.success;
-        order.save();
-        
-        return res.status(200).json(
-            new APIResponse("Payment Status Updated Successfully", 200)
-        );
-    } catch (error) {
-        return res.status(500).json(new APIError("Error: " + error.message, 500));
-    }
-};
-
-
-
-
-
-
+}
 
 
 

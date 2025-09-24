@@ -10,8 +10,9 @@ const orderSchema=new mongoose.Schema({
         required:true
     },
     paymentStatus:{
-        type:Boolean,
-        default:false
+        type:String,
+        default:"progress",
+        enum:["progress","success","failed"]
     }
 },{timestamps:true});
 

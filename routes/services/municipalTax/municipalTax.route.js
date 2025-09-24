@@ -2,7 +2,8 @@ import {
     GetMunicipalTaxOptByBillerID,
     GetMunicipalTaxOperatortList,
     MunicipalTaxOperatorConfig,
-    ValidateMunicipalTaxtOperator
+    ValidateMunicipalTaxtOperator,
+    createMunicipalTaxPayment
 } from "../../../controllers/services/municipalTax/municipal.controller.js";
 import express from "express";
 const router=express.Router();
@@ -13,6 +14,5 @@ router.route('/get_municipal_byid/:billerId').get(verifyToken,GetMunicipalTaxOpt
 router.route('/municipaltax_list').get(verifyToken,GetMunicipalTaxOperatortList);
 router.route('/municipaltax_opt/:billerId').get(verifyToken,MunicipalTaxOperatorConfig);
 router.route('/validate_municipaltax/:billerId').post(verifyToken,ValidateMunicipalTaxtOperator);
-
-
+router.route('/create_municipaltax_payment').post(verifyToken, createMunicipalTaxPayment);
 export default router;

@@ -2,6 +2,7 @@ import APIError from "../../../utils/APIError.js";
 import { APIResponse } from "../../../utils/APIResponse.js";
 import fastagModel from "../../../model/services/fastag/fastag.model.js";
 import fs from "fs";
+import { OrderHistory } from "../../../model/users/orderHistory.model.js";
 const Operators = JSON.parse(fs.readFileSync("./operators.json"));
 
 
@@ -127,6 +128,32 @@ export const ValidateFastagOperator  = async (req, res) => {
     }
 };
 
+
+function FastagAPI(req) {
+    return {
+        success: true,
+        orderId: "MZXR45798XDD",
+        details: req
+    }
+}
+export const createFastagPayment = async (req, res) => {
+    try {
+        const order = await OrderHistory.create({
+            userId: req.user.id,
+            userData: userData
+        });
+
+
+        let response = FastagAPI(req.body);
+
+        order.paymentStatus=response.success;
+        order.save()
+        return res.status(200).json(new APIResponse("Process Done",200,response));
+
+    } catch (error) {
+        return res.status(500).json(new APIError("Error: " + error.message, 500));
+    }
+}
 
 
 

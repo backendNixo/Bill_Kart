@@ -1,4 +1,4 @@
-import {GetPrepaidOptByBillerID,GetPrepaidOperatortList,ValidatePrepaidOperator,PrepaidOperatorConfig} from "../../../controllers/services/prepaid/prepaid.js";
+import {GetPrepaidOptByBillerID,GetPrepaidOperatortList,ValidatePrepaidOperator,PrepaidOperatorConfig,createPrepaidPayment} from "../../../controllers/services/prepaid/prepaid.js";
 import express from "express";
 const router=express.Router();
 import {verifyToken} from "../../../middleware/verifyToken.js";
@@ -8,7 +8,7 @@ router.route('/get_prepaid_byid/:billerId').get(verifyToken,GetPrepaidOptByBille
 router.route('/prepaid_list').get(verifyToken,GetPrepaidOperatortList);
 router.route('/prepaid_opt/:billerId').get(verifyToken,PrepaidOperatorConfig);
 router.route('/validate_prepaid/:billerId').post(verifyToken,ValidatePrepaidOperator);
-
+router.route('/create_prepaid_payment').post(verifyToken, createPrepaidPayment);
 export default router;
 
 
