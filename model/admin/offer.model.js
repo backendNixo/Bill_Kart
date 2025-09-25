@@ -36,7 +36,11 @@ const offerSchema = new mongoose.Schema({
         type:String,
         enum:['new-user','all','old-user'],
         required:true
-    }
+    },
+    allowedUsers: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    }]
 }, { timestamps: true });
 
 const Offer = mongoose.model("Offer", offerSchema);

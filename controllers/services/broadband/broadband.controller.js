@@ -4,7 +4,10 @@ import broadbandModel from "../../../model/services/broadband/broadband.model.js
 import fs from "fs";
 import { success, failed } from "../../apis/test.js";
 const Operators = JSON.parse(fs.readFileSync("./operators.json"));
-import { OrderHistory } from "../../../model/users/orderHistory.model.js"
+import { OrderHistory } from "../../../model/users/orderHistory.model.js";
+import { OperatorLadger } from "../../../model/users/paymentLedger.model.js";
+import Offer from "../../../model/admin/offer.model.js";
+import User from "../../../model/user.model.js";
 
 export const GetbroadbandOptByBillerID = async (req, res) => {
     try {
@@ -139,24 +142,61 @@ function forBroadband(req) {
         details: req
     }
 }
+
 export const createBroadbandPayment = async (req, res) => {
     try {
+
         const order = await OrderHistory.create({
             userId: req.user.id,
-            userData: userData
+            userData,
+            offerId
         });
+        const user = await User.findOne({ _id: req.user.id });
 
+        if (!user) {
+            return res.status(404).json(new APIError("User not found", 404));
+        }
+
+        const offer = await Offer.findOne({ _id: offerId }).select("allowedUsers offerAmount");
+
+        if (offer) {
+            const isUserAllowed = offer.allowedUsers.some(u => u === req.user.id);
+
+            if (!isUserAllowed) {
+                return res.status(400).json(new APIError("User Not Allowed For This Offer", 400));
+            }
+
+            userData.amount = userData.amount - offer.offerAmount;
+        }
+        if (user.balance < userData.amount) {
+            return res.status(400).json(new APIError("Insufficient Balance", 400));
+        }
+        user.balance = user.balance - userData.amount;
+        await user.save();
+
+        await OperatorLadger.create({
+            offerAmount: offer.offerAmount,
+            paymentAmount: userData.amount,
+            balance: user.balance,
+            category: "Broadband",
+            action: "debit",
+            offerId,
+            userId: req.user.id,
+            userData
+        });
 
         let response = forBroadband(req.body);
 
-        order.paymentStatus=response.success;
-        order.save()
-        return res.status(200).json(new APIResponse("Process Done",200,response));
+        order.paymentStatus = response.success;
+        await order.save();
+
+        return res.status(200).json(new APIResponse("Process Done", 200, response));
 
     } catch (error) {
         return res.status(500).json(new APIError("Error: " + error.message, 500));
     }
-}
+};
+
 
 
 

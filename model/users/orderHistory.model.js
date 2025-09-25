@@ -1,19 +1,23 @@
 import mongoose from "mongoose";
 
-const orderSchema=new mongoose.Schema({
-    userData:{
-        type:mongoose.Schema.Types.Mixed
+const orderSchema = new mongoose.Schema({
+    userData: {
+        type: mongoose.Schema.Types.Mixed
     },
-    userId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User",
-        required:true
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
     },
-    paymentStatus:{
-        type:String,
-        default:"progress",
-        enum:["progress","success","failed"]
-    }
-},{timestamps:true});
+    paymentStatus: {
+        type: String,
+        default: "progress",
+        enum: ["progress", "success", "failed"]
+    },
+    offerId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Offer"
+    },
+}, { timestamps: true });
 
-export const OrderHistory=mongoose.model("OrderHistory",orderSchema);
+export const OrderHistory = mongoose.model("OrderHistory", orderSchema);

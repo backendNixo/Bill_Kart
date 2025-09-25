@@ -3,21 +3,24 @@ import { APIResponse } from "../../../utils/APIResponse.js";
 import LPGModel from "../../../model/services/lpg/lpg.model.js"
 import fs from "fs";
 import { OrderHistory } from "../../../model/users/orderHistory.model.js";
+import User from "../../../model/user.model.js";
+import Offer from "../../../model/admin/offer.model.js";
+import { OperatorLadger } from "../../../model/users/paymentLedger.model.js";
 const Operators = JSON.parse(fs.readFileSync("./operators.json"));
 
 
 export const GetLPGOptByBillerID = async (req, res) => {
     try {
-       const billerId = req.params.billerId;
+        const billerId = req.params.billerId;
 
         if (!billerId) {
             return res.status(400).json(new APIError("BillerId required", 400));
         }
 
         const operatorIds = await broadbandModel.find({ "parameter.billerId": billerId, userId: req.user.id }, { _id: 1 });
-        
+
         console.log(operatorIds);
-        
+
         if (operatorIds.length == 0) {
             return res.status(400).json(new APIError("Operator Not Found", 400));
         }
@@ -62,7 +65,7 @@ export const LPGOperatorConfig = async (req, res) => {
     }
 };
 
-export const ValidateLPGtOperator  = async (req, res) => {
+export const ValidateLPGtOperator = async (req, res) => {
     try {
         const { billerId } = req.params;
 
@@ -92,7 +95,7 @@ export const ValidateLPGtOperator  = async (req, res) => {
             if (possibleFields.includes(normalizedKey)) {
                 const regex = new RegExp(operator.Regex);
                 console.log(regex);
-                let testResult= regex.test(String(value))
+                let testResult = regex.test(String(value))
                 return {
                     field: key,
                     value,
@@ -137,14 +140,47 @@ export const createLPGPayment = async (req, res) => {
     try {
         const order = await OrderHistory.create({
             userId: req.user.id,
-            userData: userData
+            userData: userData,
+            offerId
         });
+        const user = await User.findOne({ _id: req.user.id });
 
+        if (!user) {
+            return res.status(404).json(new APIError("User not found", 404));
+        }
+
+        const offer = await Offer.findOne({ _id: offerId }).select("allowedUsers offerAmount");
+
+        if (offer) {
+            const isUserAllowed = offer.allowedUsers.some(u => u === req.user.id);
+
+            if (!isUserAllowed) {
+                return res.status(400).json(new APIError("User Not Allowed For This Offer", 400));
+            }
+
+            userData.amount = userData.amount - offer.offerAmount;
+        }
+        if (user.balance < userData.amount) {
+            return res.status(400).json(new APIError("Insufficient Balance", 400));
+        }
+        user.balance = user.balance - userData.amount;
+        await user.save();
+
+        await OperatorLadger.create({
+            offerAmount: offer.offerAmount,
+            paymentAmount: userData.amount,
+            balance: user.balance,
+            category: "LPG Booking",
+            action: "debit",
+            offerId,
+            userId: req.user.id,
+            userData
+        });
         let response = LPGAPI(req.body);
 
-        order.paymentStatus=response.success;
+        order.paymentStatus = response.success;
         order.save()
-        return res.status(200).json(new APIResponse("Process Done",200,response));
+        return res.status(200).json(new APIResponse("Process Done", 200, response));
 
     } catch (error) {
         return res.status(500).json(new APIError("Error: " + error.message, 500));

@@ -39,6 +39,9 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Admin",
     required: true
+  },
+  balance:{
+    type:Number
   }
 
 }, { timestamps: true });

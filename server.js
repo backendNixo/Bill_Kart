@@ -13,8 +13,8 @@ import Apiroutes from "./routes/admin/api.route.js";
 import swaggerUi from "swagger-ui-express"
 import { swaggerSpec } from "./config/swagger.js";
 import compression from "compression";
-import cors from "cors";
 import dotenv from "dotenv";
+import {corsMiddleware} from "./middleware/corsmiddleware.js"
 
 dotenv.config({
     path: './.env'
@@ -27,10 +27,7 @@ connectDB();
 
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true
-}))
+app.use(corsMiddleware)
 app.use(compression());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // app.use(encryptMiddleware);
@@ -67,7 +64,7 @@ import loanRepaymentRoutes from './routes/services/loanRepayment/loanRepayment.r
 import lpgRoutes from './routes/services/lpg/lpg.route.js';
 import municipalityRoutes from "./routes/services/municipality/municipality.route.js";
 import municipalTaxRoutes from "./routes/services/municipalTax/municipalTax.route.js";
-
+import orderRoutes from "./routes/admin/order.route.js";
 
 
 app.use('/api/user/broadband',broadbandRoutes)
@@ -89,6 +86,7 @@ app.use('/api/user/loanrepayment',loanRepaymentRoutes);
 app.use('/api/user/lpg',lpgRoutes);
 app.use('/api/user/municipality',municipalityRoutes);
 app.use('/api/user/municipalTax',municipalTaxRoutes);
+app.use('/api/user/order',orderRoutes);
 
 
 
