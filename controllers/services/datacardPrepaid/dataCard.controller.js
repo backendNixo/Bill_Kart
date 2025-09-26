@@ -5,22 +5,22 @@ import fs from "fs";
 import { OrderHistory } from "../../../model/users/orderHistory.model.js";
 import User from "../../../model/user.model.js";
 import Offer from "../../../model/admin/offer.model.js";
-import {OperatorLadger} from "../../../model/users/paymentLedger.model.js";
+import { OperatorLadger } from "../../../model/users/paymentLedger.model.js";
 const Operators = JSON.parse(fs.readFileSync("./operators.json"));
 
 
 export const GetDataOptByBillerID = async (req, res) => {
     try {
-       const billerId = req.params.billerId;
+        const billerId = req.params.billerId;
 
         if (!billerId) {
             return res.status(400).json(new APIError("BillerId required", 400));
         }
 
         const operatorIds = await broadbandModel.find({ "parameter.billerId": billerId, userId: req.user.id }, { _id: 1 });
-        
+
         console.log(operatorIds);
-        
+
         if (operatorIds.length == 0) {
             return res.status(400).json(new APIError("Operator Not Found", 400));
         }
@@ -66,7 +66,7 @@ export const DatacardOperatorConfig = async (req, res) => {
     }
 };
 
-export const ValidateDataOperator  = async (req, res) => {
+export const ValidateDataOperator = async (req, res) => {
     try {
         const { billerId } = req.params;
 
@@ -96,7 +96,7 @@ export const ValidateDataOperator  = async (req, res) => {
             if (possibleFields.includes(normalizedKey)) {
                 const regex = new RegExp(operator.Regex);
                 console.log(regex);
-                let testResult= regex.test(String(value))
+                let testResult = regex.test(String(value))
                 return {
                     field: key,
                     value,
@@ -140,12 +140,12 @@ function DataCardAPI(req) {
 }
 export const createDataCardPayment = async (req, res) => {
     try {
-       const order = await OrderHistory.create({
+        const order = await OrderHistory.create({
             userId: req.user.id,
             userData: userData,
             offerId
         });
-         const user = await User.findOne({ _id: req.user.id });
+        const user = await User.findOne({ _id: req.user.id });
 
         if (!user) {
             return res.status(404).json(new APIError("User not found", 404));
@@ -168,6 +168,10 @@ export const createDataCardPayment = async (req, res) => {
         user.balance = user.balance - userData.amount;
         await user.save();
 
+        let response = DataCardAPI(req.body);
+
+        order.paymentStatus = response.success;
+        order.save()
         await OperatorLadger.create({
             offerAmount: offer.offerAmount,
             paymentAmount: userData.amount,
@@ -176,19 +180,18 @@ export const createDataCardPayment = async (req, res) => {
             action: "debit",
             offerId,
             userId: req.user.id,
-            userData
+            userData,
+            status: response.success
         });
 
-        let response = DataCardAPI(req.body);
 
-        order.paymentStatus=response.success;
-        order.save()
-        return res.status(200).json(new APIResponse("Process Done",200,response));
+        return res.status(200).json(new APIResponse("Process Done", 200, response));
 
     } catch (error) {
         return res.status(500).json(new APIError("Error: " + error.message, 500));
     }
 }
+
 
 
 

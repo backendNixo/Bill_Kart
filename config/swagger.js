@@ -43,7 +43,8 @@ const swaggerOptions = {
         "./routes/services/creditCardPay/creditCard.route.js",
         "./routes/services/datacardPrepaid/dataCard.route.js",
         "./routes/services/donation/donation.route.js",
-        "./routes/services/DTH/dth.route.js"
+        "./routes/services/DTH/dth.route.js",
+        "./routes/users/user.route.js",
     ],
 };
 

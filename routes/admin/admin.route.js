@@ -11,7 +11,8 @@ import {
     BlockUser,
     DeletedUser,
     GetAllUserNameList,
-    CreateUser
+    CreateUser,
+    ViewUserLedgerByAdmin
 } from "../../controllers/admin/auth.controller.js";
 import express from "express";
 import { verifyToken } from "../../middleware/verifyToken.js";
@@ -255,6 +256,18 @@ router.route('/get_all_users_name_list').get(verifyToken,GetAllUserNameList);
  *         description: User Created Successfully!
  */
 router.route('/create_user').post(verifyToken,CreateUser);
+
+/**
+ * @swagger
+ * /view_users_ledgers_list:
+ *   get:
+ *     summary: Get Users Ledgers List
+ *     tags: [Admin Auth Apis]
+ *     responses:
+ *       200:
+ *         description: Users Ledgers List Fetched Successfully!
+ */
+router.route('/view_users_ledgers_list').get(verifyToken,ViewUserLedgerByAdmin);
 
 
 export default router;

@@ -5,7 +5,7 @@ import APIError from "../../utils/APIError.js";
 import { APIResponse } from "../../utils/APIResponse.js";
 import bcrypt from "bcryptjs";
 import { generateAccessToken } from "../../utils/generateToken.js";
-
+import {OperatorLadger} from "../../model/users/paymentLedger.model.js"
 
 
 //ADMIN ROUTES==========================================================
@@ -309,5 +309,54 @@ export const GetAllUserNameList = async (req, res) => {
         return res.status(500).json(new APIError("Error :" + error, 500))
     }
 }
+
+export const ViewUserLedgerByAdmin = async (req, res) => {
+    try {
+        const { startDate, endDate } = req.body || {};
+        let start, end;
+
+        if (startDate && endDate) {
+            start = new Date(startDate);
+            end = new Date(endDate);
+        } else {
+            start = new Date();
+            start.setHours(0, 0, 0, 0);
+            end = new Date();
+            end.setHours(23, 59, 59, 999);
+        }
+
+        const usersLedgerList = await userModel.find({
+            adminId: req.user.id,
+            createdAt: { $gte: start, $lte: end }
+        }).populate("OperatorLadger").sort({ createdAt: -1 });
+
+        if (usersLedgerList.length === 0) {
+            return res.status(400).json(new APIError("Users Ledgers List Empty", 400));
+        }
+
+        const totalpayment = usersLedgerList.reduce(
+            (sum, document) => sum + (document.paymentAmount || 0),
+            0
+        );
+        const totaloffer = usersLedgerList.reduce(
+            (sum, document) => sum + (document.offerAmount || 0),
+            0
+        );
+
+        const list = {
+            ledgers: usersLedgerList,
+            totalpayment,
+            totaloffer
+        };
+
+        return res.status(200).json(new APIResponse("Users Ledgers List :", 200, list));
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(new APIError("Error :" + error.message, 500));
+    }
+};
+
+
+
 
 

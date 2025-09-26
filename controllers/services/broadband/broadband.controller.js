@@ -174,7 +174,11 @@ export const createBroadbandPayment = async (req, res) => {
         user.balance = user.balance - userData.amount;
         await user.save();
 
-        await OperatorLadger.create({
+        let response = forBroadband(req.body);
+
+        order.paymentStatus = response.success;
+        await order.save();
+         await OperatorLadger.create({
             offerAmount: offer.offerAmount,
             paymentAmount: userData.amount,
             balance: user.balance,
@@ -182,20 +186,18 @@ export const createBroadbandPayment = async (req, res) => {
             action: "debit",
             offerId,
             userId: req.user.id,
-            userData
+            userData,
+            status:response.success
         });
-
-        let response = forBroadband(req.body);
-
-        order.paymentStatus = response.success;
-        await order.save();
-
         return res.status(200).json(new APIResponse("Process Done", 200, response));
 
     } catch (error) {
         return res.status(500).json(new APIError("Error: " + error.message, 500));
     }
 };
+
+
+
 
 
 

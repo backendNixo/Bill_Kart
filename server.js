@@ -7,6 +7,7 @@ import RedeemeRoutes from "./routes/users/redeeme.route.js";
 import AdminOfferRoutes from "./routes/admin/offer.route.js";
 import UserOfferRoutes from "./routes/users/offer.routes.js";
 import serviceRoutes from "./routes/admin/service.route.js";
+import userRoutes from "./routes/users/user.route.js";
 import notificationRoutes from "./routes/admin/notification.route.js";
 import { checkIpLimit} from "./middleware/test.middleware.js";
 import Apiroutes from "./routes/admin/api.route.js";
@@ -27,7 +28,7 @@ connectDB();
 
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
-app.use(corsMiddleware)
+app.use(corsMiddleware);
 app.use(compression());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // app.use(encryptMiddleware);
@@ -43,6 +44,7 @@ app.use(checkIpLimit);
 app.use("/api/auth", authRoutes);
 app.use("/api/user",RedeemeRoutes);
 app.use("/api/user",UserOfferRoutes);
+app.use('/api/user',userRoutes);
 
 
 import broadbandRoutes from "./routes/services/broadband/broadband.routes.js";

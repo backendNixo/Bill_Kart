@@ -28,6 +28,10 @@ const ledgerSchema = new mongoose.Schema({
     userData: {
         type: mongoose.Schema.Types.Mixed
     },
+    status:{
+        type: String,
+        enum: ["success", "failed"]
+    }
 }, { timestamps: true });
 
 export const OperatorLadger = mongoose.model("OperatorLadger", ledgerSchema);

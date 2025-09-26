@@ -165,7 +165,10 @@ export const createLPGPayment = async (req, res) => {
         }
         user.balance = user.balance - userData.amount;
         await user.save();
+        let response = LPGAPI(req.body);
 
+        order.paymentStatus = response.success;
+        order.save()
         await OperatorLadger.create({
             offerAmount: offer.offerAmount,
             paymentAmount: userData.amount,
@@ -174,12 +177,10 @@ export const createLPGPayment = async (req, res) => {
             action: "debit",
             offerId,
             userId: req.user.id,
-            userData
+            userData,
+            status: response.success
         });
-        let response = LPGAPI(req.body);
 
-        order.paymentStatus = response.success;
-        order.save()
         return res.status(200).json(new APIResponse("Process Done", 200, response));
 
     } catch (error) {

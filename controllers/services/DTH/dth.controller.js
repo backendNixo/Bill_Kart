@@ -5,13 +5,13 @@ import fs from "fs";
 import { OrderHistory } from "../../../model/users/orderHistory.model.js";
 import User from "../../../model/user.model.js";
 import Offer from "../../../model/admin/offer.model.js";
-import {OperatorLadger} from "../../../model/users/paymentLedger.model.js";
+import { OperatorLadger } from "../../../model/users/paymentLedger.model.js";
 const Operators = JSON.parse(fs.readFileSync("./operators.json"));
 
 
 export const GetDTHOptByBillerID = async (req, res) => {
     try {
-     
+
         const billerId = req.params.billerId;
 
         if (!billerId) {
@@ -19,9 +19,9 @@ export const GetDTHOptByBillerID = async (req, res) => {
         }
 
         const operatorIds = await broadbandModel.find({ "parameter.billerId": billerId, userId: req.user.id }, { _id: 1 });
-        
+
         console.log(operatorIds);
-        
+
         if (operatorIds.length == 0) {
             return res.status(400).json(new APIError("Operator Not Found", 400));
         }
@@ -68,7 +68,7 @@ export const DTHOperatorConfig = async (req, res) => {
     }
 };
 
-export const ValidateDTHOperator  = async (req, res) => {
+export const ValidateDTHOperator = async (req, res) => {
     try {
         const { billerId } = req.params;
 
@@ -98,7 +98,7 @@ export const ValidateDTHOperator  = async (req, res) => {
             if (possibleFields.includes(normalizedKey)) {
                 const regex = new RegExp(operator.Regex);
                 console.log(regex);
-                let testResult= regex.test(String(value))
+                let testResult = regex.test(String(value))
                 return {
                     field: key,
                     value,
@@ -148,7 +148,7 @@ export const createDTHPayment = async (req, res) => {
             userData: userData,
             offerId
         });
-         const user = await User.findOne({ _id: req.user.id });
+        const user = await User.findOne({ _id: req.user.id });
 
         if (!user) {
             return res.status(404).json(new APIError("User not found", 404));
@@ -170,7 +170,10 @@ export const createDTHPayment = async (req, res) => {
         }
         user.balance = user.balance - userData.amount;
         await user.save();
+        let response = DTHAPI(req.body);
 
+        order.paymentStatus = response.success;
+        order.save()
         await OperatorLadger.create({
             offerAmount: offer.offerAmount,
             paymentAmount: userData.amount,
@@ -179,15 +182,11 @@ export const createDTHPayment = async (req, res) => {
             action: "debit",
             offerId,
             userId: req.user.id,
-            userData
+            userData,
+            status: response.success
         });
 
-
-        let response = DTHAPI(req.body);
-
-        order.paymentStatus=response.success;
-        order.save()
-        return res.status(200).json(new APIResponse("Process Done",200,response));
+        return res.status(200).json(new APIResponse("Process Done", 200, response));
 
     } catch (error) {
         return res.status(500).json(new APIError("Error: " + error.message, 500));
