@@ -45,6 +45,7 @@ const swaggerOptions = {
         "./routes/services/donation/donation.route.js",
         "./routes/services/DTH/dth.route.js",
         "./routes/users/user.route.js",
+        "./routes/admin/order.route.js",
     ],
 };
 

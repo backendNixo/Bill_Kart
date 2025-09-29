@@ -70,9 +70,29 @@ router.route("/get_profile").get(verifyToken, verifyUserAgent, verifyChecksum, d
 
 router.route("/change_password").patch(verifyToken, verifyUserAgent, verifyChecksum, UpdatePassowrd)
 
-
+/**
+ * @swagger
+ * /verify_otp:
+ *   post:
+ *     summary: OTP Verified
+ *     tags: [User Apis]
+ *     responses:
+ *       200:
+ *         description: OTP Verified Successfully!
+ */
 router.route('/verify_otp').post(verifyToken,verifyUserAgent,verifyChecksum,verifyOtp);
 
+
+/**
+ * @swagger
+ * /complete_setup:
+ *   patch:
+ *     summary: Update isSetup
+ *     tags: [User Apis]
+ *     responses:
+ *       200:
+ *         description: Update isSetup Successfully!
+ */
 router.route('/complete_setup').patch(verifyToken,completeSetup);
 
 export default router;

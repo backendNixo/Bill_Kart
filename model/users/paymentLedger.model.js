@@ -30,7 +30,7 @@ const ledgerSchema = new mongoose.Schema({
     },
     status:{
         type: String,
-        enum: ["success", "failed"]
+        enum: ["success", "failed","pending"]
     }
 }, { timestamps: true });
 
