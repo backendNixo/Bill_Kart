@@ -37,10 +37,10 @@ app.use(checkIpLimit);
 
 // Routes
 
-[Apiroutes,AdminRoutes,AdminOfferRoutes,serviceRoutes,notificationRoutes].forEach(route=>{
+[Apiroutes,AdminOfferRoutes,serviceRoutes,notificationRoutes].forEach(route=>{
     app.use("/api/admin",route);
 })
-
+app.use("/api/admin",AdminRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/user",RedeemeRoutes);
 app.use("/api/user",UserOfferRoutes);

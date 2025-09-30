@@ -1,7 +1,8 @@
 import {
     ViewLedgerByUser,
     ViewLedgerBasedOnOpt,
-    ViewSuccessOrFailedLedger
+    ViewSuccessOrFailedLedger,
+    ViewUserLedgerDayOld
 } from "../../controllers/user/user.controller.js";
 import express from "express";
 import { verifyToken } from "../../middleware/verifyToken.js";
@@ -43,5 +44,18 @@ router.route("/get_ledger_based_on_Operator/:opttype").get(verifyToken, ViewLedg
  *         description: Users Ledgers List Based On Status Fetched Successfully!
  */
 router.route("/get_ledger_based_on_Operator/:status").get(verifyToken, ViewSuccessOrFailedLedger);
+
+
+/**
+ * @swagger
+ * /show_ledger_status_graph:
+ *   get:
+ *     summary: Show Ledgers Status Graph
+ *     tags: [User Apis]
+ *     responses:
+ *       200:
+ *         description: Show Ledgers Status Graph Successfully!
+ */
+router.route('/show_ledger_status_graph').get(verifyToken,ViewUserLedgerDayOld);
 
 export default router;

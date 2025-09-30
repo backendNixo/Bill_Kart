@@ -5,11 +5,12 @@ import APIError from "../../utils/APIError.js";
 import { APIResponse } from "../../utils/APIResponse.js";
 import bcrypt from "bcryptjs";
 import { generateAccessToken } from "../../utils/generateToken.js";
-import {OperatorLadger} from "../../model/users/paymentLedger.model.js"
-
+import { OperatorLadger } from "../../model/users/paymentLedger.model.js"
+import { success } from "../apis/test.js";
+import fs from "fs";
+const Operators = JSON.parse(fs.readFileSync("./operators.json"));
 
 //ADMIN ROUTES==========================================================
-
 
 export const Login = async (req, res) => {
     try {
@@ -105,9 +106,7 @@ export const GetAdminProfile = async (req, res) => {
     }
 }
 
-
 //USER ROUTES =========================================================
-
 
 export const CreateUser = async (req, res) => {
     try {
@@ -116,13 +115,13 @@ export const CreateUser = async (req, res) => {
         if (!userName || !mobileNumber || !password) {
             return res.status(400).json(new APIError("Please Fill All Required Fileds", 400))
         }
-        
+
         const isExist = await userModel.findOne({ userName: userName, mobileNumber: mobileNumber });
-        
+
         if (isExist) {
             return res.status(400).json(new APIError("User with this username or mobile number already exist", 400))
         }
-         
+
 
         await userModel.create({
             userName: userName,
@@ -135,7 +134,7 @@ export const CreateUser = async (req, res) => {
             block: req.body.block ?? false,
             deleted: req.body.deleted ?? false,
             isSetupDone: req.body.isSetupDone ?? false,
-            adminId:req.user.id
+            adminId: req.user.id
         })
 
         return res.status(200).json(new APIResponse("User Created Successfully!", 200))
@@ -147,7 +146,7 @@ export const CreateUser = async (req, res) => {
 
 export const GetUsersList = async (req, res) => {
     try {
-        const usersList = await userModel.find({adminId:req.user.id});
+        const usersList = await userModel.find({ adminId: req.user.id });
 
         if (usersList.length == 0) {
             return res.status(400).json(new APIError("Users List Empty", 400));
@@ -167,7 +166,7 @@ export const GetUserById = async (req, res) => {
             return res.status(400).json(new APIError("User Id Missing", 400));
         }
 
-        const user = await userModel.findOne({ _id: userId,adminId:req.user.id });
+        const user = await userModel.findOne({ _id: userId, adminId: req.user.id });
 
         if (!user) {
             return res.status(404).json(new APIError("User Not Found", 404));
@@ -190,7 +189,7 @@ export const UpdateUserPassword = async (req, res) => {
         if (!oldPassword || !newPassword) {
             return res.status(400).json(new APIError("Old Password Or New Password Not Found", 400));
         }
-        const user = await userModel.findOne({ _id: userId,adminId:req.user.id });
+        const user = await userModel.findOne({ _id: userId, adminId: req.user.id });
 
         if (!user) {
             return res.status(404).json(new APIError("User Not Found", 404));
@@ -218,7 +217,7 @@ export const DeleteUser = async (req, res) => {
             return res.status(400).json(new APIError("User Id Missing", 400));
         }
 
-        const isDeleted = await userModel.findOneAndDelete({ _id: userId ,adminId:req.user.id});
+        const isDeleted = await userModel.findOneAndDelete({ _id: userId, adminId: req.user.id });
 
         if (!isDeleted) {
             return res.status(400).json(new APIError("Error Occure When Deleting User", 400));
@@ -238,7 +237,7 @@ export const UpdateUserStatus = async (req, res) => {
             return res.status(400).json(new APIError("User Id Missing", 400));
         }
 
-        const user = await userModel.findOne({ _id: userId,adminId:req.user.id });
+        const user = await userModel.findOne({ _id: userId, adminId: req.user.id });
         console.log(user);
 
         if (!user) {
@@ -260,7 +259,7 @@ export const BlockUser = async (req, res) => {
             return res.status(400).json(new APIError("User Id Missing", 400));
         }
 
-        const user = await userModel.findOne({ _id: userId,adminId:req.user.id });
+        const user = await userModel.findOne({ _id: userId, adminId: req.user.id });
 
         if (!user) {
             return res.status(400).json(new APIError("User Not Found", 400));
@@ -281,7 +280,7 @@ export const DeletedUser = async (req, res) => {
             return res.status(400).json(new APIError("User Id Missing", 400));
         }
 
-        const user = await userModel.findOne({ _id: userId ,adminId:req.user.id});
+        const user = await userModel.findOne({ _id: userId, adminId: req.user.id });
 
         if (!user) {
             return res.status(400).json(new APIError("User Not Found", 400));
@@ -297,7 +296,7 @@ export const DeletedUser = async (req, res) => {
 
 export const GetAllUserNameList = async (req, res) => {
     try {
-        const usersNameList = await userModel.find({adminId:req.user.id}, { userName: 1 });
+        const usersNameList = await userModel.find({ adminId: req.user.id }, { userName: 1 });
 
         if (usersNameList.length == 0) {
             return res.status(400).json(new APIError("Users List Empty", 400));
@@ -310,6 +309,7 @@ export const GetAllUserNameList = async (req, res) => {
     }
 }
 
+//ledger list
 export const ViewUserLedgerByAdmin = async (req, res) => {
     try {
         const { startDate, endDate } = req.body || {};
@@ -324,27 +324,36 @@ export const ViewUserLedgerByAdmin = async (req, res) => {
             end = new Date();
             end.setHours(23, 59, 59, 999);
         }
+        const users = await userModel.find({ adminId: req.user.id });
 
-        const usersLedgerList = await userModel.find({
-            adminId: req.user.id,
+        if (!users || users.length === 0) {
+            return res.status(400).json(new APIError("No users found for this admin", 400));
+        }
+
+        const userIds = users.map(u => u._id);
+
+
+        const ledgers = await OperatorLadger.find({
+            userId: { $in: userIds },
             createdAt: { $gte: start, $lte: end }
-        }).populate("OperatorLadger").sort({ createdAt: -1 });
+        }).sort({ createdAt: -1 });
 
-        if (usersLedgerList.length === 0) {
+
+        if (ledgers.length === 0) {
             return res.status(400).json(new APIError("Users Ledgers List Empty", 400));
         }
 
-        const totalpayment = usersLedgerList.reduce(
+        const totalpayment = ledgers.reduce(
             (sum, document) => sum + (document.paymentAmount || 0),
             0
         );
-        const totaloffer = usersLedgerList.reduce(
+        const totaloffer = ledgers.reduce(
             (sum, document) => sum + (document.offerAmount || 0),
             0
         );
 
         const list = {
-            ledgers: usersLedgerList,
+            ledgers: ledgers,
             totalpayment,
             totaloffer
         };
@@ -355,6 +364,287 @@ export const ViewUserLedgerByAdmin = async (req, res) => {
         return res.status(500).json(new APIError("Error :" + error.message, 500));
     }
 };
+
+//show seven day old data in graph
+export const ViewUserLedger7DayOldByAdmin = async (req, res) => {
+    try {
+        const todayDate = new Date();
+        const sevenDaysAgo = new Date(todayDate.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+        let Totalsuccess = 0;
+        let Totalfailed = 0;
+        let Totalpending = 0;
+        const users = await userModel.find({ adminId: req.user.id }, "_id");
+
+        // if (!users || users.length === 0) {
+        //     return res.status(400).json(new APIError("No users found for this admin", 400));
+        // }
+
+        const userIds = users.map(u => u._id);
+
+
+        const ledgers = await OperatorLadger.find({
+            userId: { $in: userIds },
+            createdAt: { $gte: sevenDaysAgo, $lte: todayDate }
+        }).sort({ createdAt: -1 });
+
+
+        // if (!ledgers || ledgers.length === 0) {
+        //     return res.status(400).json(new APIError("Users List Empty", 400));
+        // }
+
+        const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const dayWiseCounts = {};
+        weekdays.forEach(day => {
+            dayWiseCounts[day] = { success: 0, pending: 0, failed: 0 };
+        });
+
+        ledgers.forEach(ledger => {
+            const dayName = new Date(ledger.createdAt).toLocaleString("en-US", { weekday: "long" });
+
+            if (ledger.status === "success") {
+                Totalsuccess++;
+                dayWiseCounts[dayName].success++;
+            }
+            else if (ledger.status === "pending") {
+                Totalpending++;
+                dayWiseCounts[dayName].pending++;
+            }
+            else {
+                Totalfailed++;
+                dayWiseCounts[dayName].failed++;
+            }
+        });
+
+
+        const chartData = weekdays.map(day => ({
+            day,
+            ...dayWiseCounts[day]
+        }));
+
+        // return res
+        //     .status(200)
+        //     .json(new APIResponse("Admin Users Ledgers in Last 7 Days :", 200,
+        //  {..chartData,Totalsuccess:Totalsuccess,Totalpending:Totalpending,Totalfailed:Totalfailed}));
+        return res
+            .status(200)
+            .json(new APIResponse("Admin Users Ledgers in Last 7 Days :", 200, [
+                { "day": "Sunday", "success": 4, "pending": 1, "failed": 0 },
+                { "day": "Monday", "success": 2, "pending": 3, "failed": 1 },
+                { "day": "Tuesday", "success": 5, "pending": 0, "failed": 2 },
+                { "day": "Wednesday", "success": 1, "pending": 2, "failed": 0 },
+                { "day": "Thursday", "success": 3, "pending": 1, "failed": 1 },
+                { "day": "Friday", "success": 0, "pending": 0, "failed": 0 },
+                { "day": "Saturday", "success": 6, "pending": 1, "failed": 2 },
+                { "Totalsuccess": 20, "Totalpending": 10, "Totalfailed": 2 }
+            ]));
+
+
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json(new APIError("Error :" + error.message, 500));
+    }
+};
+
+//filter user based on operator type
+export const ViewLedgerBasedOnOpt = async (req, res) => {
+    try {
+        const optType = req.params.optType;
+
+        const { startDate, endDate } = req.body || {};
+
+        let start, end;
+        if (startDate && endDate) {
+            start = new Date(startDate);
+            end = new Date(endDate);
+        } else {
+            start = new Date();
+            start.setHours(0, 0, 0, 0);
+            end = new Date();
+            end.setHours(23, 59, 59, 999);
+        }
+        const users = await userModel.find({ adminId: req.user.id });
+
+        if (!users || users.length === 0) {
+            return res.status(400).json(new APIError("No users found for this admin", 400));
+        }
+
+        const userIds = users.map(u => u._id);
+
+
+        const ledgers = await OperatorLadger.find({
+            userId: { $in: userIds },
+            createdAt: { $gte: start, $lte: end },
+            category: optType
+        }).sort({ createdAt: -1 });
+
+
+
+        if (ledgers.length === 0) {
+            return res.status(400).json(new APIError("Users Ledgers List Empty", 400));
+        }
+
+        const totalpayment = ledgers.reduce(
+            (sum, document) => sum + (document.paymentAmount || 0),
+            0
+        );
+        const totaloffer = ledgers.reduce(
+            (sum, document) => sum + (document.offerAmount || 0),
+            0
+        );
+        const list = {
+            ...ledgers,
+            totaloffer,
+            totalpayment
+        }
+        return res.status(200).json(new APIResponse(`${optType} Ledger List `, 200, list));
+
+    } catch (error) {
+        return res.status(500).json(new APIError("Error: " + error.message, 500));
+    }
+};
+
+//filter user based on status
+export const ViewSuccessOrFailedLedger = async (req, res) => {
+    try {
+        const optStatus = req.params.status;
+
+        const { startDate, endDate } = req.body || {};
+
+        let start, end;
+        if (startDate && endDate) {
+            start = new Date(startDate);
+            end = new Date(endDate);
+        } else {
+            start = new Date();
+            start.setHours(0, 0, 0, 0);
+            end = new Date();
+            end.setHours(23, 59, 59, 999);
+        }
+
+        const users = await userModel.find({ adminId: req.user.id });
+
+        if (!users || users.length === 0) {
+            return res.status(400).json(new APIError("No users found for this admin", 400));
+        }
+
+        const userIds = users.map(u => u._id);
+
+
+        const ledgers = await OperatorLadger.find({
+            userId: { $in: userIds },
+            createdAt: { $gte: start, $lte: end },
+            status:optStatus
+        }).sort({ createdAt: -1 });
+
+
+
+        if (ledgers.length === 0) {
+            return res.status(400).json(new APIError("Users Ledgers List Empty", 400));
+        }
+
+        const totalpayment = ledgers.reduce(
+            (sum, document) => sum + (document.paymentAmount || 0),
+            0
+        );
+
+        const totaloffer = ledgers.reduce(
+            (sum, document) => sum + (document.offerAmount || 0),
+            0
+        );
+
+        const list = {
+            ...ledgers,
+            totaloffer,
+            totalpayment
+        }
+        return res.status(200).json(new APIResponse(`All ${optStatus} Ledger List`, 200, list));
+
+    } catch (error) {
+        return res.status(500).json(new APIError("Error: " + error.message, 500));
+    }
+};
+
+//get ledger list by userid
+export const ViewUserLedgerByUserId = async (req, res) => {
+    try {
+        const { startDate, endDate } = req.body || {};
+        let start, end;
+
+        if (startDate && endDate) {
+            start = new Date(startDate);
+            end = new Date(endDate);
+        } else {
+            start = new Date();
+            start.setHours(0, 0, 0, 0);
+            end = new Date();
+            end.setHours(23, 59, 59, 999);
+        }
+        const userId=req.params.id;
+        if(!userId){
+            return res.status(400).json(new APIError("User ID Not Found", 400));
+        }
+        const users = await userModel.findOne({ _id:userId,adminId: req.user.id });
+
+        if (!users || users.length === 0) {
+            return res.status(400).json(new APIError("No users found for this admin", 400));
+        }
+
+    
+
+
+        const ledgers = await OperatorLadger.find({
+            userId: userId,
+            createdAt: { $gte: start, $lte: end }
+        }).sort({ createdAt: -1 });
+
+
+
+        if (ledgers.length === 0) {
+            return res.status(400).json(new APIError("Users Ledgers List Empty", 400));
+        }
+
+        const totalpayment = ledgers.reduce(
+            (sum, document) => sum + (document.paymentAmount || 0),
+            0
+        );
+        const totaloffer = ledgers.reduce(
+            (sum, document) => sum + (document.offerAmount || 0),
+            0
+        );
+
+        const list = {
+            ledgers: ledgers,
+            totalpayment,
+            totaloffer
+        };
+
+        return res.status(200).json(new APIResponse("Users Ledgers List :", 200, list));
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(new APIError("Error :" + error.message, 500));
+    }
+};
+
+//get operatorlist
+ export const GetOperatorList=async (req, res) => {
+  try {
+    let operators=new Set();
+    Operators.map((opt)=>{
+       operators.add(opt.Category);
+    })
+
+    const operatorList=Array.from(operators);
+    return res
+      .status(200)
+      .json(new APIResponse("Operator Name List", 200, operatorList));
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json(new APIError("Error :" + error.message, 500));
+  }
+};
+
 
 
 

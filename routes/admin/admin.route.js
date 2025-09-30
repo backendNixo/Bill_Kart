@@ -12,7 +12,12 @@ import {
     DeletedUser,
     GetAllUserNameList,
     CreateUser,
-    ViewUserLedgerByAdmin
+    ViewUserLedgerByAdmin,
+    ViewUserLedger7DayOldByAdmin,
+    ViewLedgerBasedOnOpt,
+    ViewSuccessOrFailedLedger,
+    ViewUserLedgerByUserId,
+    GetOperatorList
 } from "../../controllers/admin/auth.controller.js";
 import express from "express";
 import { verifyToken } from "../../middleware/verifyToken.js";
@@ -221,7 +226,6 @@ router.route('/update_user_delete/:id').patch(verifyToken, DeletedUser);
 
 router.route('/get_all_users_name_list').get(verifyToken,GetAllUserNameList);
 
-
 /**
  * @swagger
  * /create_user:
@@ -260,14 +264,74 @@ router.route('/create_user').post(verifyToken,CreateUser);
 /**
  * @swagger
  * /view_users_ledgers_list:
- *   get:
+ *   post:
  *     summary: Get Users Ledgers List
  *     tags: [Admin Auth Apis]
  *     responses:
  *       200:
  *         description: Users Ledgers List Fetched Successfully!
  */
-router.route('/view_users_ledgers_list').get(verifyToken,ViewUserLedgerByAdmin);
+router.route('/view_users_ledgers_list').post(verifyToken,ViewUserLedgerByAdmin);
 
+//show seven day old status of spacific user
+
+/**
+ * @swagger
+ * /show_ledger_status_graph_byadmin:
+ *   get:
+ *     summary: Show Users Ledgers Status Wise
+ *     tags: [Admin Auth Apis]
+ *     responses:
+ *       200:
+ *         description: Show Users Ledgers Status Wise Successfully!
+ */
+router.route('/show_ledger_status_graph_byadmin').get(verifyToken,ViewUserLedger7DayOldByAdmin);
+/**
+ * @swagger
+ * /show_ledger_based_on_opt_byadmin/:optType:
+ *   post:
+ *     summary: Show Users Ledgers Based On Operator
+ *     tags: [Admin Auth Apis]
+ *     responses:
+ *       200:
+ *         description: Show Users Ledgers Based On Operator Successfully!
+ */
+router.route('/show_ledger_based_on_opt_byadmin/:optType').post(verifyToken,ViewLedgerBasedOnOpt);
+
+/**
+ * @swagger
+ * /show_ledger_based_on_status_byadmin/:status:
+ *   post:
+ *     summary: Show Users Ledgers Based On Status 
+ *     tags: [Admin Auth Apis]
+ *     responses:
+ *       200:
+ *         description: Show Users Ledgers Based On Status Successfully!
+ */
+router.route('/show_ledger_based_on_status_byadmin/:status').post(verifyToken,ViewSuccessOrFailedLedger);
+
+/**
+ * @swagger
+ * /get_ledger_byuserId/:id:
+ *   post:
+ *     summary: Show Users Ledgers By User Id
+ *     tags: [Admin Auth Apis]
+ *     responses:
+ *       200:
+ *         description: Show Users Ledgers By User Id Successfully!
+ */
+router.route('/get_ledger_byuserId/:id').post(verifyToken,ViewUserLedgerByUserId);
+
+/**
+ * @swagger
+ * /operator_name_list:
+ *   get:
+ *     summary: Show Operator Name List
+ *     tags: [Admin Auth Apis]
+ *     responses:
+ *       200:
+ *         description: Show Operator Name List Successfully!
+ */
+router.route('/operator_name_list').get(verifyToken,GetOperatorList);
 
 export default router;
