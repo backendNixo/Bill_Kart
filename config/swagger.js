@@ -11,7 +11,7 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: "http://192.168.1.56:9000/",
+                url: "http://192.168.1.22:9000/",
             },
         ],
         components: {
