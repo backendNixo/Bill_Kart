@@ -1,14 +1,14 @@
 import {
-CreateApi,
-DeleteApi,
-UpdateApi,
-UpdateActiveStatus,
-GetAPIById,
-GetAPIList
+    CreateApi,
+    DeleteApi,
+    UpdateApi,
+    UpdateActiveStatus,
+    GetAPIById,
+    GetAPIList
 } from "../../controllers/admin/api.controller.js";
-import {verifyToken} from '../../middleware/verifyToken.js';
+import { verifyToken } from '../../middleware/verifyToken.js';
 import express from "express";
-const router=express.Router();
+const router = express.Router();
 
 
 /**
@@ -73,7 +73,7 @@ const router=express.Router();
  *       200:
  *         description: API Created Successfully!
  */
-router.route('/create_api').post(verifyToken,CreateApi);
+router.route('/create_api').post(verifyToken, CreateApi);
 /**
  * @swagger
  * /delete_api/:id:
@@ -84,7 +84,7 @@ router.route('/create_api').post(verifyToken,CreateApi);
  *       200:
  *         description: API Deleted Successfully!
  */
-router.route('/delete_api/:id').delete(verifyToken,DeleteApi);
+router.route('/delete_api/:id').delete(verifyToken, DeleteApi);
 
 /**
  * @swagger
@@ -97,7 +97,7 @@ router.route('/delete_api/:id').delete(verifyToken,DeleteApi);
  *         description: API Updated Successfully!
  */
 
-router.route('/update_api/:id').patch(verifyToken,UpdateApi);
+router.route('/update_api/:id').patch(verifyToken, UpdateApi);
 
 /**
  * @swagger
@@ -111,7 +111,7 @@ router.route('/update_api/:id').patch(verifyToken,UpdateApi);
  */
 
 
-router.route('/update_api_status/:id').patch(verifyToken,UpdateActiveStatus);
+router.route('/update_api_status/:id').patch(verifyToken, UpdateActiveStatus);
 
 /**
  * @swagger
@@ -124,7 +124,7 @@ router.route('/update_api_status/:id').patch(verifyToken,UpdateActiveStatus);
  *         description: Get API ById Successfully!
  */
 
-router.route('/get_api_byid/:id').get(verifyToken,GetAPIById);
+router.route('/get_api_byid/:id').get(verifyToken, GetAPIById);
 
 /**
  * @swagger
@@ -137,6 +137,6 @@ router.route('/get_api_byid/:id').get(verifyToken,GetAPIById);
  *         description: API List Successfully!
  */
 
-router.route('/get_api_list').get(verifyToken,GetAPIList);
+router.route('/get_api_list').get(verifyToken, GetAPIList);
 
 export default router;

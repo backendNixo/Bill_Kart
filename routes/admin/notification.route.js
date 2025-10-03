@@ -1,4 +1,4 @@
-import{
+import {
     CreateNotification,
     DeleteNotification,
     UpdateNotification,
@@ -7,10 +7,10 @@ import{
     SendNotificationToUser
 } from "../../controllers/admin/notification.controller.js";
 
-import {verifyToken} from "../../middleware/verifyToken.js";
+import { verifyToken } from "../../middleware/verifyToken.js";
 import express from "express";
 
-const router=express.Router();
+const router = express.Router();
 
 /**
  * @swagger
@@ -41,7 +41,7 @@ const router=express.Router();
  *       200:
  *         description: Notification Created Successfully!
  */
-router.route('/create_notification').post(verifyToken,CreateNotification);
+router.route('/create_notification').post(verifyToken, CreateNotification);
 
 /**
  * @swagger
@@ -53,7 +53,7 @@ router.route('/create_notification').post(verifyToken,CreateNotification);
  *       200:
  *         description: Notification Deleted Successfully!
  */
-router.route('/delete_notification/:id').delete(verifyToken,DeleteNotification);
+router.route('/delete_notification/:id').delete(verifyToken, DeleteNotification);
 
 /**
  * @swagger
@@ -65,7 +65,7 @@ router.route('/delete_notification/:id').delete(verifyToken,DeleteNotification);
  *       200:
  *         description: Notification Updated Successfully!
  */
-router.route('/update_notification/:id').patch(verifyToken,UpdateNotification);
+router.route('/update_notification/:id').patch(verifyToken, UpdateNotification);
 
 /**
  * @swagger
@@ -77,7 +77,7 @@ router.route('/update_notification/:id').patch(verifyToken,UpdateNotification);
  *       200:
  *         description: Get Notification List Successfully!
  */
-router.route('/get_notification_list').get(verifyToken,GetNotificationList); 
+router.route('/get_notification_list').get(verifyToken, GetNotificationList);
 
 /**
  * @swagger
@@ -89,7 +89,7 @@ router.route('/get_notification_list').get(verifyToken,GetNotificationList);
  *       200:
  *         description: Get Notification List Successfully!
  */
-router.route('/notification_list_based_on_type').post(verifyToken,GetNotificationBasedOnType);
+router.route('/notification_list_based_on_type').post(verifyToken, GetNotificationBasedOnType);
 
 /**
  * @swagger
@@ -101,6 +101,6 @@ router.route('/notification_list_based_on_type').post(verifyToken,GetNotificatio
  *       200:
  *         description: Notification Read Successfully!
  */
-router.route('/send_notification/:id').patch(verifyToken,SendNotificationToUser);
+router.route('/send_notification/:id').patch(verifyToken, SendNotificationToUser);
 
 export default router;

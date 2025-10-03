@@ -1,19 +1,19 @@
 import {
-CreateService,
-GetServiceList,
-GetServiceById,
-DeleteService,
-UpdateServiceStatus,
-UpdateService,
-AllowServicePermission,
-removeServicePermission,
-UserNameList,
-GetUsersAllowedServices
+    CreateService,
+    GetServiceList,
+    GetServiceById,
+    DeleteService,
+    UpdateServiceStatus,
+    UpdateService,
+    AllowServicePermission,
+    removeServicePermission,
+    UserNameList,
+    GetUsersAllowedServices
 } from "../../controllers/admin/service.controller.js";
-import {verifyToken} from "../../middleware/verifyToken.js";
+import { verifyToken } from "../../middleware/verifyToken.js";
 
 import express from "express";
-const router=express.Router();
+const router = express.Router();
 
 
 /**
@@ -46,7 +46,7 @@ const router=express.Router();
  *         description: Service Created Successfully!
  */
 
-router.route('/create_service').post(verifyToken,CreateService);
+router.route('/create_service').post(verifyToken, CreateService);
 
 /**
  * @swagger
@@ -58,7 +58,7 @@ router.route('/create_service').post(verifyToken,CreateService);
  *       200:
  *         description: Get Service List Successfully!
  */
-router.route('/get_service_list').get(verifyToken,GetServiceList);
+router.route('/get_service_list').get(verifyToken, GetServiceList);
 
 /**
  * @swagger
@@ -70,7 +70,7 @@ router.route('/get_service_list').get(verifyToken,GetServiceList);
  *       200:
  *         description: Get Service By Id Successfully!
  */
-router.route('/get_service_byid/:id').get(verifyToken,GetServiceById);
+router.route('/get_service_byid/:id').get(verifyToken, GetServiceById);
 
 /**
  * @swagger
@@ -82,7 +82,7 @@ router.route('/get_service_byid/:id').get(verifyToken,GetServiceById);
  *       200:
  *         description: Service Deleted Successfully!
  */
-router.route('/delete_service/:id').delete(verifyToken,DeleteService);
+router.route('/delete_service/:id').delete(verifyToken, DeleteService);
 
 /**
  * @swagger
@@ -94,7 +94,7 @@ router.route('/delete_service/:id').delete(verifyToken,DeleteService);
  *       200:
  *         description: Service Status Updated Successfully!
  */
-router.route('/update_service_status/:id').patch(verifyToken,UpdateServiceStatus);
+router.route('/update_service_status/:id').patch(verifyToken, UpdateServiceStatus);
 
 /**
  * @swagger
@@ -106,7 +106,7 @@ router.route('/update_service_status/:id').patch(verifyToken,UpdateServiceStatus
  *       200:
  *         description: Service Updated Successfully!
  */
-router.route('/update_service/:id').patch(verifyToken,UpdateService);
+router.route('/update_service/:id').patch(verifyToken, UpdateService);
 
 /**
  * @swagger
@@ -118,7 +118,7 @@ router.route('/update_service/:id').patch(verifyToken,UpdateService);
  *       200:
  *         description: Allow Service Permission To User Successfully!
  */
-router.route('/allow_service_permission/:id').post(verifyToken,AllowServicePermission);
+router.route('/allow_service_permission/:id').post(verifyToken, AllowServicePermission);
 /**
  * @swagger
  * /remove_service_permission/:serviceid/:userid:
@@ -129,7 +129,7 @@ router.route('/allow_service_permission/:id').post(verifyToken,AllowServicePermi
  *       200:
  *         description: Remove Service Permission To User Successfully!
  */
-router.route('/remove_service_permission/:serviceid/:userid').get(verifyToken,removeServicePermission);
+router.route('/remove_service_permission/:serviceid/:userid').get(verifyToken, removeServicePermission);
 
 /**
  * @swagger
@@ -141,7 +141,7 @@ router.route('/remove_service_permission/:serviceid/:userid').get(verifyToken,re
  *       200:
  *         description: Allow Service Users Name List Fetched Successfully!
  */
-router.route('/get_allowed_user_username').get(verifyToken,UserNameList);
+router.route('/get_allowed_user_username').get(verifyToken, UserNameList);
 
 
 /**
@@ -154,7 +154,7 @@ router.route('/get_allowed_user_username').get(verifyToken,UserNameList);
  *       200:
  *         description: Get Users Service List Successfully!
  */
-router.route('/get_user_service_list/:id').get(verifyToken,GetUsersAllowedServices)
+router.route('/get_user_service_list/:id').get(verifyToken, GetUsersAllowedServices)
 
 
 

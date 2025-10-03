@@ -47,6 +47,7 @@ export const GetbroadbandOptList = async (req, res) => {
         return res.status(500).json(new APIError("Error: " + error.message, 500));
     }
 };
+
 export const BroadbandOperatorConfig = async (req, res) => {
     try {
         const { billerId } = req.params;

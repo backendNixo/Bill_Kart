@@ -5,9 +5,9 @@ import {
     GetOfferList,
     GetOfferById
 } from "../../controllers/admin/offer.controller.js";
-import {verifyToken} from "../../middleware/verifyToken.js";
+import { verifyToken } from "../../middleware/verifyToken.js";
 import express from "express";
-const router=express.Router();
+const router = express.Router();
 
 /**
  * @swagger
@@ -44,7 +44,7 @@ const router=express.Router();
  *       200:
  *         description: Offer Created Successfully!
  */
-router.route('/create_offer').post(verifyToken,CreateOffer);
+router.route('/create_offer').post(verifyToken, CreateOffer);
 
 /**
  * @swagger
@@ -56,7 +56,7 @@ router.route('/create_offer').post(verifyToken,CreateOffer);
  *       200:
  *         description: Offer Deleted Successfully!
  */
-router.route('/delete_offer/:id').delete(verifyToken,DeleteOffer);
+router.route('/delete_offer/:id').delete(verifyToken, DeleteOffer);
 /**
  * @swagger
  * /update_offer/:id:
@@ -67,7 +67,7 @@ router.route('/delete_offer/:id').delete(verifyToken,DeleteOffer);
  *       200:
  *         description: Offer Updated Successfully!
  */
-router.route('/update_offer/:id').patch(verifyToken,UpdateOffer);
+router.route('/update_offer/:id').patch(verifyToken, UpdateOffer);
 /**
  * @swagger
  * /get_offer_list:
@@ -78,7 +78,7 @@ router.route('/update_offer/:id').patch(verifyToken,UpdateOffer);
  *       200:
  *         description: Get Offer List Successfully!
  */
-router.route('/get_offer_list').get(verifyToken,GetOfferList);
+router.route('/get_offer_list').get(verifyToken, GetOfferList);
 
 /**
  * @swagger
@@ -90,6 +90,6 @@ router.route('/get_offer_list').get(verifyToken,GetOfferList);
  *       200:
  *         description: Get Offer By Id Successfully!
  */
-router.route('/get_offer_byid/:id').get(verifyToken,GetOfferById);
+router.route('/get_offer_byid/:id').get(verifyToken, GetOfferById);
 
 export default router;

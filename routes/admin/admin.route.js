@@ -224,7 +224,7 @@ router.route('/update_user_delete/:id').patch(verifyToken, DeletedUser);
  *         description: Users Name List Fetched Successfully!
  */
 
-router.route('/get_all_users_name_list').get(verifyToken,GetAllUserNameList);
+router.route('/get_all_users_name_list').get(verifyToken, GetAllUserNameList);
 
 /**
  * @swagger
@@ -259,7 +259,7 @@ router.route('/get_all_users_name_list').get(verifyToken,GetAllUserNameList);
  *       200:
  *         description: User Created Successfully!
  */
-router.route('/create_user').post(verifyToken,CreateUser);
+router.route('/create_user').post(verifyToken, CreateUser);
 
 /**
  * @swagger
@@ -271,7 +271,7 @@ router.route('/create_user').post(verifyToken,CreateUser);
  *       200:
  *         description: Users Ledgers List Fetched Successfully!
  */
-router.route('/view_users_ledgers_list').post(verifyToken,ViewUserLedgerByAdmin);
+router.route('/view_users_ledgers_list').post(verifyToken, ViewUserLedgerByAdmin);
 
 //show seven day old status of spacific user
 
@@ -285,7 +285,7 @@ router.route('/view_users_ledgers_list').post(verifyToken,ViewUserLedgerByAdmin)
  *       200:
  *         description: Show Users Ledgers Status Wise Successfully!
  */
-router.route('/show_ledger_status_graph_byadmin').get(verifyToken,ViewUserLedger7DayOldByAdmin);
+router.route('/show_ledger_status_graph_byadmin').get(verifyToken, ViewUserLedger7DayOldByAdmin);
 /**
  * @swagger
  * /show_ledger_based_on_opt_byadmin/:optType:
@@ -296,7 +296,7 @@ router.route('/show_ledger_status_graph_byadmin').get(verifyToken,ViewUserLedger
  *       200:
  *         description: Show Users Ledgers Based On Operator Successfully!
  */
-router.route('/show_ledger_based_on_opt_byadmin/:optType').post(verifyToken,ViewLedgerBasedOnOpt);
+router.route('/show_ledger_based_on_opt_byadmin/:optType').post(verifyToken, ViewLedgerBasedOnOpt);
 
 /**
  * @swagger
@@ -308,7 +308,7 @@ router.route('/show_ledger_based_on_opt_byadmin/:optType').post(verifyToken,View
  *       200:
  *         description: Show Users Ledgers Based On Status Successfully!
  */
-router.route('/show_ledger_based_on_status_byadmin/:status').post(verifyToken,ViewSuccessOrFailedLedger);
+router.route('/show_ledger_based_on_status_byadmin/:status').post(verifyToken, ViewSuccessOrFailedLedger);
 
 /**
  * @swagger
@@ -320,7 +320,7 @@ router.route('/show_ledger_based_on_status_byadmin/:status').post(verifyToken,Vi
  *       200:
  *         description: Show Users Ledgers By User Id Successfully!
  */
-router.route('/get_ledger_byuserId/:id').post(verifyToken,ViewUserLedgerByUserId);
+router.route('/get_ledger_byuserId/:id').post(verifyToken, ViewUserLedgerByUserId);
 
 /**
  * @swagger
@@ -332,6 +332,6 @@ router.route('/get_ledger_byuserId/:id').post(verifyToken,ViewUserLedgerByUserId
  *       200:
  *         description: Show Operator Name List Successfully!
  */
-router.route('/operator_name_list').get(verifyToken,GetOperatorList);
+router.route('/operator_name_list').get(verifyToken, GetOperatorList);
 
 export default router;

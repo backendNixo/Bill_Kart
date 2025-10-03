@@ -101,7 +101,6 @@ export const UpdateServiceStatus = async (req, res) => {
 
 //Update service name ,description ,add users
 
-
 export const UpdateService = async (req, res) => {
     try {
         const serviceId = req.params.id;
@@ -240,4 +239,5 @@ export const GetUsersAllowedServices = async (req, res) => {
         return res.status(500).json(new APIError("Error :" + error, 500));
     }
 };
+
 
