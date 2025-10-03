@@ -57,12 +57,11 @@ const swaggerOptions = {
         "./routes/services/municipality/municipality.route.js",
         "./routes/services/municipalTax/municipalTax.route.js",
         "./routes/services/postpaid/postpaid.route.js",
-         "./routes/services/prepaid/prepaid.route.js",
-         "./routes/services/waterSuply/waterSuply.route.js",
+        "./routes/services/prepaid/prepaid.route.js",
+        "./routes/services/waterSuply/waterSuply.route.js",
     ],
 };
 
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
-
 
 export { swaggerSpec }
